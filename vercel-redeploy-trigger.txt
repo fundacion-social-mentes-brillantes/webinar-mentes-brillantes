@@ -1,0 +1,2 @@
+Trigger Vercel redeploy after reconnecting the Git integration.
+Date: 2026-05-20
