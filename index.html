@@ -1,451 +1,1117 @@
-<!DOCTYPE html>
-<html class="dark scroll-smooth" lang="es">
+<!doctype html>
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="description" content="Webinar exclusivo Relaciones de Pareja Conscientes de Gimnasio Emocional. Una experiencia íntima para sanar patrones, elevar la comunicación y construir vínculos de alto valor."/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Webinar exclusivo de Gimnasio Emocional Mentes Brillantes para sanar patrones afectivos, comunicar con presencia y construir relaciones conscientes." />
+    <meta name="theme-color" content="#111111" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content="Relaciones de Pareja Conscientes | Gimnasio Emocional" />
+    <meta property="og:description" content="Una invitación privada a un webinar premium para mirar tu forma de amar con más claridad, presencia y madurez emocional." />
+    <meta property="og:url" content="https://webinar-mentes-brillantes.vercel.app" />
+    <meta property="og:image" content="https://webinar-mentes-brillantes.vercel.app/Logo.jpg" />
+
     <title>Relaciones de Pareja Conscientes | Gimnasio Emocional</title>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="icon" href="Logo.jpg" type="image/jpeg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@200..600,0..1&display=swap" rel="stylesheet" />
 
-    <script id="tailwind-config">
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        "on-primary": "#3c2f00",
-                        "primary": "#e9c349",
-                        "surface": "#131313",
-                        "background": "#131313",
-                        "on-surface": "#e5e2e1",
-                        "on-background": "#e5e2e1",
-                        "secondary-container": "#314671",
-                        "surface-container-lowest": "#0e0e0e",
-                        "surface-container-low": "#1c1b1b",
-                        "surface-container": "#201f1f",
-                        "surface-container-high": "#2a2a2a",
-                        "surface-container-highest": "#353534",
-                        "surface-variant": "#353534",
-                        "on-surface-variant": "#c5c6d0",
-                        "primary-container": "#251c00",
-                        "whatsapp": "#25D366"
-                    },
                     fontFamily: {
-                        "headline": ["Noto Serif", "serif"],
-                        "body": ["Manrope", "sans-serif"],
-                        "label": ["Manrope", "sans-serif"]
+                        display: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"]
                     },
                     letterSpacing: {
-                        "sanctuary": "0.18em",
-                        "tightest": "-0.045em"
-                    },
-                    boxShadow: {
-                        "gold-soft": "0 34px 120px -42px rgba(233,195,73,0.45)",
-                        "blue-soft": "0 34px 120px -48px rgba(49,70,113,0.65)",
-                        "inner-glow": "inset 0 1px 0 rgba(229,226,225,0.08), inset 0 -1px 0 rgba(0,0,0,0.25)"
-                    },
-                    backgroundImage: {
-                        "gold-thread": "linear-gradient(180deg, rgba(233,195,73,0), rgba(233,195,73,0.85), rgba(233,195,73,0.18), rgba(233,195,73,0))",
-                        "sanctuary-radial": "radial-gradient(circle at 22% 12%, rgba(233,195,73,0.13) 0%, rgba(233,195,73,0.035) 28%, transparent 54%), radial-gradient(circle at 82% 30%, rgba(49,70,113,0.34) 0%, rgba(49,70,113,0.08) 34%, transparent 62%), linear-gradient(180deg, #131313 0%, #0e0e0e 48%, #131313 100%)",
-                        "soft-noise": "linear-gradient(135deg, rgba(229,226,225,0.035) 0%, transparent 32%, rgba(233,195,73,0.04) 100%)"
+                        label: "0.14em"
                     }
                 }
             }
-        }
+        };
     </script>
 
     <style>
         :root {
+            --bg: #111111;
+            --surface: #191817;
+            --surface-2: #22201e;
+            --surface-3: #2c2926;
+            --text: #e9e4dc;
+            --muted: #bdb6aa;
+            --accent: #e9c349;
+            --accent-2: #8ecdc2;
+            --accent-3: #c77d69;
+            --whatsapp: #25d366;
             color-scheme: dark;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--bg);
+        }
+
         body {
-            background: #131313;
+            min-height: 100vh;
+            margin: 0;
             overflow-x: hidden;
+            background:
+                linear-gradient(118deg, rgba(233, 195, 73, 0.09), transparent 28%),
+                linear-gradient(242deg, rgba(142, 205, 194, 0.1), transparent 32%),
+                linear-gradient(180deg, var(--bg) 0%, #151311 42%, var(--bg) 100%);
+            color: var(--text);
+            font-family: "Manrope", sans-serif;
+            text-rendering: optimizeLegibility;
         }
 
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 250, 'GRAD' 0, 'opsz' 24;
-        }
-
-        .grain::before {
+        body::before {
             content: "";
             position: fixed;
             inset: 0;
-            z-index: 0;
+            z-index: -2;
             pointer-events: none;
-            opacity: 0.18;
             background-image:
-                radial-gradient(circle at 25% 25%, rgba(229,226,225,0.08) 0 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, rgba(233,195,73,0.05) 0 1px, transparent 1px);
-            background-size: 44px 44px, 68px 68px;
+                linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+                repeating-linear-gradient(115deg, rgba(233, 195, 73, 0.035) 0 1px, transparent 1px 28px);
+            background-size: 56px 56px, 56px 56px, 100% 100%;
+            mask-image: linear-gradient(180deg, black 0%, black 64%, transparent 100%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.13;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, 0.18) 0.7px, transparent 0.7px);
+            background-size: 18px 18px;
             mix-blend-mode: soft-light;
         }
 
-        .luxury-wordmark {
+        ::selection {
+            background: var(--accent);
+            color: #211600;
+        }
+
+        section {
+            scroll-margin-top: 96px;
+        }
+
+        a,
+        button,
+        summary {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 350, "GRAD" 0, "opsz" 24;
+            line-height: 1;
+        }
+
+        .skip-link {
+            position: fixed;
+            left: 16px;
+            top: 16px;
+            z-index: 80;
+            transform: translateY(-140%);
+            border-radius: 8px;
+            background: var(--accent);
+            color: #211600;
+            padding: 12px 16px;
+            font-weight: 800;
+            transition: transform 180ms ease;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        .shell {
+            width: min(1160px, calc(100% - 32px));
+            margin-inline: auto;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .balanced {
             text-wrap: balance;
         }
 
-        .breathing-title {
-            text-wrap: balance;
-        }
-
-        .body-balance {
+        .pretty {
             text-wrap: pretty;
         }
 
-        .reveal-card {
-            transform: translateZ(0);
+        .premium-panel {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.078), rgba(255, 255, 255, 0.026)),
+                color-mix(in srgb, var(--surface-2) 84%, transparent);
+            box-shadow: 0 32px 110px -70px rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(18px);
         }
 
-        .reveal-card::after {
+        .surface-band {
+            background:
+                linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--surface-2) 96%, transparent)),
+                linear-gradient(90deg, rgba(233, 195, 73, 0.03), rgba(142, 205, 194, 0.04));
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            color: color-mix(in srgb, var(--text) 82%, transparent);
+            padding: 0.52rem 0.78rem;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .chip-accent {
+            border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+            background: color-mix(in srgb, var(--accent) 13%, transparent);
+            color: var(--accent);
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            border-radius: 999px;
+            background: var(--whatsapp);
+            color: #ffffff;
+            padding: 0.92rem 1.22rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 24px 80px -42px rgba(37, 211, 102, 0.85);
+            transition: transform 220ms ease, filter 220ms ease, box-shadow 220ms ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            filter: saturate(1.08);
+            box-shadow: 0 28px 92px -38px rgba(37, 211, 102, 0.95);
+        }
+
+        .cta-secondary {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+            border-radius: 999px;
+            color: var(--text);
+            padding: 0.78rem 1rem;
+            font-weight: 800;
+            transition: background 220ms ease, transform 220ms ease;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .hero-stage {
+            position: relative;
+            min-height: 510px;
+            overflow: hidden;
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, rgba(233, 195, 73, 0.16), transparent 31%),
+                linear-gradient(315deg, rgba(142, 205, 194, 0.18), transparent 34%),
+                linear-gradient(180deg, color-mix(in srgb, var(--surface-3) 82%, transparent), color-mix(in srgb, var(--bg) 88%, transparent));
+        }
+
+        .hero-stage::before {
             content: "";
             position: absolute;
-            inset: auto 18% 0 18%;
+            inset: 0;
+            background:
+                repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 42px),
+                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.042) 0 1px, transparent 1px 42px);
+            mask-image: linear-gradient(135deg, transparent 0%, black 22%, black 72%, transparent 100%);
+        }
+
+        .hero-stage::after {
+            content: "";
+            position: absolute;
+            inset: 12%;
+            border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+            border-radius: 50%;
+            transform: rotate(-17deg) scaleX(1.45);
+            opacity: 0.42;
+        }
+
+        .stage-line {
+            position: absolute;
+            left: 10%;
+            right: 10%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(233,195,73,0.35), transparent);
-            opacity: 0;
-            transition: opacity 500ms ease;
+            background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 72%, transparent), transparent);
+            opacity: 0.68;
         }
 
-        .reveal-card:hover::after {
+        .stage-line:nth-child(1) {
+            top: 26%;
+        }
+
+        .stage-line:nth-child(2) {
+            top: 49%;
+            transform: translateX(8%);
+            background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-2) 65%, transparent), transparent);
+        }
+
+        .stage-line:nth-child(3) {
+            top: 72%;
+            transform: translateX(-7%);
+            background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-3) 60%, transparent), transparent);
+        }
+
+        .video-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #050505;
+        }
+
+        .video-frame iframe,
+        .video-frame video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .thread {
+            position: relative;
+        }
+
+        .thread::before {
+            content: "";
+            position: absolute;
+            left: 17px;
+            top: 2.25rem;
+            bottom: 2.25rem;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, var(--accent), color-mix(in srgb, var(--accent-2) 76%, transparent), transparent);
+        }
+
+        .thread-node {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            width: 36px;
+            height: 36px;
+            place-items: center;
+            border-radius: 999px;
+            background: var(--accent);
+            color: #211600;
+            font-size: 0.74rem;
+            font-weight: 900;
+        }
+
+        .faq details {
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.052);
+        }
+
+        .faq summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq details[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            transition: transform 180ms ease;
+        }
+
+        [data-reveal] {
             opacity: 1;
+            transform: none;
         }
 
-        .floating-orb {
-            animation: floatOrb 12s ease-in-out infinite alternate;
+        @media (prefers-reduced-motion: no-preference) {
+            [data-reveal] {
+                opacity: 0;
+                transform: translateY(22px);
+                transition: opacity 650ms ease, transform 650ms ease;
+            }
+
+            [data-reveal].is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        @keyframes floatOrb {
-            from { transform: translate3d(0, 0, 0) scale(1); }
-            to { transform: translate3d(18px, -24px, 0) scale(1.04); }
+        @supports not (color: color-mix(in srgb, white, black)) {
+            .premium-panel {
+                background: rgba(34, 32, 30, 0.86);
+            }
         }
 
-        .progress-node {
-            box-shadow: 0 0 0 6px rgba(233,195,73,0.045), 0 0 42px rgba(233,195,73,0.22);
-        }
+        @media (max-width: 767px) {
+            .shell {
+                width: min(100% - 24px, 1160px);
+            }
 
-        .whatsapp-cta {
-            box-shadow: 0 24px 80px -30px rgba(37,211,102,0.85), inset 0 1px 0 rgba(255,255,255,0.18);
-        }
+            .hero-stage {
+                min-height: 390px;
+            }
 
-        .premium-mask {
-            -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%);
-            mask-image: linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%);
+            .thread::before {
+                left: 15px;
+            }
         }
     </style>
 </head>
 
-<body class="grain bg-surface text-on-surface font-body antialiased selection:bg-primary selection:text-on-primary">
-    <div class="relative z-10 min-h-screen overflow-hidden">
-        <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 bg-sanctuary-radial"></div>
-        <div aria-hidden="true" class="pointer-events-none fixed left-1/2 top-0 z-0 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px]"></div>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-        <nav class="fixed left-0 top-0 z-50 w-full px-4 pt-4 sm:px-6">
-            <div class="mx-auto flex max-w-7xl items-center justify-between rounded-full bg-secondary-container/60 px-4 py-3 shadow-blue-soft backdrop-blur-xl sm:px-5">
-                <a href="#inicio" class="group flex items-center gap-3" aria-label="Ir al inicio">
-                    <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-surface-container shadow-inner-glow">
-                        <img alt="Gimnasio Emocional" class="h-9 w-auto object-contain opacity-95 transition duration-500 group-hover:scale-105" src="Logo.jpg"/>
-                    </span>
-                    <span class="hidden font-headline text-lg italic tracking-tight text-primary sm:inline-block">Gimnasio Emocional</span>
-                </a>
+    <script>
+        /*
+         * WEBINAR EXPERIENCE SYSTEM
+         * Edita este bloque para crear una nueva landing de webinar.
+         * El resto de la página se alimenta de esta configuración.
+         */
+        const WEBINAR_CONFIG = {
+            brand: "Gimnasio Emocional",
+            organization: "Gimnasio Emocional Mentes Brillantes",
+            themeName: "Relaciones de Pareja Conscientes",
+            category: "Webinar exclusivo",
+            headline: "Sana tus patrones afectivos y vuelve a elegir el amor con presencia",
+            highlightedWord: "presencia",
+            subheadline: "Una experiencia privada para comprender por qué repetimos ciertas dinámicas, cómo reparar desde la conciencia y qué prácticas sostienen vínculos más seguros, maduros y humanos.",
+            audience: "Personas que quieren dejar de amar desde la herida, la ansiedad o el sacrificio silencioso, y empezar a vincularse desde claridad, dignidad y presencia.",
+            date: "Próxima fecha por confirmar",
+            duration: "90 minutos",
+            format: "Online en vivo + grupo VIP",
+            scarcityNote: "Entrada por WhatsApp. Cupos cuidados para mantener una experiencia cercana y sin ruido.",
+            cta: {
+                label: "Unirme al grupo VIP",
+                secondaryLabel: "Ver mapa del webinar",
+                url: "https://chat.whatsapp.com/J0N6LHqhEFf0F7CdVweCNI?mode=gi_t"
+            },
+            video: {
+                enabled: false,
+                videoType: "none",
+                videoUrl: "",
+                iframeUrl: "",
+                posterImage: ""
+            },
+            speaker: {
+                name: "Equipo Mentes Brillantes",
+                role: "Gimnasio Emocional",
+                bio: "Un espacio de educación emocional creado para acompañar procesos de transformación interior con lenguaje claro, mirada humana y prácticas aplicables a la vida cotidiana.",
+                quote: "La calidad de tu vida también se entrena en la forma en que te vinculas, comunicas y eliges desde tu centro.",
+                image: ""
+            },
+            audienceFit: [
+                "Sientes que repites conversaciones, conflictos o elecciones afectivas.",
+                "Quieres poner límites sin culpa y comunicarte sin atacar ni desaparecer.",
+                "Buscas una mirada espiritual y psicológica que sea profunda, práctica y respetuosa."
+            ],
+            benefits: [
+                {
+                    title: "Leer el patrón antes de repetirlo",
+                    description: "Identifica las señales emocionales que aparecen antes del conflicto, la dependencia, la distancia o la necesidad de aprobación.",
+                    chip: "Autoconciencia",
+                    icon: "psychology"
+                },
+                {
+                    title: "Comunicar sin perder tu centro",
+                    description: "Aprende a expresar necesidades y límites con firmeza, ternura y responsabilidad emocional.",
+                    chip: "Comunicación",
+                    icon: "forum"
+                },
+                {
+                    title: "Separar amor de supervivencia",
+                    description: "Distingue cuándo eliges desde paz y presencia, y cuándo reaccionas desde abandono, miedo o culpa.",
+                    chip: "Claridad",
+                    icon: "healing"
+                },
+                {
+                    title: "Diseñar acuerdos más conscientes",
+                    description: "Llévate preguntas y prácticas para reparar, conversar y sostener vínculos más maduros.",
+                    chip: "Acción",
+                    icon: "diversity_1"
+                }
+            ],
+            agenda: [
+                {
+                    step: "01",
+                    title: "Entrada al mapa emocional",
+                    description: "Ubicamos el punto de partida: qué duele, qué se repite y qué necesita ser visto con honestidad."
+                },
+                {
+                    step: "02",
+                    title: "Patrones, heridas y lenguaje del vínculo",
+                    description: "Exploramos apego, límites, comunicación y decisiones afectivas sin convertirlo en culpa."
+                },
+                {
+                    step: "03",
+                    title: "Prácticas para elegir distinto",
+                    description: "Integramos recursos concretos para conversar, reparar y volver al cuerpo antes de reaccionar."
+                },
+                {
+                    step: "04",
+                    title: "Cierre y siguiente paso",
+                    description: "Definimos una acción simple para llevar la conciencia del webinar a la relación real."
+                }
+            ],
+            emotionalChips: ["Claridad", "Sanación", "Presencia", "Límites", "Amor adulto"],
+            credibility: [
+                {
+                    label: "Marca anfitriona",
+                    value: "Gimnasio Emocional Mentes Brillantes"
+                },
+                {
+                    label: "Formato",
+                    value: "Experiencia guiada, íntima y accionable"
+                },
+                {
+                    label: "Acceso",
+                    value: "Grupo VIP de WhatsApp, sin formularios largos"
+                }
+            ],
+            testimonials: [],
+            faqs: [
+                {
+                    question: "¿El webinar es solo para personas con pareja?",
+                    answer: "No. También es útil si estás soltero, en una pausa afectiva o quieres comprender tus patrones antes de una nueva relación."
+                },
+                {
+                    question: "¿Tengo que llenar un formulario?",
+                    answer: "No. El flujo principal es entrar al grupo VIP de WhatsApp, donde recibirás la información y recordatorios del webinar."
+                },
+                {
+                    question: "¿Se necesita experiencia previa en terapia o crecimiento personal?",
+                    answer: "No. La experiencia está diseñada para ser profunda sin volverse complicada, con lenguaje claro y ejercicios aplicables."
+                },
+                {
+                    question: "¿Dónde se publicará la fecha exacta?",
+                    answer: "La fecha, hora y enlace de acceso se compartirán dentro del grupo VIP de WhatsApp cuando el equipo confirme la convocatoria."
+                }
+            ],
+            seo: {
+                title: "Relaciones de Pareja Conscientes | Gimnasio Emocional",
+                description: "Webinar exclusivo de Gimnasio Emocional Mentes Brillantes para sanar patrones afectivos, comunicar con presencia y construir relaciones conscientes.",
+                ogImage: "https://webinar-mentes-brillantes.vercel.app/Logo.jpg",
+                url: "https://webinar-mentes-brillantes.vercel.app"
+            },
+            visualMood: {
+                style: "premium editorial sanctuary",
+                primaryAccent: "#e9c349",
+                secondaryAccent: "#8ecdc2",
+                warmAccent: "#c77d69",
+                background: "#111111",
+                surface: "#191817",
+                text: "#e9e4dc"
+            }
+        };
+    </script>
 
-                <div class="hidden items-center gap-8 lg:flex">
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/58 transition hover:text-primary" href="#viaje">El viaje</a>
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/58 transition hover:text-primary" href="#metodo">La sabiduría</a>
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/58 transition hover:text-primary" href="#santuario">El santuario</a>
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/58 transition hover:text-primary" href="#reserva">Conectar</a>
-                </div>
+    <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border border-white/10 bg-black/38 px-3 py-2 shadow-2xl backdrop-blur-xl" aria-label="Navegación principal">
+            <a href="#inicio" class="flex min-w-0 items-center gap-3 rounded-full pr-2" aria-label="Ir al inicio">
+                <span class="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full bg-white/8">
+                    <img src="Logo.jpg" alt="Logo de Gimnasio Emocional Mentes Brillantes" class="h-9 w-auto object-contain" />
+                </span>
+                <span class="hidden min-w-0 font-display text-base italic text-[color:var(--accent)] sm:block" data-brand>Gimnasio Emocional</span>
+            </a>
 
-                <a class="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-[11px] font-extrabold uppercase tracking-[0.16em] text-on-primary transition duration-300 hover:-translate-y-0.5 hover:shadow-gold-soft active:scale-[0.98]" href="https://chat.whatsapp.com/J0N6LHqhEFf0F7CdVweCNI?mode=gi_t" target="_blank" rel="noopener noreferrer">
-                    <span>Reservar</span>
-                    <span class="material-symbols-outlined text-[17px] transition group-hover:translate-x-0.5">arrow_forward</span>
-                </a>
+            <div class="hidden items-center gap-6 lg:flex">
+                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#para-quien">Para quién</a>
+                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#descubrir">Descubrirás</a>
+                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#agenda">Agenda</a>
+                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#mentor">Mentor</a>
+                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#faq">FAQ</a>
             </div>
+
+            <a class="cta-primary min-h-11 px-4 py-2 text-[0.68rem] sm:px-5" href="#" target="_blank" rel="noopener noreferrer" data-cta-link data-cta-label>
+                Unirme
+            </a>
         </nav>
+    </header>
 
-        <main id="inicio">
-            <section class="relative isolate flex min-h-screen items-center px-5 pb-24 pt-36 sm:px-8 lg:px-12 lg:pt-32">
-                <div aria-hidden="true" class="floating-orb absolute -left-32 top-36 h-80 w-80 rounded-full bg-primary/10 blur-[110px]"></div>
-                <div aria-hidden="true" class="floating-orb absolute -right-28 bottom-20 h-[28rem] w-[28rem] rounded-full bg-secondary-container/30 blur-[150px]" style="animation-delay: -3s;"></div>
+    <main id="contenido">
+        <!-- Hero / Private Invitation -->
+        <section id="inicio" class="relative overflow-hidden px-0 pb-20 pt-28 sm:pt-32 lg:min-h-screen lg:pb-28">
+            <div class="shell grid items-center gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-16">
+                <div data-reveal>
+                    <div class="mb-7 flex flex-wrap items-center gap-2">
+                        <span class="chip chip-accent" data-category>Webinar exclusivo</span>
+                        <span class="chip" data-theme-name>Relaciones de Pareja Conscientes</span>
+                    </div>
 
-                <div class="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1.08fr_0.92fr]">
-                    <div class="max-w-4xl">
-                        <div class="mb-8 flex flex-wrap items-center gap-3">
-                            <span class="rounded-full bg-primary/10 px-4 py-2 font-label text-[10px] font-extrabold uppercase tracking-sanctuary text-primary shadow-inner-glow">Webinar exclusivo</span>
-                            <span class="rounded-full bg-secondary-container/60 px-4 py-2 font-label text-[10px] font-bold uppercase tracking-sanctuary text-on-surface/70 backdrop-blur-xl shadow-inner-glow">Relaciones conscientes</span>
+                    <p class="eyebrow mb-5" data-format>Online en vivo + grupo VIP</p>
+                    <h1 class="balanced font-display text-[3.15rem] font-medium leading-[0.98] text-[color:var(--text)] sm:text-[4.8rem] lg:text-[6.4rem]" data-headline>
+                        Sana tus patrones afectivos y vuelve a elegir el amor con <em class="text-[color:var(--accent)]">presencia</em>
+                    </h1>
+
+                    <p class="pretty mt-7 max-w-2xl text-lg font-light leading-8 text-[color:color-mix(in_srgb,var(--text)_78%,transparent)] sm:text-xl sm:leading-9" data-subheadline>
+                        Una experiencia privada para comprender por qué repetimos ciertas dinámicas, cómo reparar desde la conciencia y qué prácticas sostienen vínculos más seguros, maduros y humanos.
+                    </p>
+
+                    <div class="mt-8 grid gap-3 sm:grid-cols-3">
+                        <div class="premium-panel px-4 py-4">
+                            <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">Fecha</p>
+                            <p class="mt-2 font-display text-xl text-[color:var(--accent)]" data-date>Próxima fecha por confirmar</p>
                         </div>
+                        <div class="premium-panel px-4 py-4">
+                            <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">Duración</p>
+                            <p class="mt-2 font-display text-xl text-[color:var(--text)]" data-duration>90 minutos</p>
+                        </div>
+                        <div class="premium-panel px-4 py-4">
+                            <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">Acceso</p>
+                            <p class="mt-2 font-display text-xl text-[color:var(--text)]">VIP</p>
+                        </div>
+                    </div>
 
-                        <p class="mb-6 max-w-xl font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/45">Para quienes ya no quieren amar desde la herida, sino elegir desde la conciencia.</p>
+                    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <a class="cta-primary text-sm" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>
+                            <span class="material-symbols-outlined text-xl" aria-hidden="true">lock</span>
+                            <span data-cta-label>Unirme al grupo VIP</span>
+                        </a>
+                        <a class="cta-secondary text-sm" href="#agenda">
+                            <span data-secondary-cta>Ver mapa del webinar</span>
+                            <span class="material-symbols-outlined text-lg" aria-hidden="true">south</span>
+                        </a>
+                    </div>
 
-                        <h1 class="breathing-title font-headline text-[clamp(3.2rem,8vw,8.9rem)] font-medium leading-[0.88] tracking-tightest text-on-surface">
-                            Relaciones de Pareja <span class="block text-primary italic">Conscientes</span>
-                        </h1>
+                    <p class="pretty mt-5 max-w-xl text-sm leading-7 text-white/48" data-scarcity>
+                        Entrada por WhatsApp. Cupos cuidados para mantener una experiencia cercana y sin ruido.
+                    </p>
+                </div>
 
-                        <div class="mt-10 grid gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-end">
-                            <div class="hidden h-40 w-full rounded-[2rem] bg-secondary-container/60 shadow-blue-soft backdrop-blur-xl lg:block">
-                                <div class="flex h-full flex-col justify-end p-7">
-                                    <span class="font-headline text-4xl italic text-primary">01</span>
-                                    <span class="mt-2 font-label text-[10px] font-bold uppercase tracking-sanctuary text-on-surface/55">Entrada privada al santuario emocional</span>
-                                </div>
+                <aside class="relative" aria-label="Visual principal del webinar" data-reveal>
+                    <div class="premium-panel p-3">
+                        <div id="videoMount" class="hero-stage" role="img" aria-label="Visual abstracto premium del webinar">
+                            <span class="stage-line"></span>
+                            <span class="stage-line"></span>
+                            <span class="stage-line"></span>
+                            <div class="absolute inset-x-6 top-7 z-10 flex items-center justify-between gap-4">
+                                <p class="eyebrow max-w-[13rem]" data-visual-label>Club privado de transformación interior</p>
+                                <span class="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/28 text-[color:var(--accent)]">
+                                    <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+                                </span>
                             </div>
-
-                            <div>
-                                <p class="body-balance max-w-2xl text-lg font-light leading-[1.9] text-on-surface/75 md:text-xl">
-                                    Una experiencia editorial e íntima para comprender por qué repetimos patrones, cómo sanar el vínculo y qué prácticas elevan una relación hacia un amor maduro, seguro y profundamente humano.
+                            <div class="absolute bottom-7 left-6 right-6 z-10">
+                                <p class="mb-4 font-display text-3xl italic leading-tight text-[color:var(--text)] sm:text-4xl" data-speaker-quote>
+                                    La calidad de tu vida también se entrena en la forma en que te vinculas.
                                 </p>
-
-                                <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                                    <a class="whatsapp-cta group inline-flex items-center justify-center gap-3 rounded-full bg-whatsapp px-7 py-4 text-center font-label text-sm font-extrabold uppercase tracking-[0.13em] text-white transition duration-300 hover:-translate-y-1 active:scale-[0.98] sm:px-8" href="https://chat.whatsapp.com/J0N6LHqhEFf0F7CdVweCNI?mode=gi_t" target="_blank" rel="noopener noreferrer">
-                                        <span class="material-symbols-outlined text-[20px] transition duration-300 group-hover:-rotate-6">lock</span>
-                                        Unirme al Grupo VIP
-                                    </a>
-                                    <p class="max-w-xs text-xs leading-relaxed text-on-surface/45">Acceso por WhatsApp. Plazas limitadas. Sin ruido, sin spam, solo preparación consciente.</p>
-                                </div>
+                                <div class="flex flex-wrap gap-2" data-emotional-chips></div>
                             </div>
                         </div>
                     </div>
+                </aside>
+            </div>
+        </section>
 
-                    <aside class="relative lg:pt-20">
-                        <div class="absolute -left-10 top-6 hidden h-40 w-40 rounded-full bg-primary/10 blur-[70px] lg:block"></div>
+        <!-- Fast Value / Conversion Proof -->
+        <section class="surface-band px-0 py-16 sm:py-20">
+            <div class="shell grid gap-4 md:grid-cols-3" data-credibility-strip></div>
+        </section>
 
-                        <div class="relative ml-auto max-w-xl rounded-[2.5rem] bg-secondary-container/60 p-4 shadow-blue-soft backdrop-blur-xl sm:p-5 lg:rotate-[1.5deg]">
-                            <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-surface-container-lowest shadow-inner-glow">
-                                <div class="absolute inset-0 bg-soft-noise"></div>
-                                <div class="absolute left-8 top-8 max-w-[14rem]">
-                                    <p class="font-label text-[10px] font-extrabold uppercase tracking-sanctuary text-primary/90">Club privado de la mente</p>
-                                    <h2 class="mt-5 font-headline text-4xl leading-[1.05] tracking-tight text-on-surface">Entrena tu forma de amar.</h2>
-                                </div>
-
-                                <div class="absolute bottom-8 left-8 right-8 rounded-[2rem] bg-secondary-container/60 p-6 backdrop-blur-xl shadow-inner-glow">
-                                    <div class="flex items-center justify-between gap-4">
-                                        <span class="font-label text-[10px] font-bold uppercase tracking-sanctuary text-on-surface/45">Insight central</span>
-                                        <span class="material-symbols-outlined text-primary">psychology</span>
-                                    </div>
-                                    <p class="mt-5 font-headline text-2xl italic leading-snug text-on-surface/90">“No se trata de encontrar a alguien perfecto, sino de dejar de negociar tu paz interior.”</p>
-                                </div>
-
-                                <div class="absolute right-6 top-1/2 hidden -translate-y-1/2 flex-col gap-3 sm:flex">
-                                    <span class="rounded-full bg-surface/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/70 backdrop-blur-xl">Apego</span>
-                                    <span class="rounded-full bg-primary/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-primary backdrop-blur-xl">Límites</span>
-                                    <span class="rounded-full bg-surface/55 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/70 backdrop-blur-xl">Presencia</span>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
+        <!-- Audience Fit -->
+        <section id="para-quien" class="px-0 py-20 sm:py-28">
+            <div class="shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+                <div class="lg:sticky lg:top-28" data-reveal>
+                    <p class="eyebrow mb-4">Para quién es</p>
+                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Una invitación para mirar tu vínculo sin castigarte.</h2>
+                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62" data-audience>
+                        Personas que quieren dejar de amar desde la herida, la ansiedad o el sacrificio silencioso.
+                    </p>
                 </div>
-            </section>
 
-            <section id="viaje" class="relative bg-surface-container-low px-5 py-28 sm:px-8 lg:px-12 lg:py-36">
-                <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.75fr_1.25fr]">
-                    <div class="lg:sticky lg:top-32 lg:self-start">
-                        <p class="mb-5 font-label text-[11px] font-extrabold uppercase tracking-sanctuary text-primary">El viaje</p>
-                        <h2 class="breathing-title font-headline text-4xl leading-[1.05] tracking-tightest text-on-surface md:text-6xl">Una ruta de transformación sin ruido emocional.</h2>
-                        <p class="body-balance mt-8 max-w-md text-base font-light leading-[1.9] text-on-surface/62">
-                            El webinar está diseñado como una experiencia de claridad: primero observas, luego comprendes, después eliges distinto.
-                        </p>
+                <div class="grid gap-4" data-audience-fit></div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section id="descubrir" class="surface-band px-0 py-20 sm:py-28">
+            <div class="shell">
+                <div class="grid gap-8 lg:grid-cols-[1fr_0.82fr] lg:items-end" data-reveal>
+                    <div>
+                        <p class="eyebrow mb-4">Lo que vas a descubrir</p>
+                        <h2 class="balanced max-w-4xl font-display text-4xl leading-tight sm:text-6xl">Claridad emocional convertida en decisiones concretas.</h2>
                     </div>
-
-                    <div class="relative grid gap-8 lg:pl-16">
-                        <div aria-hidden="true" class="progress-thread absolute left-3 top-5 hidden h-[calc(100%-2.5rem)] w-px bg-gold-thread premium-mask lg:block"></div>
-
-                        <article class="reveal-card relative rounded-[2rem] bg-secondary-container/60 p-8 shadow-blue-soft backdrop-blur-xl transition duration-500 hover:-translate-y-1 lg:ml-0 lg:max-w-2xl">
-                            <span class="progress-node absolute -left-[4.45rem] top-10 hidden h-3 w-3 rounded-full bg-primary lg:block"></span>
-                            <div class="mb-7 flex flex-wrap gap-2">
-                                <span class="rounded-full bg-primary/12 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">Insight chip</span>
-                                <span class="rounded-full bg-surface/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Autoconciencia</span>
-                            </div>
-                            <span class="font-headline text-5xl italic text-primary/90">01</span>
-                            <h3 class="mt-5 font-headline text-3xl leading-tight text-on-surface">Reconocer el patrón invisible</h3>
-                            <p class="mt-5 max-w-xl text-sm leading-[1.9] text-on-surface/65 md:text-base">Identifica las dinámicas que aparecen una y otra vez: silencio, explosión, dependencia, persecución, huida o necesidad de aprobación.</p>
-                        </article>
-
-                        <article class="reveal-card relative rounded-[2rem] bg-surface/70 p-8 shadow-gold-soft backdrop-blur-xl transition duration-500 hover:-translate-y-1 lg:ml-auto lg:max-w-2xl">
-                            <span class="progress-node absolute -left-[4.45rem] top-10 hidden h-3 w-3 rounded-full bg-primary lg:block"></span>
-                            <div class="mb-7 flex flex-wrap gap-2">
-                                <span class="rounded-full bg-primary/12 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">Insight chip</span>
-                                <span class="rounded-full bg-secondary-container/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Herida emocional</span>
-                            </div>
-                            <span class="font-headline text-5xl italic text-primary/90">02</span>
-                            <h3 class="mt-5 font-headline text-3xl leading-tight text-on-surface">Separar amor de supervivencia</h3>
-                            <p class="mt-5 max-w-xl text-sm leading-[1.9] text-on-surface/65 md:text-base">Aprende a distinguir cuándo estás eligiendo desde paz, presencia y dignidad, y cuándo estás reaccionando desde miedo, abandono o culpa.</p>
-                        </article>
-
-                        <article class="reveal-card relative rounded-[2rem] bg-secondary-container/60 p-8 shadow-blue-soft backdrop-blur-xl transition duration-500 hover:-translate-y-1 lg:max-w-2xl lg:translate-x-10">
-                            <span class="progress-node absolute -left-[4.45rem] top-10 hidden h-3 w-3 rounded-full bg-primary lg:block"></span>
-                            <div class="mb-7 flex flex-wrap gap-2">
-                                <span class="rounded-full bg-primary/12 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">Insight chip</span>
-                                <span class="rounded-full bg-surface/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Elección consciente</span>
-                            </div>
-                            <span class="font-headline text-5xl italic text-primary/90">03</span>
-                            <h3 class="mt-5 font-headline text-3xl leading-tight text-on-surface">Construir una nueva arquitectura vincular</h3>
-                            <p class="mt-5 max-w-xl text-sm leading-[1.9] text-on-surface/65 md:text-base">Integra herramientas para comunicar, reparar, poner límites y cuidar la conexión sin abandonarte en el proceso.</p>
-                        </article>
-                    </div>
+                    <p class="pretty text-base font-light leading-8 text-white/62">
+                        Cada bloque está diseñado para que el participante salga con lenguaje, mapa y una acción posible. Profundo, sí. Confuso, no.
+                    </p>
                 </div>
-            </section>
 
-            <section id="metodo" class="relative bg-surface px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-                <div aria-hidden="true" class="absolute right-0 top-20 h-96 w-96 rounded-full bg-secondary-container/20 blur-[130px]"></div>
+                <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4" data-benefits></div>
+            </div>
+        </section>
 
-                <div class="mx-auto max-w-7xl">
-                    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <!-- Agenda -->
+        <section id="agenda" class="px-0 py-20 sm:py-28">
+            <div class="shell grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+                <div data-reveal>
+                    <p class="eyebrow mb-4">Mapa del webinar</p>
+                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Un hilo de progreso para pasar de reacción a presencia.</h2>
+                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62">
+                        La agenda funciona como una ruta: observar, comprender, practicar y elegir el siguiente paso.
+                    </p>
+                    <a class="cta-secondary mt-8 text-sm" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>
+                        <span data-cta-label>Unirme al grupo VIP</span>
+                        <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="thread grid gap-5" data-agenda></div>
+            </div>
+        </section>
+
+        <!-- Speaker -->
+        <section id="mentor" class="surface-band px-0 py-20 sm:py-28">
+            <div class="shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                <div data-speaker-visual data-reveal></div>
+
+                <div data-reveal>
+                    <p class="eyebrow mb-4">Mentor / Ponente</p>
+                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl" data-speaker-name>Equipo Mentes Brillantes</h2>
+                    <p class="mt-3 text-sm font-extrabold uppercase tracking-label text-[color:var(--accent)]" data-speaker-role>Gimnasio Emocional</p>
+                    <p class="pretty mt-7 text-base font-light leading-8 text-white/66" data-speaker-bio></p>
+                    <blockquote class="mt-8 border-l border-[color:var(--accent)]/45 pl-5 font-display text-2xl italic leading-snug text-white/88" data-speaker-quote-block></blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Honest Credibility -->
+        <section id="credibilidad" class="px-0 py-20 sm:py-28">
+            <div class="shell">
+                <div class="mx-auto max-w-3xl text-center" data-reveal>
+                    <p class="eyebrow mb-4">Credibilidad honesta</p>
+                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Confianza sin testimonios inventados.</h2>
+                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62">
+                        Esta plantilla está preparada para mostrar prueba social real cuando exista. Mientras tanto, se apoya en claridad de promesa, autoridad del espacio y transparencia del flujo.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-4 md:grid-cols-3" data-credibility></div>
+                <div class="mt-5 grid gap-4 md:grid-cols-2" data-testimonials></div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="surface-band px-0 py-20 sm:py-28">
+            <div class="shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
+                <div data-reveal>
+                    <p class="eyebrow mb-4">Preguntas frecuentes</p>
+                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Menos dudas. Más decisión tranquila.</h2>
+                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62">
+                        Lo esencial antes de entrar al grupo VIP y reservar tu lugar en la experiencia.
+                    </p>
+                </div>
+
+                <div class="faq grid gap-3" data-faqs></div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="reserva" class="px-0 py-20 sm:py-28">
+            <div class="shell">
+                <div class="premium-panel overflow-hidden p-6 sm:p-10 lg:p-12" data-reveal>
+                    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
                         <div>
-                            <p class="mb-5 font-label text-[11px] font-extrabold uppercase tracking-sanctuary text-primary">La sabiduría</p>
-                            <h2 class="breathing-title max-w-4xl font-headline text-4xl leading-[1.02] tracking-tightest text-on-surface md:text-6xl">Lo que descubrirás cuando el amor deja de ser una batalla.</h2>
-                        </div>
-                        <p class="body-balance max-w-xl text-base font-light leading-[1.9] text-on-surface/62 lg:pb-3">
-                            Cada bloque está pensado para mover al participante de la confusión a la comprensión. No desde la teoría fría, sino desde una experiencia emocionalmente honesta.
-                        </p>
-                    </div>
-
-                    <div class="mt-20 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                        <article class="group relative min-h-[24rem] overflow-hidden rounded-[2.25rem] bg-secondary-container/60 p-7 shadow-blue-soft backdrop-blur-xl transition duration-500 hover:-translate-y-2">
-                            <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-primary/10 blur-[70px] transition duration-500 group-hover:bg-primary/16"></div>
-                            <span class="material-symbols-outlined text-4xl text-primary">forum</span>
-                            <h3 class="mt-12 font-headline text-2xl leading-tight text-on-surface">Comunicación asertiva</h3>
-                            <p class="mt-5 text-sm leading-[1.85] text-on-surface/62">Expresar necesidades sin convertir la conversación en juicio, defensa o castigo emocional.</p>
-                            <span class="absolute bottom-7 left-7 rounded-full bg-surface/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/60">Claridad</span>
-                        </article>
-
-                        <article class="group relative min-h-[24rem] overflow-hidden rounded-[2.25rem] bg-surface-container-low p-7 shadow-gold-soft transition duration-500 hover:-translate-y-2 md:mt-14">
-                            <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-primary/10 blur-[70px] transition duration-500 group-hover:bg-primary/16"></div>
-                            <span class="material-symbols-outlined text-4xl text-primary">healing</span>
-                            <h3 class="mt-12 font-headline text-2xl leading-tight text-on-surface">Sanar heridas emocionales</h3>
-                            <p class="mt-5 text-sm leading-[1.85] text-on-surface/62">Reconocer memorias de abandono, rechazo o control que siguen decidiendo por ti.</p>
-                            <span class="absolute bottom-7 left-7 rounded-full bg-primary/12 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-primary">Reparación</span>
-                        </article>
-
-                        <article class="group relative min-h-[24rem] overflow-hidden rounded-[2.25rem] bg-secondary-container/60 p-7 shadow-blue-soft backdrop-blur-xl transition duration-500 hover:-translate-y-2 xl:mt-28">
-                            <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-primary/10 blur-[70px] transition duration-500 group-hover:bg-primary/16"></div>
-                            <span class="material-symbols-outlined text-4xl text-primary">shield</span>
-                            <h3 class="mt-12 font-headline text-2xl leading-tight text-on-surface">Límites sanos</h3>
-                            <p class="mt-5 text-sm leading-[1.85] text-on-surface/62">Crear una estructura de respeto donde ambos puedan amar sin invadir ni desaparecer.</p>
-                            <span class="absolute bottom-7 left-7 rounded-full bg-surface/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/60">Dignidad</span>
-                        </article>
-
-                        <article class="group relative min-h-[24rem] overflow-hidden rounded-[2.25rem] bg-surface-container-low p-7 shadow-gold-soft transition duration-500 hover:-translate-y-2 md:mt-8 xl:mt-6">
-                            <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-primary/10 blur-[70px] transition duration-500 group-hover:bg-primary/16"></div>
-                            <span class="material-symbols-outlined text-4xl text-primary">favorite</span>
-                            <h3 class="mt-12 font-headline text-2xl leading-tight text-on-surface">Amor adulto</h3>
-                            <p class="mt-5 text-sm leading-[1.85] text-on-surface/62">Pasar de la exigencia a la presencia: elegir vínculos con madurez, ternura y responsabilidad.</p>
-                            <span class="absolute bottom-7 left-7 rounded-full bg-primary/12 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-primary">Presencia</span>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section id="santuario" class="relative bg-surface-container-low px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-                <div class="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-                    <div class="relative order-2 lg:order-1">
-                        <div class="absolute -left-10 -top-10 h-48 w-48 rounded-full bg-primary/10 blur-[80px]"></div>
-                        <div class="relative max-w-lg rounded-[2.5rem] bg-secondary-container/60 p-5 shadow-blue-soft backdrop-blur-xl">
-                            <div class="rounded-[2rem] bg-surface/70 p-8 shadow-inner-glow sm:p-10">
-                                <div class="mb-10 flex items-center justify-between gap-6">
-                                    <div>
-                                        <p class="font-label text-[10px] font-extrabold uppercase tracking-sanctuary text-primary">Tu mentoría</p>
-                                        <h3 class="mt-3 font-headline text-3xl leading-tight text-on-surface">Mente brillante al servicio</h3>
-                                    </div>
-                                    <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                                        <span class="material-symbols-outlined text-4xl text-primary">person</span>
-                                    </div>
-                                </div>
-
-                                <p class="font-headline text-2xl italic leading-[1.45] text-on-surface/88">
-                                    “La calidad de tu vida depende directamente de la calidad de tus relaciones. En el Gimnasio Emocional, aprendemos a amar sin perdernos.”
-                                </p>
-
-                                <div class="mt-10 flex flex-wrap gap-2">
-                                    <span class="rounded-full bg-primary/12 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">Psicología de alto impacto</span>
-                                    <span class="rounded-full bg-surface-container-high/80 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Especialista en vínculos</span>
-                                    <span class="rounded-full bg-secondary-container/60 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Transformación interior</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="order-1 lg:order-2 lg:pl-8">
-                        <p class="mb-5 font-label text-[11px] font-extrabold uppercase tracking-sanctuary text-primary">El santuario</p>
-                        <h2 class="breathing-title font-headline text-4xl leading-[1.04] tracking-tightest text-on-surface md:text-6xl">No es una clase más. Es una pausa elegante para mirar tu forma de vincularte.</h2>
-                        <p class="body-balance mt-8 max-w-2xl text-base font-light leading-[1.9] text-on-surface/64">
-                            La experiencia se siente íntima, sobria y profunda: como entrar a un club privado donde el lujo no es ostentación, sino silencio, claridad y verdad emocional.
-                        </p>
-
-                        <div class="mt-12 grid gap-4 sm:grid-cols-3">
-                            <div class="rounded-[1.75rem] bg-surface/65 p-6 shadow-inner-glow">
-                                <p class="font-headline text-4xl italic text-primary">01</p>
-                                <p class="mt-4 text-xs font-bold uppercase leading-relaxed tracking-[0.14em] text-on-surface/52">Entrada sin juicio</p>
-                            </div>
-                            <div class="rounded-[1.75rem] bg-secondary-container/60 p-6 shadow-inner-glow backdrop-blur-xl sm:translate-y-8">
-                                <p class="font-headline text-4xl italic text-primary">02</p>
-                                <p class="mt-4 text-xs font-bold uppercase leading-relaxed tracking-[0.14em] text-on-surface/52">Claridad emocional</p>
-                            </div>
-                            <div class="rounded-[1.75rem] bg-surface/65 p-6 shadow-inner-glow sm:translate-y-2">
-                                <p class="font-headline text-4xl italic text-primary">03</p>
-                                <p class="mt-4 text-xs font-bold uppercase leading-relaxed tracking-[0.14em] text-on-surface/52">Acción consciente</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="reserva" class="relative isolate bg-surface px-5 py-28 sm:px-8 lg:px-12 lg:py-40">
-                <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-surface-container-low"></div>
-                <div aria-hidden="true" class="absolute left-1/2 top-1/2 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[150px]"></div>
-
-                <div class="relative mx-auto max-w-6xl overflow-hidden rounded-[3rem] bg-secondary-container/60 p-7 shadow-blue-soft backdrop-blur-xl sm:p-10 lg:p-14">
-                    <div class="absolute right-10 top-10 hidden rounded-full bg-primary/10 px-5 py-2 font-label text-[10px] font-extrabold uppercase tracking-sanctuary text-primary lg:block">Cupo privado</div>
-                    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-                        <div>
-                            <p class="mb-6 font-label text-[11px] font-extrabold uppercase tracking-sanctuary text-primary">Invitación final</p>
-                            <h2 class="breathing-title font-headline text-4xl leading-[1.02] tracking-tightest text-on-surface md:text-6xl lg:text-7xl">Asegura tu lugar en el grupo VIP.</h2>
-                            <p class="body-balance mt-8 max-w-2xl text-base font-light leading-[1.9] text-on-surface/68">
-                                Entra al espacio donde recibirás la información del webinar y la preparación previa para vivirlo con presencia. Esta invitación es para personas listas para mirar su relación desde un nivel más alto de conciencia.
+                            <p class="eyebrow mb-4">Invitación final</p>
+                            <h2 class="balanced font-display text-4xl leading-tight sm:text-6xl">Entra al espacio donde la transformación empieza antes del webinar.</h2>
+                            <p class="pretty mt-6 max-w-2xl text-base font-light leading-8 text-white/64">
+                                Recibirás la información de acceso, recordatorios y preparación previa dentro del grupo VIP. Un paso simple, sin formularios largos.
                             </p>
                         </div>
 
-                        <div class="rounded-[2.25rem] bg-surface/65 p-7 shadow-inner-glow">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="rounded-full bg-primary/12 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-primary">Sanar</span>
-                                <span class="rounded-full bg-secondary-container/60 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Comprender</span>
-                                <span class="rounded-full bg-secondary-container/60 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface/62">Elegir</span>
-                            </div>
-
-                            <a class="whatsapp-cta group mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-whatsapp px-8 py-5 text-center font-headline text-xl font-bold text-white transition duration-300 hover:-translate-y-1 active:scale-[0.98]" href="https://chat.whatsapp.com/J0N6LHqhEFf0F7CdVweCNI?mode=gi_t" target="_blank" rel="noopener noreferrer">
-                                <span class="material-symbols-outlined text-[22px] transition group-hover:-rotate-6">lock</span>
-                                Quiero entrar ahora
+                        <div>
+                            <div class="mb-5 flex flex-wrap gap-2" data-final-chips></div>
+                            <a class="cta-primary w-full text-sm sm:text-base" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>
+                                <span class="material-symbols-outlined text-xl" aria-hidden="true">lock_open</span>
+                                <span data-cta-label>Unirme al grupo VIP</span>
                             </a>
-
-                            <p class="mt-5 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-on-surface/42">Grupo VIP de WhatsApp · Cero spam · Acceso limitado</p>
+                            <p class="mt-4 text-center text-[0.7rem] font-extrabold uppercase tracking-label text-white/42">
+                                WhatsApp VIP · Acceso directo · Sin spam
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-
-        <footer class="relative bg-surface-container-low px-5 py-12 sm:px-8 lg:px-12">
-            <div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
-                <div class="flex items-center gap-3">
-                    <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-surface/70 shadow-inner-glow">
-                        <img alt="Gimnasio Emocional" class="h-9 w-auto grayscale" src="Logo.jpg"/>
-                    </span>
-                    <span class="font-headline text-lg italic tracking-tight text-primary">Gimnasio Emocional</span>
-                </div>
-
-                <div class="flex flex-wrap gap-x-8 gap-y-3">
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/45 transition hover:text-primary" href="#">Política de privacidad</a>
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/45 transition hover:text-primary" href="#">Términos</a>
-                    <a class="font-label text-[11px] font-bold uppercase tracking-sanctuary text-on-surface/45 transition hover:text-primary" href="#reserva">Contacto</a>
-                </div>
-
-                <p class="font-label text-[10px] font-bold uppercase tracking-sanctuary text-on-surface/32">Mentes Brillantes · Gimnasio Emocional © 2026</p>
             </div>
-        </footer>
-    </div>
+        </section>
+    </main>
+
+    <footer class="px-0 py-12">
+        <div class="shell flex flex-col gap-8 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center gap-3">
+                <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-full bg-white/8">
+                    <img src="Logo.jpg" alt="Logo de Gimnasio Emocional Mentes Brillantes" class="h-9 w-auto object-contain opacity-80" />
+                </span>
+                <div>
+                    <p class="font-display text-lg italic text-[color:var(--accent)]" data-brand>Gimnasio Emocional</p>
+                    <p class="text-xs text-white/42" data-footer-theme>Relaciones de Pareja Conscientes</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-x-6 gap-y-3 text-[0.68rem] font-extrabold uppercase tracking-label text-white/42">
+                <a class="transition hover:text-[color:var(--accent)]" href="#inicio">Inicio</a>
+                <a class="transition hover:text-[color:var(--accent)]" href="#agenda">Agenda</a>
+                <a class="transition hover:text-[color:var(--accent)]" href="#faq">FAQ</a>
+                <a class="transition hover:text-[color:var(--accent)]" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>WhatsApp</a>
+            </div>
+
+            <p class="text-xs text-white/34">© 2026 Mentes Brillantes</p>
+        </div>
+    </footer>
+
+    <script>
+        const escapeHTML = (value = "") => String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+
+        const $ = (selector, scope = document) => scope.querySelector(selector);
+        const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+
+        const setText = (selector, value) => {
+            $$(selector).forEach((node) => {
+                node.textContent = value || "";
+            });
+        };
+
+        const setMeta = (selector, value) => {
+            const node = $(selector);
+            if (node && value) node.setAttribute("content", value);
+        };
+
+        function applyTheme(config) {
+            const mood = config.visualMood || {};
+            const root = document.documentElement;
+            root.style.setProperty("--accent", mood.primaryAccent || "#e9c349");
+            root.style.setProperty("--accent-2", mood.secondaryAccent || "#8ecdc2");
+            root.style.setProperty("--accent-3", mood.warmAccent || "#c77d69");
+            root.style.setProperty("--bg", mood.background || "#111111");
+            root.style.setProperty("--surface", mood.surface || "#191817");
+            root.style.setProperty("--text", mood.text || "#e9e4dc");
+        }
+
+        function renderHeadline(config) {
+            const headline = config.headline || "";
+            const highlighted = config.highlightedWord || "";
+            const headlineNode = $("[data-headline]");
+            if (!headlineNode) return;
+
+            if (!highlighted || !headline.toLowerCase().includes(highlighted.toLowerCase())) {
+                headlineNode.textContent = headline;
+                return;
+            }
+
+            const index = headline.toLowerCase().indexOf(highlighted.toLowerCase());
+            const before = headline.slice(0, index);
+            const match = headline.slice(index, index + highlighted.length);
+            const after = headline.slice(index + highlighted.length);
+            headlineNode.innerHTML = `${escapeHTML(before)}<em class="text-[color:var(--accent)]">${escapeHTML(match)}</em>${escapeHTML(after)}`;
+        }
+
+        function renderVideo(config) {
+            const mount = $("#videoMount");
+            const video = config.video || {};
+            const type = video.videoType || video.type || "none";
+            if (!mount || !video.enabled || type === "none") return;
+
+            const source = video.iframeUrl || video.videoUrl || video.url;
+            if (!source) return;
+
+            mount.className = "video-frame";
+            mount.removeAttribute("role");
+            mount.removeAttribute("aria-label");
+
+            if (type === "youtube" || type === "vimeo") {
+                mount.innerHTML = `
+                    <iframe
+                        src="${escapeHTML(source)}"
+                        title="${escapeHTML(config.themeName)}"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                `;
+                return;
+            }
+
+            if (type === "local") {
+                mount.innerHTML = `
+                    <video controls preload="metadata" ${video.posterImage ? `poster="${escapeHTML(video.posterImage)}"` : ""}>
+                        <source src="${escapeHTML(source)}" />
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                `;
+            }
+        }
+
+        function renderChips(selector, chips = []) {
+            const mount = $(selector);
+            if (!mount) return;
+            mount.innerHTML = chips.map((chip, index) => `
+                <span class="chip ${index === 0 ? "chip-accent" : ""}">${escapeHTML(chip)}</span>
+            `).join("");
+        }
+
+        function renderCredibilityStrip(config) {
+            const mount = $("[data-credibility-strip]");
+            if (!mount) return;
+
+            const items = [
+                { label: "Tema", value: config.themeName },
+                { label: "Formato", value: config.format },
+                { label: "Acción", value: config.cta.label }
+            ];
+
+            mount.innerHTML = items.map((item) => `
+                <article class="premium-panel p-5" data-reveal>
+                    <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">${escapeHTML(item.label)}</p>
+                    <p class="pretty mt-3 font-display text-2xl leading-snug text-[color:var(--text)]">${escapeHTML(item.value)}</p>
+                </article>
+            `).join("");
+        }
+
+        function renderAudience(config) {
+            const mount = $("[data-audience-fit]");
+            if (!mount) return;
+
+            mount.innerHTML = (config.audienceFit || []).map((item, index) => `
+                <article class="premium-panel grid gap-4 p-6 sm:grid-cols-[3.2rem_1fr]" data-reveal>
+                    <span class="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--accent)] text-sm font-black text-[#211600]">${String(index + 1).padStart(2, "0")}</span>
+                    <p class="pretty text-lg font-light leading-8 text-white/76">${escapeHTML(item)}</p>
+                </article>
+            `).join("");
+        }
+
+        function renderBenefits(config) {
+            const mount = $("[data-benefits]");
+            if (!mount) return;
+
+            mount.innerHTML = (config.benefits || []).map((item) => `
+                <article class="premium-panel group min-h-[19rem] p-6 transition duration-300 hover:-translate-y-1" data-reveal>
+                    <div class="mb-10 flex items-start justify-between gap-4">
+                        <span class="material-symbols-outlined text-4xl text-[color:var(--accent)]" aria-hidden="true">${escapeHTML(item.icon || "auto_awesome")}</span>
+                        <span class="chip chip-accent">${escapeHTML(item.chip)}</span>
+                    </div>
+                    <h3 class="balanced font-display text-2xl leading-tight">${escapeHTML(item.title)}</h3>
+                    <p class="pretty mt-5 text-sm leading-7 text-white/62">${escapeHTML(item.description)}</p>
+                </article>
+            `).join("");
+        }
+
+        function renderAgenda(config) {
+            const mount = $("[data-agenda]");
+            if (!mount) return;
+
+            mount.innerHTML = (config.agenda || []).map((item) => `
+                <article class="grid gap-4 pl-0 sm:grid-cols-[3.8rem_1fr]" data-reveal>
+                    <span class="thread-node">${escapeHTML(item.step)}</span>
+                    <div class="premium-panel p-6">
+                        <h3 class="balanced font-display text-2xl leading-tight">${escapeHTML(item.title)}</h3>
+                        <p class="pretty mt-4 text-sm leading-7 text-white/62">${escapeHTML(item.description)}</p>
+                    </div>
+                </article>
+            `).join("");
+        }
+
+        function renderSpeaker(config) {
+            const speaker = config.speaker || {};
+            const visual = $("[data-speaker-visual]");
+            if (!visual) return;
+
+            if (speaker.image) {
+                visual.innerHTML = `
+                    <figure class="overflow-hidden rounded-[8px]">
+                        <img src="${escapeHTML(speaker.image)}" alt="Retrato de ${escapeHTML(speaker.name)}" class="aspect-[4/5] w-full object-cover" loading="lazy" />
+                    </figure>
+                `;
+                return;
+            }
+
+            const initials = (speaker.name || "GE")
+                .split(" ")
+                .filter(Boolean)
+                .slice(0, 2)
+                .map((word) => word[0])
+                .join("")
+                .toUpperCase();
+
+            visual.innerHTML = `
+                <div class="hero-stage grid min-h-[430px] place-items-center p-8" role="img" aria-label="Placeholder editorial para el mentor del webinar">
+                    <div class="relative z-10 text-center">
+                        <div class="mx-auto grid h-28 w-28 place-items-center rounded-full border border-white/12 bg-black/24 font-display text-4xl italic text-[color:var(--accent)]">${escapeHTML(initials)}</div>
+                        <p class="eyebrow mt-8">${escapeHTML(speaker.role || config.brand)}</p>
+                        <p class="balanced mx-auto mt-4 max-w-sm font-display text-3xl leading-tight">${escapeHTML(speaker.name || config.brand)}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCredibility(config) {
+            const credibilityMount = $("[data-credibility]");
+            const testimonialsMount = $("[data-testimonials]");
+            if (!credibilityMount || !testimonialsMount) return;
+
+            credibilityMount.innerHTML = (config.credibility || []).map((item) => `
+                <article class="premium-panel p-6" data-reveal>
+                    <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">${escapeHTML(item.label)}</p>
+                    <p class="pretty mt-3 font-display text-2xl leading-snug">${escapeHTML(item.value)}</p>
+                </article>
+            `).join("");
+
+            const testimonials = config.testimonials || [];
+            if (!testimonials.length) {
+                testimonialsMount.innerHTML = `
+                    <article class="premium-panel p-6 md:col-span-2" data-reveal>
+                        <p class="eyebrow">Prueba social real</p>
+                        <p class="pretty mt-4 text-base leading-8 text-white/66">
+                            Los testimonios aparecerán solo cuando existan comentarios reales y verificables de participantes.
+                        </p>
+                    </article>
+                `;
+                return;
+            }
+
+            testimonialsMount.innerHTML = testimonials.map((item) => `
+                <article class="premium-panel p-6" data-reveal>
+                    <p class="pretty font-display text-2xl italic leading-snug">“${escapeHTML(item.quote)}”</p>
+                    <p class="mt-6 text-sm font-extrabold uppercase tracking-label text-[color:var(--accent)]">${escapeHTML(item.name)}</p>
+                    <p class="mt-1 text-sm text-white/48">${escapeHTML(item.context || "")}</p>
+                </article>
+            `).join("");
+        }
+
+        function renderFaqs(config) {
+            const mount = $("[data-faqs]");
+            if (!mount) return;
+
+            mount.innerHTML = (config.faqs || []).map((item) => `
+                <details class="p-5" data-reveal>
+                    <summary class="flex items-start justify-between gap-4">
+                        <span class="balanced font-display text-xl leading-snug">${escapeHTML(item.question)}</span>
+                        <span class="faq-icon material-symbols-outlined mt-1 shrink-0 text-[color:var(--accent)]" aria-hidden="true">add</span>
+                    </summary>
+                    <p class="pretty mt-4 text-sm leading-7 text-white/62">${escapeHTML(item.answer)}</p>
+                </details>
+            `).join("");
+        }
+
+        function initReveal() {
+            const nodes = $$("[data-reveal]");
+            if (!("IntersectionObserver" in window)) {
+                nodes.forEach((node) => node.classList.add("is-visible"));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.14 });
+
+            nodes.forEach((node) => observer.observe(node));
+        }
+
+        function initPage(config) {
+            applyTheme(config);
+
+            document.title = config.seo?.title || `${config.themeName} | ${config.brand}`;
+            setMeta('meta[name="description"]', config.seo?.description || config.subheadline);
+            setMeta('meta[name="theme-color"]', config.visualMood?.background || "#111111");
+            setMeta('meta[property="og:title"]', config.seo?.title || config.themeName);
+            setMeta('meta[property="og:description"]', config.seo?.description || config.subheadline);
+            setMeta('meta[property="og:url"]', config.seo?.url || window.location.href);
+            setMeta('meta[property="og:image"]', config.seo?.ogImage || "");
+
+            setText("[data-brand]", config.brand);
+            setText("[data-category]", config.category);
+            setText("[data-theme-name]", config.themeName);
+            setText("[data-format]", config.format);
+            setText("[data-subheadline]", config.subheadline);
+            setText("[data-date]", config.date);
+            setText("[data-duration]", config.duration);
+            setText("[data-scarcity]", config.scarcityNote);
+            setText("[data-audience]", config.audience);
+            setText("[data-secondary-cta]", config.cta.secondaryLabel);
+            setText("[data-speaker-name]", config.speaker.name);
+            setText("[data-speaker-role]", config.speaker.role);
+            setText("[data-speaker-bio]", config.speaker.bio);
+            setText("[data-speaker-quote]", config.speaker.quote);
+            setText("[data-speaker-quote-block]", config.speaker.quote);
+            setText("[data-footer-theme]", config.themeName);
+            setText("[data-visual-label]", `${config.brand} · invitación privada`);
+            setText("[data-cta-label]", config.cta.label);
+
+            $$("[data-cta-link]").forEach((link) => {
+                link.setAttribute("href", config.cta.url);
+            });
+
+            renderHeadline(config);
+            renderVideo(config);
+            renderChips("[data-emotional-chips]", config.emotionalChips);
+            renderChips("[data-final-chips]", config.emotionalChips);
+            renderCredibilityStrip(config);
+            renderAudience(config);
+            renderBenefits(config);
+            renderAgenda(config);
+            renderSpeaker(config);
+            renderCredibility(config);
+            renderFaqs(config);
+            initReveal();
+        }
+
+        initPage(WEBINAR_CONFIG);
+    </script>
 </body>
 </html>
