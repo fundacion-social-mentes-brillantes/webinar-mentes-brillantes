@@ -1,1056 +1,2352 @@
-<!doctype html>
-<html lang="es" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Webinar exclusivo de Gimnasio Emocional Mentes Brillantes para sanar patrones afectivos, comunicar con presencia y construir relaciones conscientes." />
-    <meta name="theme-color" content="#111111" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#6c3f53">
+    <meta name="description" content="El hogar que construí después del adiós, de Alexandra Ortega. Una historia de sanación, psicología aterrizada y ejercicios para volver a ti. Libro digital en PDF y EPUB.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://webinar-mentes-brillantes.vercel.app/">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_CO" />
-    <meta property="og:title" content="Relaciones de Pareja Conscientes | Gimnasio Emocional" />
-    <meta property="og:description" content="Una invitación privada a un webinar premium para mirar tu forma de amar con más claridad, presencia y madurez emocional." />
-    <meta property="og:url" content="https://webinar-mentes-brillantes.vercel.app" />
-    <meta property="og:image" content="https://webinar-mentes-brillantes.vercel.app/Logo.jpg" />
+    <meta property="og:type" content="book">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="Gimnasio Emocional Mentes Brillantes">
+    <meta property="og:title" content="El hogar que construí después del adiós">
+    <meta property="og:description" content="No es un libro sobre separarse ni sobre quedarse. Es un libro sobre despertar y volver a ti.">
+    <meta property="og:url" content="https://webinar-mentes-brillantes.vercel.app/">
+    <meta property="og:image" content="https://webinar-mentes-brillantes.vercel.app/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="El hogar que construí después del adiós">
+    <meta name="twitter:description" content="Una historia que te lee a ti, la psicología que explica tu dolor y los ejercicios que te devuelven a casa.">
+    <meta name="twitter:image" content="https://webinar-mentes-brillantes.vercel.app/assets/og.png">
 
-    <title>Relaciones de Pareja Conscientes | Gimnasio Emocional</title>
+    <title>El hogar que construí después del adiós | Alexandra Ortega</title>
 
-    <link rel="icon" href="Logo.jpg" type="image/jpeg" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@200..600,0..1&display=swap" rel="stylesheet" />
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        display: ["Noto Serif", "serif"],
-                        body: ["Manrope", "sans-serif"]
-                    },
-                    letterSpacing: {
-                        label: "0.14em"
-                    }
-                }
-            }
-        };
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg: #111111;
-            --surface: #191817;
-            --surface-2: #22201e;
-            --surface-3: #2c2926;
-            --text: #e9e4dc;
-            --muted: #bdb6aa;
-            --accent: #e9c349;
-            --accent-2: #8ecdc2;
-            --accent-3: #c77d69;
-            --whatsapp: #25d366;
-            color-scheme: dark;
+            --ink: #2d211e;
+            --ink-soft: #59463f;
+            --plum: #6c3f53;
+            --plum-deep: #3f2531;
+            --rose: #bd7d86;
+            --blush: #e5beb2;
+            --clay: #a76752;
+            --gold: #c39352;
+            --olive: #73775b;
+            --cream: #f7efe3;
+            --paper: #fffaf2;
+            --paper-warm: #f0dfcd;
+            --white: #fffdf9;
+            --shadow: 0 35px 90px rgba(61, 40, 34, .18);
+            --display: "Bodoni Moda", Georgia, serif;
+            --sans: "DM Sans", system-ui, sans-serif;
+            --shell: min(1180px, calc(100vw - 40px));
         }
 
-        * {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
         html {
-            background: var(--bg);
+            scroll-behavior: smooth;
+            background: var(--cream);
         }
 
         body {
-            min-height: 100vh;
             margin: 0;
             overflow-x: hidden;
+            color: var(--ink);
             background:
-                linear-gradient(118deg, rgba(233, 195, 73, 0.09), transparent 28%),
-                linear-gradient(242deg, rgba(142, 205, 194, 0.1), transparent 32%),
-                linear-gradient(180deg, var(--bg) 0%, #151311 42%, var(--bg) 100%);
-            color: var(--text);
-            font-family: "Manrope", sans-serif;
-            text-rendering: optimizeLegibility;
+                radial-gradient(circle at 5% 20%, rgba(189, 125, 134, .09), transparent 28rem),
+                var(--cream);
+            font-family: var(--sans);
+            -webkit-font-smoothing: antialiased;
         }
 
         body::before {
             content: "";
             position: fixed;
             inset: 0;
-            z-index: -2;
+            z-index: 100;
             pointer-events: none;
+            opacity: .22;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
-                repeating-linear-gradient(115deg, rgba(233, 195, 73, 0.035) 0 1px, transparent 1px 28px);
-            background-size: 56px 56px, 56px 56px, 100% 100%;
-            mask-image: linear-gradient(180deg, black 0%, black 64%, transparent 100%);
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.13;
-            background-image:
-                radial-gradient(rgba(255, 255, 255, 0.18) 0.7px, transparent 0.7px);
-            background-size: 18px 18px;
-            mix-blend-mode: soft-light;
+                repeating-linear-gradient(0deg, rgba(62, 40, 31, .025) 0, rgba(62, 40, 31, .025) 1px, transparent 1px, transparent 4px),
+                repeating-linear-gradient(90deg, rgba(255, 255, 255, .03) 0, rgba(255, 255, 255, .03) 1px, transparent 1px, transparent 6px);
+            mix-blend-mode: multiply;
         }
 
         ::selection {
-            background: var(--accent);
-            color: #211600;
+            color: var(--white);
+            background: var(--plum);
         }
 
-        section {
-            scroll-margin-top: 96px;
+        img,
+        video,
+        iframe {
+            display: block;
+            max-width: 100%;
         }
 
-        a,
+        a {
+            color: inherit;
+        }
+
         button,
-        summary {
+        a {
             -webkit-tap-highlight-color: transparent;
         }
 
-        a:focus-visible,
-        button:focus-visible,
-        summary:focus-visible {
-            outline: 2px solid var(--accent);
+        :focus-visible {
+            outline: 3px solid var(--gold);
             outline-offset: 4px;
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: "FILL" 0, "wght" 350, "GRAD" 0, "opsz" 24;
-            line-height: 1;
         }
 
         .skip-link {
             position: fixed;
-            left: 16px;
-            top: 16px;
-            z-index: 80;
-            transform: translateY(-140%);
-            border-radius: 8px;
-            background: var(--accent);
-            color: #211600;
-            padding: 12px 16px;
-            font-weight: 800;
-            transition: transform 180ms ease;
+            top: 12px;
+            left: 12px;
+            z-index: 200;
+            transform: translateY(-150%);
+            border-radius: 999px;
+            padding: 12px 18px;
+            color: var(--white);
+            background: var(--plum-deep);
+            text-decoration: none;
+            font-weight: 700;
         }
 
         .skip-link:focus {
             transform: translateY(0);
         }
 
+        .progress {
+            position: fixed;
+            inset: 0 auto auto 0;
+            z-index: 120;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--rose), var(--gold), var(--olive));
+            box-shadow: 0 0 18px rgba(195, 147, 82, .48);
+        }
+
         .shell {
-            width: min(1160px, calc(100% - 32px));
+            width: var(--shell);
             margin-inline: auto;
         }
 
         .eyebrow {
-            color: var(--accent);
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 0.14em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            color: var(--plum);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .2em;
             text-transform: uppercase;
         }
 
-        .balanced {
-            text-wrap: balance;
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: currentColor;
         }
 
-        .pretty {
-            text-wrap: pretty;
+        .display {
+            margin: 0;
+            font-family: var(--display);
+            font-weight: 500;
+            letter-spacing: -.045em;
         }
 
-        .premium-panel {
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            background:
-                linear-gradient(145deg, rgba(255, 255, 255, 0.078), rgba(255, 255, 255, 0.026)),
-                color-mix(in srgb, var(--surface-2) 84%, transparent);
-            box-shadow: 0 32px 110px -70px rgba(0, 0, 0, 0.92);
+        .section-title {
+            max-width: 920px;
+            margin: 20px 0 0;
+            font-family: var(--display);
+            font-size: clamp(3rem, 7vw, 6.8rem);
+            font-weight: 500;
+            line-height: .94;
+            letter-spacing: -.055em;
+        }
+
+        .section-intro {
+            max-width: 670px;
+            margin: 26px 0 0;
+            color: var(--ink-soft);
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 58px;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            border: 0;
+            border-radius: 999px;
+            padding: 16px 25px;
+            color: var(--white);
+            background: var(--plum);
+            box-shadow: 0 18px 45px rgba(81, 44, 60, .2);
+            font: 700 .76rem/1 var(--sans);
+            letter-spacing: .12em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: var(--plum-deep);
+            box-shadow: 0 24px 60px rgba(81, 44, 60, .3);
+        }
+
+        .button .arrow {
+            font-size: 1.25rem;
+            line-height: 0;
+            transition: transform .25s ease;
+        }
+
+        .button:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .button--light {
+            color: var(--plum-deep);
+            background: var(--paper);
+            box-shadow: 0 18px 50px rgba(29, 17, 20, .18);
+        }
+
+        .button--light:hover {
+            color: var(--white);
+            background: var(--rose);
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            color: var(--plum);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 6px;
+            text-transform: uppercase;
+        }
+
+        .topbar {
+            position: relative;
+            z-index: 90;
+            padding: 10px 18px;
+            color: var(--white);
+            background: var(--plum-deep);
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .nav {
+            position: fixed;
+            top: 48px;
+            right: 0;
+            left: 0;
+            z-index: 80;
+            transition: top .3s ease, background .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
+        }
+
+        .nav.is-scrolled {
+            top: 0;
+            background: rgba(247, 239, 227, .88);
+            box-shadow: 0 10px 35px rgba(57, 37, 31, .08);
             backdrop-filter: blur(18px);
         }
 
-        .surface-band {
-            background:
-                linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--surface-2) 96%, transparent)),
-                linear-gradient(90deg, rgba(233, 195, 73, 0.03), rgba(142, 205, 194, 0.04));
+        .nav__inner {
+            display: flex;
+            min-height: 78px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
         }
 
-        .chip {
+        .brand {
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.06);
-            color: color-mix(in srgb, var(--text) 82%, transparent);
-            padding: 0.52rem 0.78rem;
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            gap: 12px;
+            text-decoration: none;
         }
 
-        .chip-accent {
-            border-color: color-mix(in srgb, var(--accent) 28%, transparent);
-            background: color-mix(in srgb, var(--accent) 13%, transparent);
-            color: var(--accent);
-        }
-
-        .cta-primary {
-            display: inline-flex;
-            min-height: 54px;
-            align-items: center;
-            justify-content: center;
-            gap: 0.65rem;
-            border-radius: 999px;
-            background: var(--whatsapp);
-            color: #ffffff;
-            padding: 0.92rem 1.22rem;
-            font-weight: 900;
-            letter-spacing: 0.08em;
-            text-align: center;
-            text-transform: uppercase;
-            box-shadow: 0 24px 80px -42px rgba(37, 211, 102, 0.85);
-            transition: transform 220ms ease, filter 220ms ease, box-shadow 220ms ease;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            filter: saturate(1.08);
-            box-shadow: 0 28px 92px -38px rgba(37, 211, 102, 0.95);
-        }
-
-        .cta-secondary {
-            display: inline-flex;
-            min-height: 48px;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
-            border-radius: 999px;
-            color: var(--text);
-            padding: 0.78rem 1rem;
-            font-weight: 800;
-            transition: background 220ms ease, transform 220ms ease;
-        }
-
-        .cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-1px);
-        }
-
-        .hero-stage {
-            position: relative;
-            min-height: 510px;
-            overflow: hidden;
-            border-radius: 8px;
-            background:
-                linear-gradient(135deg, rgba(233, 195, 73, 0.16), transparent 31%),
-                linear-gradient(315deg, rgba(142, 205, 194, 0.18), transparent 34%),
-                linear-gradient(180deg, color-mix(in srgb, var(--surface-3) 82%, transparent), color-mix(in srgb, var(--bg) 88%, transparent));
-        }
-
-        .hero-stage::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 42px),
-                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.042) 0 1px, transparent 1px 42px);
-            mask-image: linear-gradient(135deg, transparent 0%, black 22%, black 72%, transparent 100%);
-        }
-
-        .hero-stage::after {
-            content: "";
-            position: absolute;
-            inset: 12%;
-            border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
-            border-radius: 50%;
-            transform: rotate(-17deg) scaleX(1.45);
-            opacity: 0.42;
-        }
-
-        .stage-line {
-            position: absolute;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 72%, transparent), transparent);
-            opacity: 0.68;
-        }
-
-        .stage-line:nth-child(1) {
-            top: 26%;
-        }
-
-        .stage-line:nth-child(2) {
-            top: 49%;
-            transform: translateX(8%);
-            background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-2) 65%, transparent), transparent);
-        }
-
-        .stage-line:nth-child(3) {
-            top: 72%;
-            transform: translateX(-7%);
-            background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-3) 60%, transparent), transparent);
-        }
-
-        .video-frame {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            border-radius: 8px;
-            background: #050505;
-        }
-
-        .video-frame iframe,
-        .video-frame video {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .thread {
-            position: relative;
-        }
-
-        .thread::before {
-            content: "";
-            position: absolute;
-            left: 17px;
-            top: 2.25rem;
-            bottom: 2.25rem;
-            width: 1px;
-            background: linear-gradient(180deg, transparent, var(--accent), color-mix(in srgb, var(--accent-2) 76%, transparent), transparent);
-        }
-
-        .thread-node {
-            position: relative;
-            z-index: 1;
+        .brand__mark {
             display: grid;
             width: 36px;
             height: 36px;
             place-items: center;
+            border-radius: 50% 50% 44% 56%;
+            color: var(--white);
+            background: var(--plum);
+            font: 500 1.05rem/1 var(--display);
+            transform: rotate(-7deg);
+        }
+
+        .brand__mark span {
+            transform: rotate(7deg);
+        }
+
+        .brand__text {
+            display: grid;
+            line-height: 1.05;
+        }
+
+        .brand__text strong {
+            color: var(--ink);
+            font: 600 .86rem/1 var(--sans);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .brand__text small {
+            margin-top: 4px;
+            color: var(--ink-soft);
+            font-size: .63rem;
+            letter-spacing: .08em;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav__links > a:not(.nav__cta) {
+            position: relative;
+            color: var(--ink-soft);
+            font-size: .73rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav__links > a:not(.nav__cta)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -7px;
+            left: 0;
+            height: 1px;
+            background: var(--plum);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease;
+        }
+
+        .nav__links > a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav__cta {
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
             border-radius: 999px;
-            background: var(--accent);
-            color: #211600;
-            font-size: 0.74rem;
-            font-weight: 900;
+            padding: 10px 18px;
+            color: var(--white);
+            background: var(--plum);
+            font-size: .67rem;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-decoration: none;
+            text-transform: uppercase;
         }
 
-        .faq details {
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.052);
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 38px);
+            overflow: hidden;
+            padding: 156px 0 76px;
+            isolation: isolate;
         }
 
-        .faq summary {
-            cursor: pointer;
+        .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            width: 65vw;
+            height: 65vw;
+            top: -26vw;
+            right: -20vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(229, 190, 178, .7), rgba(229, 190, 178, .04) 66%, transparent 68%);
+        }
+
+        .hero::after {
+            content: "VOLVER A TI";
+            position: absolute;
+            z-index: -1;
+            right: -3vw;
+            bottom: 0;
+            color: rgba(108, 63, 83, .045);
+            font: 500 clamp(5rem, 15vw, 13rem)/.8 var(--display);
+            letter-spacing: -.08em;
+            white-space: nowrap;
+        }
+
+        .hero__grid {
+            display: grid;
+            align-items: center;
+            gap: clamp(48px, 7vw, 100px);
+            grid-template-columns: minmax(0, 1.08fr) minmax(370px, .72fr);
+        }
+
+        .hero__copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero__overline {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 26px;
+            color: var(--plum);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .hero__overline::before {
+            content: "01";
+            display: grid;
+            width: 37px;
+            height: 37px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: var(--plum);
+            letter-spacing: 0;
+        }
+
+        .hero h1 {
+            max-width: 780px;
+            margin: 0;
+            font-family: var(--display);
+            font-size: clamp(4.2rem, 8vw, 8.2rem);
+            font-weight: 500;
+            line-height: .84;
+            letter-spacing: -.07em;
+        }
+
+        .hero h1 em {
+            display: block;
+            margin-left: clamp(26px, 5vw, 78px);
+            color: var(--plum);
+            font-weight: 400;
+        }
+
+        .hero__lead {
+            max-width: 650px;
+            margin: 35px 0 0;
+            color: var(--ink-soft);
+            font-family: var(--display);
+            font-size: clamp(1.3rem, 2vw, 1.75rem);
+            line-height: 1.45;
+        }
+
+        .hero__lead strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .hero__actions {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-top: 36px;
+        }
+
+        .hero__facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+            margin-top: 38px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(108, 63, 83, .16);
+        }
+
+        .hero__fact {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--ink-soft);
+            font-size: .73rem;
+            font-weight: 600;
+        }
+
+        .hero__fact::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--rose);
+        }
+
+        .book-stage {
+            position: relative;
+            display: grid;
+            min-height: 650px;
+            place-items: center;
+            perspective: 1300px;
+        }
+
+        .book-stage__arch {
+            position: absolute;
+            inset: 2% 0 0;
+            border-radius: 49% 49% 10px 10px / 30% 30% 10px 10px;
+            background:
+                linear-gradient(160deg, rgba(255, 253, 249, .75), rgba(229, 190, 178, .2)),
+                radial-gradient(circle at 50% 40%, rgba(195, 147, 82, .35), transparent 46%);
+            box-shadow: inset 0 0 80px rgba(255, 255, 255, .6);
+        }
+
+        .book {
+            position: relative;
+            z-index: 2;
+            width: min(360px, 78%);
+            transform: rotateY(-7deg) rotateX(1.5deg);
+            transform-style: preserve-3d;
+            transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+            filter: drop-shadow(28px 35px 35px rgba(72, 47, 37, .28));
+        }
+
+        .book::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 1%;
+            right: -14px;
+            width: 30px;
+            height: 98%;
+            border-radius: 0 4px 4px 0;
+            background: repeating-linear-gradient(90deg, #efe0ca 0, #fff7e8 2px, #d7c7b1 3px);
+            transform: translateZ(-12px);
+        }
+
+        .book img {
+            width: 100%;
+            border-radius: 3px 8px 8px 3px;
+        }
+
+        .book-stage__seal {
+            position: absolute;
+            z-index: 3;
+            right: -16px;
+            bottom: 76px;
+            display: grid;
+            width: 128px;
+            height: 128px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: var(--plum);
+            box-shadow: 0 20px 50px rgba(71, 38, 51, .32);
+            font: 500 1rem/1.15 var(--display);
+            text-align: center;
+            transform: rotate(8deg);
+        }
+
+        .book-stage__seal small {
+            display: block;
+            margin-top: 6px;
+            font: 700 .55rem/1 var(--sans);
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .book-stage__line {
+            position: absolute;
+            z-index: 1;
+            width: 170px;
+            height: 170px;
+            border: 1px solid rgba(108, 63, 83, .25);
+            border-radius: 50%;
+        }
+
+        .book-stage__line--one {
+            top: 8%;
+            left: -10%;
+        }
+
+        .book-stage__line--two {
+            right: -5%;
+            bottom: 15%;
+            width: 90px;
+            height: 90px;
+            border-color: rgba(115, 119, 91, .38);
+        }
+
+        .marquee {
+            overflow: hidden;
+            color: var(--paper);
+            background: var(--plum);
+            transform: rotate(-1.2deg) scale(1.02);
+        }
+
+        .marquee__track {
+            display: flex;
+            width: max-content;
+            animation: marquee 28s linear infinite;
+        }
+
+        .marquee__item {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            padding: 25px 18px;
+            font: 400 clamp(1.3rem, 2vw, 2rem)/1 var(--display);
+            white-space: nowrap;
+        }
+
+        .marquee__item::after {
+            content: "✦";
+            color: var(--blush);
+            font-family: serif;
+        }
+
+        @keyframes marquee {
+            to { transform: translateX(-50%); }
+        }
+
+        .recognition {
+            padding: clamp(110px, 14vw, 190px) 0 120px;
+        }
+
+        .recognition__head {
+            display: grid;
+            align-items: end;
+            gap: 40px 80px;
+            grid-template-columns: 1.15fr .7fr;
+        }
+
+        .recognition__head .section-intro {
+            margin-bottom: 10px;
+        }
+
+        .recognition__grid {
+            display: grid;
+            gap: 18px;
+            margin-top: 78px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .recognition-card {
+            position: relative;
+            min-height: 420px;
+            overflow: hidden;
+            border-radius: 220px 220px 28px 28px;
+            padding: 44px 34px 34px;
+            background: var(--paper-warm);
+            transition: transform .35s ease;
+        }
+
+        .recognition-card:nth-child(2) {
+            margin-top: 44px;
+            color: var(--white);
+            background: var(--plum);
+        }
+
+        .recognition-card:nth-child(3) {
+            background: #d9d4bd;
+        }
+
+        .recognition-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .recognition-card__number {
+            display: grid;
+            width: 46px;
+            height: 46px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: rgba(108, 63, 83, .9);
+            font-size: .72rem;
+            font-weight: 700;
+        }
+
+        .recognition-card:nth-child(2) .recognition-card__number {
+            color: var(--plum);
+            background: var(--blush);
+        }
+
+        .recognition-card h3 {
+            max-width: 280px;
+            margin: 88px 0 0;
+            font: 500 clamp(2.25rem, 3.5vw, 3.6rem)/.98 var(--display);
+            letter-spacing: -.04em;
+        }
+
+        .recognition-card p {
+            margin: 24px 0 0;
+            color: var(--ink-soft);
+            font-size: .94rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .recognition-card:nth-child(2) p {
+            color: rgba(255, 253, 249, .76);
+        }
+
+        .recognition-card__orb {
+            position: absolute;
+            top: 68px;
+            right: -18px;
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .28);
+            box-shadow: inset 0 0 30px rgba(255, 255, 255, .3);
+        }
+
+        .threshold {
+            position: relative;
+            padding: 120px 0;
+            color: var(--paper);
+            background: var(--plum-deep);
+        }
+
+        .threshold::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .28;
+            background:
+                radial-gradient(circle at 15% 10%, var(--rose), transparent 30rem),
+                radial-gradient(circle at 85% 90%, var(--olive), transparent 28rem);
+        }
+
+        .threshold__inner {
+            position: relative;
+            display: grid;
+            align-items: center;
+            gap: clamp(50px, 8vw, 110px);
+            grid-template-columns: .85fr 1.15fr;
+        }
+
+        .threshold__quote {
+            position: sticky;
+            top: 120px;
+            align-self: start;
+        }
+
+        .threshold .eyebrow {
+            color: var(--blush);
+        }
+
+        .threshold blockquote {
+            margin: 22px 0 0;
+            font: 400 clamp(3.1rem, 6vw, 6.2rem)/.98 var(--display);
+            letter-spacing: -.05em;
+        }
+
+        .threshold blockquote em {
+            color: var(--blush);
+        }
+
+        .threshold__layers {
+            display: grid;
+            gap: 18px;
+        }
+
+        .layer {
+            min-height: 240px;
+            border-radius: 90px 20px 20px 20px;
+            padding: 38px 40px 34px;
+            color: var(--ink);
+            background: var(--paper);
+        }
+
+        .layer:nth-child(2) {
+            margin-left: 7%;
+            background: var(--blush);
+        }
+
+        .layer:nth-child(3) {
+            margin-left: 14%;
+            background: #d1d2bd;
+        }
+
+        .layer__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .layer__number {
+            color: var(--plum);
+            font: 500 1rem/1 var(--display);
+        }
+
+        .layer__label {
+            border-radius: 999px;
+            padding: 9px 13px;
+            color: var(--plum);
+            background: rgba(255, 255, 255, .42);
+            font-size: .61rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .layer h3 {
+            margin: 38px 0 0;
+            font: 500 clamp(2rem, 3vw, 3rem)/1 var(--display);
+            letter-spacing: -.035em;
+        }
+
+        .layer p {
+            max-width: 480px;
+            margin: 16px 0 0;
+            color: var(--ink-soft);
+            font-size: .92rem;
+            line-height: 1.7;
+        }
+
+        .journey {
+            padding: clamp(110px, 14vw, 180px) 0;
+        }
+
+        .journey__header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .journey__header p {
+            max-width: 410px;
+            margin: 0 0 10px;
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        .journey__rail {
+            display: grid;
+            gap: 16px;
+            margin-top: 68px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .journey-card {
+            position: relative;
+            min-height: 560px;
+            overflow: hidden;
+            border-radius: 180px 180px 18px 18px;
+            background: var(--plum-deep);
+            isolation: isolate;
+        }
+
+        .journey-card:nth-child(even) {
+            margin-top: 55px;
+        }
+
+        .journey-card img {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .journey-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(180deg, transparent 26%, rgba(44, 27, 30, .25) 58%, rgba(44, 27, 30, .95) 100%);
+        }
+
+        .journey-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .journey-card__content {
+            position: absolute;
+            right: 25px;
+            bottom: 28px;
+            left: 25px;
+            color: var(--white);
+        }
+
+        .journey-card__step {
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .journey-card h3 {
+            margin: 10px 0 0;
+            font: 500 2rem/1.05 var(--display);
+        }
+
+        .journey-card p {
+            margin: 12px 0 0;
+            color: rgba(255, 253, 249, .72);
+            font-size: .79rem;
+            line-height: 1.6;
+        }
+
+        .chapters {
+            padding: 110px 0 130px;
+            background: var(--paper);
+        }
+
+        .chapters__grid {
+            display: grid;
+            gap: 70px;
+            grid-template-columns: .75fr 1.25fr;
+        }
+
+        .chapters__intro {
+            position: sticky;
+            top: 130px;
+            align-self: start;
+        }
+
+        .chapters__intro .section-title {
+            font-size: clamp(3.5rem, 6vw, 6.3rem);
+        }
+
+        .chapters__list {
+            counter-reset: chapter;
+        }
+
+        .chapter {
+            display: grid;
+            min-height: 145px;
+            align-items: start;
+            gap: 22px;
+            padding: 34px 0;
+            border-bottom: 1px solid rgba(108, 63, 83, .15);
+            grid-template-columns: 52px .8fr 1.2fr;
+            counter-increment: chapter;
+        }
+
+        .chapter::before {
+            content: "0" counter(chapter);
+            display: grid;
+            width: 40px;
+            height: 40px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--plum);
+            background: var(--paper-warm);
+            font-size: .67rem;
+            font-weight: 700;
+        }
+
+        .chapter h3 {
+            margin: 4px 0 0;
+            font: 500 clamp(1.5rem, 2vw, 2.1rem)/1.08 var(--display);
+            letter-spacing: -.025em;
+        }
+
+        .chapter p {
+            margin: 4px 0 0;
+            color: var(--ink-soft);
+            font-size: .87rem;
+            font-weight: 300;
+            line-height: 1.68;
+        }
+
+        .manifesto {
+            position: relative;
+            display: grid;
+            min-height: 92vh;
+            place-items: center;
+            overflow: hidden;
+            padding: 120px 0;
+            color: var(--white);
+            background:
+                linear-gradient(90deg, rgba(39, 26, 27, .82), rgba(63, 37, 49, .45)),
+                url("assets/journey-return.webp") center 48% / cover no-repeat;
+            text-align: center;
+            isolation: isolate;
+        }
+
+        .manifesto::after {
+            content: "";
+            position: absolute;
+            inset: 28px;
+            z-index: -1;
+            border-radius: 46% 46% 5% 5% / 36% 36% 5% 5%;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25);
+        }
+
+        .manifesto__copy {
+            max-width: 1000px;
+        }
+
+        .manifesto__mark {
+            display: block;
+            color: var(--blush);
+            font: 400 5rem/.6 var(--display);
+        }
+
+        .manifesto h2 {
+            margin: 24px 0 0;
+            font: 400 clamp(3.6rem, 8vw, 8.6rem)/.92 var(--display);
+            letter-spacing: -.06em;
+        }
+
+        .manifesto p {
+            max-width: 620px;
+            margin: 30px auto 0;
+            color: rgba(255, 253, 249, .77);
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .video-section {
+            padding: clamp(110px, 14vw, 180px) 0;
+        }
+
+        .video-section__grid {
+            display: grid;
+            align-items: center;
+            gap: clamp(50px, 8vw, 110px);
+            grid-template-columns: .78fr 1.22fr;
+        }
+
+        .video-section__copy .section-title {
+            font-size: clamp(3.5rem, 6vw, 6.2rem);
+        }
+
+        .video-frame {
+            position: relative;
+            overflow: hidden;
+            min-height: 590px;
+            border-radius: 260px 260px 26px 26px;
+            color: var(--white);
+            background:
+                linear-gradient(180deg, rgba(46, 31, 28, .02), rgba(46, 31, 28, .66)),
+                url("assets/journey-stillness.webp") center / cover no-repeat;
+            box-shadow: var(--shadow);
+        }
+
+        .video-frame iframe,
+        .video-frame video {
+            width: 100%;
+            height: 100%;
+            min-height: 590px;
+            border: 0;
+            object-fit: cover;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-content: center;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-placeholder__play {
+            display: grid;
+            width: 94px;
+            height: 94px;
+            margin: 0 auto 26px;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .48);
+            border-radius: 50%;
+            color: var(--plum);
+            background: rgba(255, 253, 249, .86);
+            box-shadow: 0 18px 50px rgba(40, 24, 29, .25);
+            backdrop-filter: blur(8px);
+            font-size: 1.55rem;
+            padding-left: 5px;
+        }
+
+        .video-placeholder__label {
+            font-size: .66rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .video-placeholder h3 {
+            max-width: 440px;
+            margin: 14px auto 0;
+            font: 500 clamp(2.3rem, 4vw, 4rem)/1 var(--display);
+        }
+
+        .video-placeholder p {
+            max-width: 440px;
+            margin: 16px auto 0;
+            color: rgba(255, 253, 249, .74);
+            font-size: .9rem;
+            line-height: 1.65;
+        }
+
+        .author {
+            padding: 120px 0;
+            color: var(--white);
+            background: var(--olive);
+        }
+
+        .author__grid {
+            display: grid;
+            align-items: center;
+            gap: clamp(50px, 8vw, 110px);
+            grid-template-columns: .8fr 1.2fr;
+        }
+
+        .author__portrait {
+            position: relative;
+            display: grid;
+            min-height: 550px;
+            place-items: center;
+            overflow: hidden;
+            border-radius: 280px 280px 24px 24px;
+            background:
+                radial-gradient(circle at 50% 34%, rgba(255, 255, 255, .3), transparent 18%),
+                linear-gradient(155deg, #a7a78b, #5d624c);
+        }
+
+        .author__portrait::before,
+        .author__portrait::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, .26);
+            border-radius: 50%;
+        }
+
+        .author__portrait::before {
+            width: 340px;
+            height: 340px;
+        }
+
+        .author__portrait::after {
+            width: 460px;
+            height: 460px;
+        }
+
+        .author__monogram {
+            position: relative;
+            z-index: 1;
+            font: 400 clamp(7rem, 15vw, 12rem)/1 var(--display);
+            letter-spacing: -.12em;
+        }
+
+        .author .eyebrow {
+            color: #e8d3bf;
+        }
+
+        .author h2 {
+            margin: 22px 0 0;
+            font: 500 clamp(4.3rem, 8vw, 8rem)/.88 var(--display);
+            letter-spacing: -.06em;
+        }
+
+        .author__role {
+            margin: 18px 0 0;
+            color: #e8d3bf;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .author__bio {
+            max-width: 650px;
+            margin: 30px 0 0;
+            color: rgba(255, 253, 249, .76);
+            font-size: clamp(1rem, 1.4vw, 1.15rem);
+            font-weight: 300;
+            line-height: 1.85;
+        }
+
+        .author__quote {
+            max-width: 620px;
+            margin: 38px 0 0;
+            padding: 24px 0 0 28px;
+            border-left: 2px solid #e8d3bf;
+            font: 400 clamp(1.6rem, 2.5vw, 2.35rem)/1.3 var(--display);
+        }
+
+        .offer {
+            position: relative;
+            padding: clamp(110px, 14vw, 180px) 0;
+            overflow: hidden;
+        }
+
+        .offer::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 600px;
+            height: 600px;
+            top: 8%;
+            left: -360px;
+            border-radius: 50%;
+            background: rgba(229, 190, 178, .4);
+            filter: blur(4px);
+        }
+
+        .offer__grid {
+            display: grid;
+            align-items: center;
+            gap: clamp(50px, 8vw, 110px);
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .offer__visual {
+            position: relative;
+        }
+
+        .offer__visual img {
+            width: 100%;
+            border-radius: 48% 48% 18px 18px / 30% 30% 18px 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .offer__badge {
+            position: absolute;
+            top: 42px;
+            left: -32px;
+            display: grid;
+            width: 130px;
+            height: 130px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: var(--plum);
+            font: 500 1.2rem/1.05 var(--display);
+            text-align: center;
+            transform: rotate(-10deg);
+        }
+
+        .offer__copy {
+            max-width: 560px;
+        }
+
+        .offer__copy .section-title {
+            font-size: clamp(3.7rem, 6.5vw, 6.8rem);
+        }
+
+        .offer__price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-top: 34px;
+            color: var(--plum);
+        }
+
+        .offer__price strong {
+            font: 500 clamp(3rem, 5vw, 5.2rem)/1 var(--display);
+            letter-spacing: -.05em;
+        }
+
+        .offer__price span {
+            font-size: .73rem;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        .offer__list {
+            display: grid;
+            gap: 12px;
+            margin: 30px 0 0;
+            padding: 0;
             list-style: none;
         }
 
-        .faq summary::-webkit-details-marker {
+        .offer__list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--ink-soft);
+            font-size: .9rem;
+        }
+
+        .offer__list li::before {
+            content: "✓";
+            display: grid;
+            width: 24px;
+            height: 24px;
+            flex: 0 0 auto;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: var(--olive);
+            font-size: .7rem;
+            font-weight: 700;
+        }
+
+        .offer__actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            margin-top: 38px;
+        }
+
+        .offer__note {
+            margin: 22px 0 0;
+            color: var(--ink-soft);
+            font-size: .72rem;
+            line-height: 1.6;
+        }
+
+        .faq {
+            padding: 110px 0 140px;
+            background: var(--paper-warm);
+        }
+
+        .faq__grid {
+            display: grid;
+            gap: 75px;
+            grid-template-columns: .7fr 1.3fr;
+        }
+
+        .faq__intro {
+            position: sticky;
+            top: 120px;
+            align-self: start;
+        }
+
+        .faq__intro .section-title {
+            font-size: clamp(3.5rem, 6vw, 6rem);
+        }
+
+        .faq__list {
+            border-top: 1px solid rgba(108, 63, 83, .18);
+        }
+
+        details {
+            border-bottom: 1px solid rgba(108, 63, 83, .18);
+        }
+
+        summary {
+            display: flex;
+            min-height: 105px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            cursor: pointer;
+            list-style: none;
+            font: 500 clamp(1.4rem, 2vw, 2rem)/1.2 var(--display);
+        }
+
+        summary::-webkit-details-marker {
             display: none;
         }
 
-        .faq details[open] .faq-icon {
+        summary::after {
+            content: "+";
+            display: grid;
+            width: 38px;
+            height: 38px;
+            flex: 0 0 auto;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--plum);
+            background: rgba(255, 255, 255, .48);
+            font: 400 1.3rem/1 var(--sans);
+            transition: transform .25s ease, background .25s ease;
+        }
+
+        details[open] summary::after {
+            color: var(--white);
+            background: var(--plum);
             transform: rotate(45deg);
         }
 
-        .faq-icon {
-            transition: transform 180ms ease;
+        details p {
+            max-width: 660px;
+            margin: -8px 0 30px;
+            padding-right: 60px;
+            color: var(--ink-soft);
+            font-size: .93rem;
+            line-height: 1.75;
+        }
+
+        .finale {
+            position: relative;
+            display: grid;
+            min-height: 82vh;
+            place-items: center;
+            overflow: hidden;
+            padding: 120px 0;
+            color: var(--white);
+            background: var(--plum-deep);
+            text-align: center;
+        }
+
+        .finale::before,
+        .finale::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+
+        .finale::before {
+            width: 430px;
+            height: 430px;
+            top: -230px;
+            left: -100px;
+            background: rgba(189, 125, 134, .24);
+        }
+
+        .finale::after {
+            width: 500px;
+            height: 500px;
+            right: -220px;
+            bottom: -250px;
+            background: rgba(115, 119, 91, .28);
+        }
+
+        .finale__inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .finale__label {
+            color: var(--blush);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .finale h2 {
+            margin: 28px 0 0;
+            font: 400 clamp(4rem, 9vw, 9.2rem)/.88 var(--display);
+            letter-spacing: -.065em;
+        }
+
+        .finale h2 em {
+            color: var(--blush);
+            font-weight: 400;
+        }
+
+        .finale p {
+            max-width: 610px;
+            margin: 30px auto 0;
+            color: rgba(255, 253, 249, .72);
+            font-weight: 300;
+            line-height: 1.75;
+        }
+
+        .finale .button {
+            margin-top: 38px;
+        }
+
+        .footer {
+            padding: 34px 0 96px;
+            color: rgba(255, 253, 249, .6);
+            background: #2c1921;
+            font-size: .7rem;
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer a {
+            text-underline-offset: 4px;
+        }
+
+        .footer__links {
+            display: flex;
+            gap: 22px;
+        }
+
+        .mobile-buy {
+            position: fixed;
+            right: 12px;
+            bottom: 12px;
+            left: 12px;
+            z-index: 95;
+            display: none;
+            min-height: 58px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-radius: 18px;
+            padding: 10px 11px 10px 17px;
+            color: var(--white);
+            background: rgba(63, 37, 49, .94);
+            box-shadow: 0 15px 45px rgba(45, 28, 34, .35);
+            backdrop-filter: blur(16px);
+            text-decoration: none;
+        }
+
+        .mobile-buy__copy {
+            display: grid;
+            gap: 2px;
+        }
+
+        .mobile-buy__copy small {
+            color: rgba(255, 255, 255, .65);
+            font-size: .58rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .mobile-buy__copy strong {
+            font: 500 1.2rem/1.1 var(--display);
+        }
+
+        .mobile-buy__action {
+            border-radius: 12px;
+            padding: 12px 14px;
+            color: var(--plum-deep);
+            background: var(--paper);
+            font-size: .64rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
         }
 
         [data-reveal] {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1);
+        }
+
+        [data-reveal].is-visible {
             opacity: 1;
-            transform: none;
+            transform: translateY(0);
         }
 
-        @media (prefers-reduced-motion: no-preference) {
+        @media (max-width: 1000px) {
+            :root {
+                --shell: min(100% - 34px, 760px);
+            }
+
+            .nav__links > a:not(.nav__cta) {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .hero__grid,
+            .recognition__head,
+            .threshold__inner,
+            .chapters__grid,
+            .video-section__grid,
+            .author__grid,
+            .offer__grid,
+            .faq__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero__grid {
+                gap: 25px;
+            }
+
+            .hero h1 {
+                max-width: 700px;
+            }
+
+            .book-stage {
+                min-height: 650px;
+            }
+
+            .recognition__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .recognition-card:nth-child(2),
+            .journey-card:nth-child(even) {
+                margin-top: 0;
+            }
+
+            .recognition-card:nth-child(3) {
+                grid-column: 1 / -1;
+                min-height: 340px;
+            }
+
+            .threshold__quote,
+            .chapters__intro,
+            .faq__intro {
+                position: relative;
+                top: auto;
+            }
+
+            .journey__rail {
+                overflow-x: auto;
+                grid-template-columns: repeat(4, minmax(260px, 1fr));
+                scroll-snap-type: x mandatory;
+                scrollbar-width: thin;
+            }
+
+            .journey-card {
+                scroll-snap-align: start;
+            }
+
+            .chapters__grid,
+            .faq__grid {
+                gap: 45px;
+            }
+
+            .author__portrait {
+                min-height: 440px;
+            }
+
+            .offer__grid {
+                max-width: 680px;
+                margin-inline: auto;
+            }
+        }
+
+        @media (max-width: 680px) {
+            :root {
+                --shell: min(100% - 28px, 540px);
+            }
+
+            .topbar {
+                min-height: 44px;
+                display: grid;
+                place-items: center;
+                padding: 8px 12px;
+                font-size: .58rem;
+            }
+
+            .nav {
+                top: 44px;
+            }
+
+            .nav__inner {
+                min-height: 68px;
+            }
+
+            .brand__text small,
+            .nav__cta {
+                display: none;
+            }
+
+            .brand__text strong {
+                max-width: 180px;
+                font-size: .7rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 132px 0 55px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.75rem, 18vw, 5.8rem);
+            }
+
+            .hero h1 em {
+                margin-left: 20px;
+            }
+
+            .hero__lead {
+                margin-top: 26px;
+                font-size: 1.28rem;
+            }
+
+            .hero__actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .hero__actions .text-link {
+                justify-content: center;
+            }
+
+            .hero__facts {
+                gap: 10px 16px;
+            }
+
+            .book-stage {
+                min-height: 520px;
+            }
+
+            .book {
+                width: min(285px, 76%);
+            }
+
+            .book-stage__seal {
+                right: -4px;
+                bottom: 48px;
+                width: 102px;
+                height: 102px;
+                font-size: .86rem;
+            }
+
+            .marquee__item {
+                padding-block: 20px;
+            }
+
+            .recognition {
+                padding: 95px 0;
+            }
+
+            .recognition__grid {
+                margin-top: 50px;
+                grid-template-columns: 1fr;
+            }
+
+            .recognition-card,
+            .recognition-card:nth-child(3) {
+                min-height: 360px;
+                grid-column: auto;
+            }
+
+            .recognition-card h3 {
+                margin-top: 58px;
+            }
+
+            .threshold,
+            .journey,
+            .chapters,
+            .video-section,
+            .author,
+            .offer,
+            .faq {
+                padding-block: 92px;
+            }
+
+            .threshold__layers {
+                margin-top: 12px;
+            }
+
+            .layer,
+            .layer:nth-child(2),
+            .layer:nth-child(3) {
+                min-height: 220px;
+                margin-left: 0;
+                border-radius: 70px 18px 18px 18px;
+                padding: 32px 26px 28px;
+            }
+
+            .layer h3 {
+                margin-top: 28px;
+            }
+
+            .journey__header {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            .journey__rail {
+                width: calc(100vw - 14px);
+                margin-top: 45px;
+                grid-template-columns: repeat(4, minmax(78vw, 1fr));
+            }
+
+            .journey-card {
+                min-height: 510px;
+            }
+
+            .chapter {
+                gap: 12px 15px;
+                grid-template-columns: 42px 1fr;
+            }
+
+            .chapter p {
+                grid-column: 2;
+            }
+
+            .manifesto {
+                min-height: 80vh;
+                padding: 90px 28px;
+            }
+
+            .manifesto::after {
+                inset: 14px;
+            }
+
+            .video-frame {
+                min-height: 520px;
+            }
+
+            .video-placeholder {
+                padding: 28px;
+            }
+
+            .author__portrait {
+                min-height: 380px;
+            }
+
+            .offer__badge {
+                top: 22px;
+                left: -4px;
+                width: 105px;
+                height: 105px;
+                font-size: 1rem;
+            }
+
+            .offer__actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .offer__actions .text-link {
+                justify-content: center;
+            }
+
+            summary {
+                min-height: 94px;
+                font-size: 1.35rem;
+            }
+
+            details p {
+                padding-right: 0;
+            }
+
+            .footer {
+                padding-bottom: 105px;
+            }
+
+            .footer__inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .mobile-buy {
+                display: flex;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+
             [data-reveal] {
-                opacity: 0;
-                transform: translateY(22px);
-                transition: opacity 650ms ease, transform 650ms ease;
-            }
-
-            [data-reveal].is-visible {
                 opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @supports not (color: color-mix(in srgb, white, black)) {
-            .premium-panel {
-                background: rgba(34, 32, 30, 0.86);
-            }
-        }
-
-        @media (max-width: 767px) {
-            .shell {
-                width: min(100% - 24px, 1160px);
-            }
-
-            .hero-stage {
-                min-height: 390px;
-            }
-
-            .thread::before {
-                left: 15px;
+                transform: none;
             }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "El hogar que construí después del adiós",
+      "author": {
+        "@type": "Person",
+        "name": "Alexandra Ortega"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gimnasio Emocional Mentes Brillantes"
+      },
+      "bookFormat": "https://schema.org/EBook",
+      "inLanguage": "es",
+      "numberOfPages": 102,
+      "datePublished": "2026",
+      "description": "Una historia de sanación emocional, psicología aterrizada y ejercicios para volver a ti.",
+      "image": "https://webinar-mentes-brillantes.vercel.app/assets/book-cover.webp",
+      "offers": {
+        "@type": "Offer",
+        "price": "39900",
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock",
+        "url": "https://wa.me/573112602355?text=Hola%2C%20quiero%20mi%20copia%20del%20libro%20El%20hogar%20que%20constru%C3%AD%20despu%C3%A9s%20del%20adi%C3%B3s.%20HOGAR"
+      }
+    }
+    </script>
 </head>
 
 <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="progress" id="progress" aria-hidden="true"></div>
 
-    <script>
-        /*
-         * WEBINAR EXPERIENCE SYSTEM
-         * Edita este bloque para crear una nueva landing de webinar.
-         * El resto de la página se alimenta de esta configuración.
-         */
-        const WEBINAR_CONFIG = {
-            brand: "Gimnasio Emocional",
-            organization: "Gimnasio Emocional Mentes Brillantes",
-            themeName: "Relaciones de Pareja Conscientes",
-            category: "Webinar exclusivo",
-            headline: "Sana tus patrones afectivos y vuelve a elegir el amor con presencia",
-            highlightedWord: "presencia",
-            subheadline: "Una experiencia privada para comprender por qué repetimos ciertas dinámicas, cómo reparar desde la conciencia y qué prácticas sostienen vínculos más seguros, maduros y humanos.",
-            audience: "Personas que quieren dejar de amar desde la herida, la ansiedad o el sacrificio silencioso, y empezar a vincularse desde claridad, dignidad y presencia.",
-            date: "Próxima fecha por confirmar",
-            duration: "90 minutos",
-            format: "Online en vivo + grupo VIP",
-            scarcityNote: "Entrada por WhatsApp. Cupos cuidados para mantener una experiencia cercana y sin ruido.",
-            cta: {
-                label: "Unirme al grupo VIP",
-                secondaryLabel: "Ver mapa del webinar",
-                url: "https://chat.whatsapp.com/J0N6LHqhEFf0F7CdVweCNI?mode=gi_t"
-            },
-            video: {
-                enabled: false,
-                videoType: "none",
-                videoUrl: "",
-                iframeUrl: "",
-                posterImage: ""
-            },
-            speaker: {
-                name: "Equipo Mentes Brillantes",
-                role: "Gimnasio Emocional",
-                bio: "Un espacio de educación emocional creado para acompañar procesos de transformación interior con lenguaje claro, mirada humana y prácticas aplicables a la vida cotidiana.",
-                quote: "La calidad de tu vida también se entrena en la forma en que te vinculas, comunicas y eliges desde tu centro.",
-                image: ""
-            },
-            audienceFit: [
-                "Sientes que repites conversaciones, conflictos o elecciones afectivas.",
-                "Quieres poner límites sin culpa y comunicarte sin atacar ni desaparecer.",
-                "Buscas una mirada espiritual y psicológica que sea profunda, práctica y respetuosa."
-            ],
-            benefits: [
-                {
-                    title: "Leer el patrón antes de repetirlo",
-                    description: "Identifica las señales emocionales que aparecen antes del conflicto, la dependencia, la distancia o la necesidad de aprobación.",
-                    chip: "Autoconciencia",
-                    icon: "psychology"
-                },
-                {
-                    title: "Comunicar sin perder tu centro",
-                    description: "Aprende a expresar necesidades y límites con firmeza, ternura y responsabilidad emocional.",
-                    chip: "Comunicación",
-                    icon: "forum"
-                },
-                {
-                    title: "Separar amor de supervivencia",
-                    description: "Distingue cuándo eliges desde paz y presencia, y cuándo reaccionas desde abandono, miedo o culpa.",
-                    chip: "Claridad",
-                    icon: "healing"
-                },
-                {
-                    title: "Diseñar acuerdos más conscientes",
-                    description: "Llévate preguntas y prácticas para reparar, conversar y sostener vínculos más maduros.",
-                    chip: "Acción",
-                    icon: "diversity_1"
-                }
-            ],
-            agenda: [
-                {
-                    step: "01",
-                    title: "Entrada al mapa emocional",
-                    description: "Ubicamos el punto de partida: qué duele, qué se repite y qué necesita ser visto con honestidad."
-                },
-                {
-                    step: "02",
-                    title: "Patrones, heridas y lenguaje del vínculo",
-                    description: "Exploramos apego, límites, comunicación y decisiones afectivas sin convertirlo en culpa."
-                },
-                {
-                    step: "03",
-                    title: "Prácticas para elegir distinto",
-                    description: "Integramos recursos concretos para conversar, reparar y volver al cuerpo antes de reaccionar."
-                },
-                {
-                    step: "04",
-                    title: "Cierre y siguiente paso",
-                    description: "Definimos una acción simple para llevar la conciencia del webinar a la relación real."
-                }
-            ],
-            emotionalChips: ["Claridad", "Sanación", "Presencia", "Límites", "Amor adulto"],
-            credibility: [
-                {
-                    label: "Marca anfitriona",
-                    value: "Gimnasio Emocional Mentes Brillantes"
-                },
-                {
-                    label: "Formato",
-                    value: "Experiencia guiada, íntima y accionable"
-                },
-                {
-                    label: "Acceso",
-                    value: "Grupo VIP de WhatsApp, sin formularios largos"
-                }
-            ],
-            testimonials: [],
-            faqs: [
-                {
-                    question: "¿El webinar es solo para personas con pareja?",
-                    answer: "No. También es útil si estás soltero, en una pausa afectiva o quieres comprender tus patrones antes de una nueva relación."
-                },
-                {
-                    question: "¿Tengo que llenar un formulario?",
-                    answer: "No. El flujo principal es entrar al grupo VIP de WhatsApp, donde recibirás la información y recordatorios del webinar."
-                },
-                {
-                    question: "¿Se necesita experiencia previa en terapia o crecimiento personal?",
-                    answer: "No. La experiencia está diseñada para ser profunda sin volverse complicada, con lenguaje claro y ejercicios aplicables."
-                },
-                {
-                    question: "¿Dónde se publicará la fecha exacta?",
-                    answer: "La fecha, hora y enlace de acceso se compartirán dentro del grupo VIP de WhatsApp cuando el equipo confirme la convocatoria."
-                }
-            ],
-            seo: {
-                title: "Relaciones de Pareja Conscientes | Gimnasio Emocional",
-                description: "Webinar exclusivo de Gimnasio Emocional Mentes Brillantes para sanar patrones afectivos, comunicar con presencia y construir relaciones conscientes.",
-                ogImage: "https://webinar-mentes-brillantes.vercel.app/Logo.jpg",
-                url: "https://webinar-mentes-brillantes.vercel.app"
-            },
-            visualMood: {
-                style: "premium editorial sanctuary",
-                primaryAccent: "#e9c349",
-                secondaryAccent: "#8ecdc2",
-                warmAccent: "#c77d69",
-                background: "#111111",
-                surface: "#191817",
-                text: "#e9e4dc"
-            }
-        };
-    </script>
+    <div class="topbar">Libro digital premium · PDF + EPUB · Lectura inmediata</div>
 
-    <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
-        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border border-white/10 bg-black/38 px-3 py-2 shadow-2xl backdrop-blur-xl" aria-label="Navegación principal">
-            <a href="#inicio" class="flex min-w-0 items-center gap-3 rounded-full pr-2" aria-label="Ir al inicio">
-                <span class="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full bg-white/8">
-                    <img src="Logo.jpg" alt="Logo de Gimnasio Emocional Mentes Brillantes" class="h-9 w-auto object-contain" />
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+        <div class="shell nav__inner">
+            <a class="brand" href="#inicio" aria-label="Volver al inicio">
+                <span class="brand__mark" aria-hidden="true"><span>G</span></span>
+                <span class="brand__text">
+                    <strong>Gimnasio Emocional</strong>
+                    <small>Mentes Brillantes</small>
                 </span>
-                <span class="hidden min-w-0 font-display text-base italic text-[color:var(--accent)] sm:block" data-brand>Gimnasio Emocional</span>
             </a>
 
-            <div class="hidden items-center gap-6 lg:flex">
-                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#para-quien">Para quién</a>
-                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#descubrir">Descubrirás</a>
-                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#agenda">Agenda</a>
-                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#mentor">Mentor</a>
-                <a class="text-[0.68rem] font-extrabold uppercase tracking-label text-white/58 transition hover:text-[color:var(--accent)]" href="#faq">FAQ</a>
+            <div class="nav__links">
+                <a href="#para-quien">Para quién</a>
+                <a href="#interior">Qué encontrarás</a>
+                <a href="#autora">Autora</a>
+                <a href="#preguntas">Preguntas</a>
+                <a class="nav__cta" href="#quiero-el-libro">Quiero el libro</a>
             </div>
-
-            <a class="cta-primary min-h-11 px-4 py-2 text-[0.68rem] sm:px-5" href="#" target="_blank" rel="noopener noreferrer" data-cta-link data-cta-label>
-                Unirme
-            </a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main id="contenido">
-        <!-- Hero / Private Invitation -->
-        <section id="inicio" class="relative overflow-hidden px-0 pb-20 pt-28 sm:pt-32 lg:min-h-screen lg:pb-28">
-            <div class="shell grid items-center gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-16">
-                <div data-reveal>
-                    <div class="mb-7 flex flex-wrap items-center gap-2">
-                        <span class="chip chip-accent" data-category>Webinar exclusivo</span>
-                        <span class="chip" data-theme-name>Relaciones de Pareja Conscientes</span>
-                    </div>
-
-                    <p class="eyebrow mb-5" data-format>Online en vivo + grupo VIP</p>
-                    <h1 class="balanced font-display text-[3.15rem] font-medium leading-[0.98] text-[color:var(--text)] sm:text-[4.8rem] lg:text-[6.4rem]" data-headline>
-                        Sana tus patrones afectivos y vuelve a elegir el amor con <em class="text-[color:var(--accent)]">presencia</em>
-                    </h1>
-
-                    <p class="pretty mt-7 max-w-2xl text-lg font-light leading-8 text-[color:color-mix(in_srgb,var(--text)_78%,transparent)] sm:text-xl sm:leading-9" data-subheadline>
-                        Una experiencia privada para comprender por qué repetimos ciertas dinámicas, cómo reparar desde la conciencia y qué prácticas sostienen vínculos más seguros, maduros y humanos.
+        <section class="hero" id="inicio">
+            <div class="shell hero__grid">
+                <div class="hero__copy" data-reveal>
+                    <div class="hero__overline">Un viaje de regreso a ti</div>
+                    <h1>El hogar que <em>construí</em> después del adiós</h1>
+                    <p class="hero__lead">
+                        No es un libro sobre separarse ni sobre quedarse.
+                        <strong>Es un libro sobre despertar.</strong>
                     </p>
 
-                    <div class="mt-8 grid gap-3 sm:grid-cols-3">
-                        <div class="premium-panel px-4 py-4">
-                            <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">Fecha</p>
-                            <p class="mt-2 font-display text-xl text-[color:var(--accent)]" data-date>Próxima fecha por confirmar</p>
-                        </div>
-                        <div class="premium-panel px-4 py-4">
-                            <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">Duración</p>
-                            <p class="mt-2 font-display text-xl text-[color:var(--text)]" data-duration>90 minutos</p>
-                        </div>
-                        <div class="premium-panel px-4 py-4">
-                            <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">Acceso</p>
-                            <p class="mt-2 font-display text-xl text-[color:var(--text)]">VIP</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                        <a class="cta-primary text-sm" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>
-                            <span class="material-symbols-outlined text-xl" aria-hidden="true">lock</span>
-                            <span data-cta-label>Unirme al grupo VIP</span>
+                    <div class="hero__actions">
+                        <a class="button" href="#quiero-el-libro">
+                            Quiero volver a mí <span class="arrow" aria-hidden="true">→</span>
                         </a>
-                        <a class="cta-secondary text-sm" href="#agenda">
-                            <span data-secondary-cta>Ver mapa del webinar</span>
-                            <span class="material-symbols-outlined text-lg" aria-hidden="true">south</span>
+                        <a class="text-link" href="#historia">Conocer la historia</a>
+                    </div>
+
+                    <div class="hero__facts" aria-label="Características del libro">
+                        <span class="hero__fact">102 páginas</span>
+                        <span class="hero__fact">6 capítulos + epílogo</span>
+                        <span class="hero__fact">PDF + EPUB</span>
+                    </div>
+                </div>
+
+                <div class="book-stage" id="bookStage" data-reveal aria-label="Portada del libro El hogar que construí después del adiós">
+                    <div class="book-stage__arch" aria-hidden="true"></div>
+                    <div class="book-stage__line book-stage__line--one" aria-hidden="true"></div>
+                    <div class="book-stage__line book-stage__line--two" aria-hidden="true"></div>
+                    <div class="book" id="book">
+                        <img src="assets/book-cover.webp" width="1000" height="1500" alt="Portada de El hogar que construí después del adiós, de Alexandra Ortega">
+                    </div>
+                    <div class="book-stage__seal">
+                        <span>Tu copia<br>digital<small>$39.900 COP</small></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <div class="marquee__item">Una historia que te lee a ti</div>
+                <div class="marquee__item">Psicología que explica tu dolor</div>
+                <div class="marquee__item">Ejercicios que te devuelven a casa</div>
+                <div class="marquee__item">Una historia que te lee a ti</div>
+                <div class="marquee__item">Psicología que explica tu dolor</div>
+                <div class="marquee__item">Ejercicios que te devuelven a casa</div>
+            </div>
+        </div>
+
+        <section class="recognition" id="para-quien">
+            <div class="shell">
+                <div class="recognition__head">
+                    <div data-reveal>
+                        <p class="eyebrow">Tal vez este libro llegó a tiempo</p>
+                        <h2 class="section-title">Tres momentos.<br>Un mismo regreso.</h2>
+                    </div>
+                    <p class="section-intro" data-reveal>
+                        La historia de Elena acompaña sin juzgar. No te dice qué decisión tomar: te ayuda a escuchar
+                        la voz que el miedo, la culpa o la costumbre fueron apagando.
+                    </p>
+                </div>
+
+                <div class="recognition__grid">
+                    <article class="recognition-card" data-reveal>
+                        <span class="recognition-card__number">01</span>
+                        <span class="recognition-card__orb" aria-hidden="true"></span>
+                        <h3>Cuando aún estás dentro</h3>
+                        <p>Sostienes la casa, la rutina y la apariencia de normalidad, pero algo dentro de ti pide descanso, claridad y espacio para respirar.</p>
+                    </article>
+
+                    <article class="recognition-card" data-reveal>
+                        <span class="recognition-card__number">02</span>
+                        <span class="recognition-card__orb" aria-hidden="true"></span>
+                        <h3>Cuando estás soltando</h3>
+                        <p>El silencio se vuelve ansiedad, un mensaje trae calma breve y el ciclo comienza otra vez. Aquí entiendes por qué no es falta de carácter.</p>
+                    </article>
+
+                    <article class="recognition-card" data-reveal>
+                        <span class="recognition-card__number">03</span>
+                        <span class="recognition-card__orb" aria-hidden="true"></span>
+                        <h3>Cuando ya saliste, pero aún no vuelves</h3>
+                        <p>La relación terminó, pero el duelo invisible sigue ahí. Necesitas recordar quién eras antes de vivir para sostener a todos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="threshold" id="interior">
+            <div class="shell threshold__inner">
+                <div class="threshold__quote" data-reveal>
+                    <p class="eyebrow">No es autoayuda genérica</p>
+                    <blockquote>Un libro que no solo se lee. <em>Se atraviesa.</em></blockquote>
+                </div>
+
+                <div class="threshold__layers">
+                    <article class="layer" data-reveal>
+                        <div class="layer__top">
+                            <span class="layer__number">01 — Reconocerte</span>
+                            <span class="layer__label">Narrativa</span>
+                        </div>
+                        <h3>La historia de Elena</h3>
+                        <p>Una madre que camina midiendo cada palabra y que, capítulo a capítulo, descubre que quedarse también puede ser una forma de irse de sí misma.</p>
+                    </article>
+
+                    <article class="layer" data-reveal>
+                        <div class="layer__top">
+                            <span class="layer__number">02 — Comprenderte</span>
+                            <span class="layer__label">Psicología</span>
+                        </div>
+                        <h3>Lo que tu cuerpo intentaba decir</h3>
+                        <p>Apego, sistema nervioso, dependencia emocional y lealtades familiares explicados con claridad, cercanía y sin convertir tu historia en culpa.</p>
+                    </article>
+
+                    <article class="layer" data-reveal>
+                        <div class="layer__top">
+                            <span class="layer__number">03 — Volver a ti</span>
+                            <span class="layer__label">Cuaderno de trabajo</span>
+                        </div>
+                        <h3>Ejercicios para tu propia historia</h3>
+                        <p>Cartas, journaling, preguntas guiadas, respiración y pequeñas prácticas para que no solo entiendas: para que empieces a transformarte.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="journey" id="historia">
+            <div class="shell">
+                <div class="journey__header">
+                    <div data-reveal>
+                        <p class="eyebrow">El viaje emocional</p>
+                        <h2 class="section-title">Del silencio<br>a la libertad interior.</h2>
+                    </div>
+                    <p data-reveal>
+                        Cada umbral nombra una parte del camino. Puedes reconocerte en uno o en todos.
+                        La salida no empieza con una respuesta perfecta, sino con una mirada más honesta.
+                    </p>
+                </div>
+
+                <div class="journey__rail" aria-label="Etapas del viaje del libro">
+                    <article class="journey-card" data-reveal>
+                        <img src="assets/journey-stillness.webp" width="720" height="900" alt="Mujer frente a una ventana abierta mirando el mar">
+                        <div class="journey-card__content">
+                            <span class="journey-card__step">Umbral 01</span>
+                            <h3>El silencio</h3>
+                            <p>Cuando quedarse se vuelve una forma de irse de ti.</p>
+                        </div>
+                    </article>
+
+                    <article class="journey-card" data-reveal>
+                        <img src="assets/journey-fear.webp" width="720" height="900" alt="Mujer abrazándose en una habitación con luz cálida">
+                        <div class="journey-card__content">
+                            <span class="journey-card__step">Umbral 02</span>
+                            <h3>El miedo</h3>
+                            <p>El amor te expande; el miedo te encoge.</p>
+                        </div>
+                    </article>
+
+                    <article class="journey-card" data-reveal>
+                        <img src="assets/journey-grief.webp" width="720" height="900" alt="Mujer caminando junto al mar al atardecer">
+                        <div class="journey-card__content">
+                            <span class="journey-card__step">Umbral 03</span>
+                            <h3>El duelo</h3>
+                            <p>Soltar algo que, por dentro, ya había terminado.</p>
+                        </div>
+                    </article>
+
+                    <article class="journey-card" data-reveal>
+                        <img src="assets/journey-return.webp" width="720" height="900" alt="Mujer abriendo las cortinas hacia un amanecer">
+                        <div class="journey-card__content">
+                            <span class="journey-card__step">Umbral 04</span>
+                            <h3>El regreso</h3>
+                            <p>La vida que vuelve a sentirse tuya.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="chapters" aria-labelledby="chapters-title">
+            <div class="shell chapters__grid">
+                <div class="chapters__intro" data-reveal>
+                    <p class="eyebrow">Dentro del libro</p>
+                    <h2 class="section-title" id="chapters-title">Seis capítulos para volver.</h2>
+                    <p class="section-intro">Un recorrido íntimo, cálido y esperanzador. Espiritual, pero con los pies en la tierra.</p>
+                </div>
+
+                <div class="chapters__list">
+                    <article class="chapter" data-reveal>
+                        <h3>La trampa del amor por los hijos</h3>
+                        <p>El dibujo de Mateo despierta una pregunta: ¿qué aprenden los hijos de la forma en que una madre se ama a sí misma?</p>
+                    </article>
+                    <article class="chapter" data-reveal>
+                        <h3>Cuando el amor se convierte en miedo</h3>
+                        <p>El control sutil, las palabras medidas y la diferencia profunda entre sentirse amada y sentirse vigilada.</p>
+                    </article>
+                    <article class="chapter" data-reveal>
+                        <h3>La adicción emocional</h3>
+                        <p>Por qué un mensaje calma por un instante y luego deja más vacío. El apego explicado sin juicio.</p>
+                    </article>
+                    <article class="chapter" data-reveal>
+                        <h3>El duelo invisible</h3>
+                        <p>Honrar lo que fue, convivir con la ausencia y dejar de exigirle al duelo que avance en línea recta.</p>
+                    </article>
+                    <article class="chapter" data-reveal>
+                        <h3>El reencuentro contigo</h3>
+                        <p>Reconstruir la identidad más allá de la pareja, la maternidad y los papeles que un día ocuparon todo.</p>
+                    </article>
+                    <article class="chapter" data-reveal>
+                        <h3>La libertad interior</h3>
+                        <p>Dejar de esperar que alguien vuelva o cambie, no desde el rencor, sino desde la certeza tranquila de tenerte a ti.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="manifesto" aria-label="Frase destacada del libro">
+            <div class="manifesto__copy" data-reveal>
+                <span class="manifesto__mark" aria-hidden="true">“</span>
+                <h2>El hogar no era una casa.<br>El hogar eras tú.</h2>
+                <p>
+                    Una mujer que ya no espera que él vuelva ni que cambie, porque aprendió a tenerse a sí misma.
+                </p>
+            </div>
+        </section>
+
+        <section class="video-section" id="mensaje">
+            <div class="shell video-section__grid">
+                <div class="video-section__copy" data-reveal>
+                    <p class="eyebrow">Una conversación de corazón</p>
+                    <h2 class="section-title">Alexandra te cuenta por qué escribió este libro.</h2>
+                    <p class="section-intro">
+                        Este espacio queda preparado para el video de la autora: un mensaje cercano sobre la historia
+                        que inspiró estas páginas y la mujer a la que espera acompañar.
+                    </p>
+                </div>
+
+                <div class="video-frame" id="videoMount" data-reveal>
+                    <div class="video-placeholder" role="img" aria-label="Espacio reservado para el video de Alexandra Ortega">
+                        <span class="video-placeholder__play" aria-hidden="true">▶</span>
+                        <span class="video-placeholder__label">Próximamente</span>
+                        <h3>Un mensaje de Alexandra para ti</h3>
+                        <p>Un encuentro íntimo sobre sanar sin culpa, romper el silencio heredado y volver a sentirte en casa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="author" id="autora">
+            <div class="shell author__grid">
+                <div class="author__portrait" data-reveal aria-label="Monograma de Alexandra Ortega">
+                    <span class="author__monogram" aria-hidden="true">AO</span>
+                </div>
+
+                <div data-reveal>
+                    <p class="eyebrow">Sobre la autora</p>
+                    <h2>Alexandra<br>Ortega</h2>
+                    <p class="author__role">Psicóloga · Coach · Fundadora de GEMB</p>
+                    <p class="author__bio">
+                        Alexandra escribe desde la psicología y desde una profunda sensibilidad por las historias que
+                        muchas mujeres viven en silencio. Su mirada no empuja, no juzga y no promete milagros: acompaña
+                        a comprender lo que duele y a encontrar recursos para elegir con más conciencia y libertad.
+                    </p>
+                    <p class="author__quote">“No destruyes una familia cuando eliges sanar. La reconstruyes desde un lugar más verdadero.”</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer" id="quiero-el-libro">
+            <div class="shell offer__grid">
+                <div class="offer__visual" data-reveal>
+                    <img src="assets/book-digital.webp" width="900" height="900" alt="Libro El hogar que construí después del adiós en una tableta">
+                    <div class="offer__badge">Disponible<br>ahora</div>
+                </div>
+
+                <div class="offer__copy" data-reveal>
+                    <p class="eyebrow">Tu siguiente página puede empezar hoy</p>
+                    <h2 class="section-title">Quiero mi copia digital.</h2>
+                    <p class="section-intro">
+                        Recibe el libro en dos formatos para leerlo desde tu celular, tableta o computador y volver
+                        a sus ejercicios cada vez que lo necesites.
+                    </p>
+
+                    <div class="offer__price">
+                        <strong>$39.900</strong>
+                        <span>COP</span>
+                    </div>
+
+                    <ul class="offer__list">
+                        <li>Libro completo de 102 páginas</li>
+                        <li>Formatos PDF + EPUB</li>
+                        <li>Entrega digital por WhatsApp</li>
+                        <li>Lectura y ejercicios a tu propio ritmo</li>
+                    </ul>
+
+                    <div class="offer__actions">
+                        <a class="button" data-wa data-location="offer" href="https://wa.me/573112602355?text=Hola%2C%20quiero%20mi%20copia%20del%20libro%20El%20hogar%20que%20constru%C3%AD%20despu%C3%A9s%20del%20adi%C3%B3s.%20HOGAR" target="_blank" rel="noopener noreferrer">
+                            Pedir el libro por WhatsApp <span class="arrow" aria-hidden="true">→</span>
                         </a>
+                        <a class="text-link" href="#preguntas">Resolver una duda</a>
                     </div>
 
-                    <p class="pretty mt-5 max-w-xl text-sm leading-7 text-white/48" data-scarcity>
-                        Entrada por WhatsApp. Cupos cuidados para mantener una experiencia cercana y sin ruido.
+                    <p class="offer__note">
+                        Al tocar el botón se abrirá WhatsApp con la palabra <strong>HOGAR</strong>. El equipo de Gimnasio Emocional
+                        te indicará el medio de pago y realizará la entrega digital.
                     </p>
                 </div>
-
-                <aside class="relative" aria-label="Visual principal del webinar" data-reveal>
-                    <div class="premium-panel p-3">
-                        <div id="videoMount" class="hero-stage" role="img" aria-label="Visual abstracto premium del webinar">
-                            <span class="stage-line"></span>
-                            <span class="stage-line"></span>
-                            <span class="stage-line"></span>
-                            <div class="absolute inset-x-6 top-7 z-10 flex items-center justify-between gap-4">
-                                <p class="eyebrow max-w-[13rem]" data-visual-label>Club privado de transformación interior</p>
-                                <span class="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/28 text-[color:var(--accent)]">
-                                    <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
-                                </span>
-                            </div>
-                            <div class="absolute bottom-7 left-6 right-6 z-10">
-                                <p class="mb-4 font-display text-3xl italic leading-tight text-[color:var(--text)] sm:text-4xl" data-speaker-quote>
-                                    La calidad de tu vida también se entrena en la forma en que te vinculas.
-                                </p>
-                                <div class="flex flex-wrap gap-2" data-emotional-chips></div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
             </div>
         </section>
 
-        <!-- Fast Value / Conversion Proof -->
-        <section class="surface-band px-0 py-16 sm:py-20">
-            <div class="shell grid gap-4 md:grid-cols-3" data-credibility-strip></div>
-        </section>
-
-        <!-- Audience Fit -->
-        <section id="para-quien" class="px-0 py-20 sm:py-28">
-            <div class="shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-                <div class="lg:sticky lg:top-28" data-reveal>
-                    <p class="eyebrow mb-4">Para quién es</p>
-                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Una invitación para mirar tu vínculo sin castigarte.</h2>
-                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62" data-audience>
-                        Personas que quieren dejar de amar desde la herida, la ansiedad o el sacrificio silencioso.
-                    </p>
+        <section class="faq" id="preguntas">
+            <div class="shell faq__grid">
+                <div class="faq__intro" data-reveal>
+                    <p class="eyebrow">Antes de abrir la primera página</p>
+                    <h2 class="section-title">Preguntas que también merecen calma.</h2>
                 </div>
 
-                <div class="grid gap-4" data-audience-fit></div>
-            </div>
-        </section>
-
-        <!-- Benefits -->
-        <section id="descubrir" class="surface-band px-0 py-20 sm:py-28">
-            <div class="shell">
-                <div class="grid gap-8 lg:grid-cols-[1fr_0.82fr] lg:items-end" data-reveal>
-                    <div>
-                        <p class="eyebrow mb-4">Lo que vas a descubrir</p>
-                        <h2 class="balanced max-w-4xl font-display text-4xl leading-tight sm:text-6xl">Claridad emocional convertida en decisiones concretas.</h2>
-                    </div>
-                    <p class="pretty text-base font-light leading-8 text-white/62">
-                        Cada bloque está diseñado para que el participante salga con lenguaje, mapa y una acción posible. Profundo, sí. Confuso, no.
-                    </p>
-                </div>
-
-                <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4" data-benefits></div>
-            </div>
-        </section>
-
-        <!-- Agenda -->
-        <section id="agenda" class="px-0 py-20 sm:py-28">
-            <div class="shell grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
-                <div data-reveal>
-                    <p class="eyebrow mb-4">Mapa del webinar</p>
-                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Un hilo de progreso para pasar de reacción a presencia.</h2>
-                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62">
-                        La agenda funciona como una ruta: observar, comprender, practicar y elegir el siguiente paso.
-                    </p>
-                    <a class="cta-secondary mt-8 text-sm" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>
-                        <span data-cta-label>Unirme al grupo VIP</span>
-                        <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
-                    </a>
-                </div>
-
-                <div class="thread grid gap-5" data-agenda></div>
-            </div>
-        </section>
-
-        <!-- Speaker -->
-        <section id="mentor" class="surface-band px-0 py-20 sm:py-28">
-            <div class="shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                <div data-speaker-visual data-reveal></div>
-
-                <div data-reveal>
-                    <p class="eyebrow mb-4">Mentor / Ponente</p>
-                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl" data-speaker-name>Equipo Mentes Brillantes</h2>
-                    <p class="mt-3 text-sm font-extrabold uppercase tracking-label text-[color:var(--accent)]" data-speaker-role>Gimnasio Emocional</p>
-                    <p class="pretty mt-7 text-base font-light leading-8 text-white/66" data-speaker-bio></p>
-                    <blockquote class="mt-8 border-l border-[color:var(--accent)]/45 pl-5 font-display text-2xl italic leading-snug text-white/88" data-speaker-quote-block></blockquote>
+                <div class="faq__list" data-reveal>
+                    <details>
+                        <summary>¿Es una novela o un libro de psicología?</summary>
+                        <p>Es un libro híbrido. Combina la historia de Elena, explicaciones psicológicas en lenguaje cercano y ejercicios para trabajar tu propia experiencia.</p>
+                    </details>
+                    <details>
+                        <summary>¿El libro me dice que debo terminar mi relación?</summary>
+                        <p>No. No empuja a separarse ni a quedarse. Acompaña a comprender lo que sucede y a tomar decisiones desde la conciencia y la libertad, no desde el miedo o la culpa.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cómo recibo el libro?</summary>
+                        <p>Al escribir la palabra HOGAR por WhatsApp, el equipo te comparte el medio de pago. Después recibes tu copia digital en PDF y EPUB.</p>
+                    </details>
+                    <details>
+                        <summary>¿Puedo leerlo desde el celular?</summary>
+                        <p>Sí. El PDF funciona en celular, tableta y computador. El EPUB se adapta a la pantalla y permite ajustar el tamaño de letra en aplicaciones de lectura compatibles.</p>
+                    </details>
+                    <details>
+                        <summary>¿Reemplaza un proceso terapéutico?</summary>
+                        <p>No. Es una herramienta de acompañamiento emocional y educativo. No sustituye terapia, diagnóstico ni atención profesional cuando sean necesarios.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué pasa después de escribir por WhatsApp?</summary>
+                        <p>Se abrirá una conversación directa con Gimnasio Emocional Mentes Brillantes. Allí confirmas tu pedido, recibes las instrucciones de pago y luego la entrega digital.</p>
+                    </details>
                 </div>
             </div>
         </section>
 
-        <!-- Honest Credibility -->
-        <section id="credibilidad" class="px-0 py-20 sm:py-28">
-            <div class="shell">
-                <div class="mx-auto max-w-3xl text-center" data-reveal>
-                    <p class="eyebrow mb-4">Credibilidad honesta</p>
-                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Confianza sin testimonios inventados.</h2>
-                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62">
-                        Esta plantilla está preparada para mostrar prueba social real cuando exista. Mientras tanto, se apoya en claridad de promesa, autoridad del espacio y transparencia del flujo.
-                    </p>
-                </div>
-
-                <div class="mt-12 grid gap-4 md:grid-cols-3" data-credibility></div>
-                <div class="mt-5 grid gap-4 md:grid-cols-2" data-testimonials></div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq" class="surface-band px-0 py-20 sm:py-28">
-            <div class="shell grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
-                <div data-reveal>
-                    <p class="eyebrow mb-4">Preguntas frecuentes</p>
-                    <h2 class="balanced font-display text-4xl leading-tight sm:text-5xl">Menos dudas. Más decisión tranquila.</h2>
-                    <p class="pretty mt-6 text-base font-light leading-8 text-white/62">
-                        Lo esencial antes de entrar al grupo VIP y reservar tu lugar en la experiencia.
-                    </p>
-                </div>
-
-                <div class="faq grid gap-3" data-faqs></div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section id="reserva" class="px-0 py-20 sm:py-28">
-            <div class="shell">
-                <div class="premium-panel overflow-hidden p-6 sm:p-10 lg:p-12" data-reveal>
-                    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-                        <div>
-                            <p class="eyebrow mb-4">Invitación final</p>
-                            <h2 class="balanced font-display text-4xl leading-tight sm:text-6xl">Entra al espacio donde la transformación empieza antes del webinar.</h2>
-                            <p class="pretty mt-6 max-w-2xl text-base font-light leading-8 text-white/64">
-                                Recibirás la información de acceso, recordatorios y preparación previa dentro del grupo VIP. Un paso simple, sin formularios largos.
-                            </p>
-                        </div>
-
-                        <div>
-                            <div class="mb-5 flex flex-wrap gap-2" data-final-chips></div>
-                            <a class="cta-primary w-full text-sm sm:text-base" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>
-                                <span class="material-symbols-outlined text-xl" aria-hidden="true">lock_open</span>
-                                <span data-cta-label>Unirme al grupo VIP</span>
-                            </a>
-                            <p class="mt-4 text-center text-[0.7rem] font-extrabold uppercase tracking-label text-white/42">
-                                WhatsApp VIP · Acceso directo · Sin spam
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <section class="finale">
+            <div class="shell finale__inner" data-reveal>
+                <span class="finale__label">El adiós no siempre es el final</span>
+                <h2>Puede ser el lugar donde <em>vuelves a ti.</em></h2>
+                <p>
+                    No necesitas tener todas las respuestas para dar el primer paso.
+                    A veces basta una página que ponga palabras donde antes solo había silencio.
+                </p>
+                <a class="button button--light" data-wa data-location="final" href="https://wa.me/573112602355?text=Hola%2C%20quiero%20mi%20copia%20del%20libro%20El%20hogar%20que%20constru%C3%AD%20despu%C3%A9s%20del%20adi%C3%B3s.%20HOGAR" target="_blank" rel="noopener noreferrer">
+                    Quiero comenzar mi regreso <span class="arrow" aria-hidden="true">→</span>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="px-0 py-12">
-        <div class="shell flex flex-col gap-8 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
-            <div class="flex items-center gap-3">
-                <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-full bg-white/8">
-                    <img src="Logo.jpg" alt="Logo de Gimnasio Emocional Mentes Brillantes" class="h-9 w-auto object-contain opacity-80" />
-                </span>
-                <div>
-                    <p class="font-display text-lg italic text-[color:var(--accent)]" data-brand>Gimnasio Emocional</p>
-                    <p class="text-xs text-white/42" data-footer-theme>Relaciones de Pareja Conscientes</p>
-                </div>
+    <footer class="footer">
+        <div class="shell footer__inner">
+            <p>© 2026 Gimnasio Emocional Mentes Brillantes · Las emociones también se entrenan.</p>
+            <div class="footer__links">
+                <a href="https://www.instagram.com/gimnasioemocional_mb/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.gimnasioemocionalmb.com/" target="_blank" rel="noopener noreferrer">Sitio web</a>
+                <a href="https://wa.me/573112602355" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
-
-            <div class="flex flex-wrap gap-x-6 gap-y-3 text-[0.68rem] font-extrabold uppercase tracking-label text-white/42">
-                <a class="transition hover:text-[color:var(--accent)]" href="#inicio">Inicio</a>
-                <a class="transition hover:text-[color:var(--accent)]" href="#agenda">Agenda</a>
-                <a class="transition hover:text-[color:var(--accent)]" href="#faq">FAQ</a>
-                <a class="transition hover:text-[color:var(--accent)]" href="#" target="_blank" rel="noopener noreferrer" data-cta-link>WhatsApp</a>
-            </div>
-
-            <p class="text-xs text-white/34">© 2026 Mentes Brillantes</p>
         </div>
     </footer>
 
+    <a class="mobile-buy" data-wa data-location="mobile-sticky" href="https://wa.me/573112602355?text=Hola%2C%20quiero%20mi%20copia%20del%20libro%20El%20hogar%20que%20constru%C3%AD%20despu%C3%A9s%20del%20adi%C3%B3s.%20HOGAR" target="_blank" rel="noopener noreferrer" aria-label="Pedir el libro por WhatsApp por 39.900 pesos colombianos">
+        <span class="mobile-buy__copy">
+            <small>Libro digital</small>
+            <strong>$39.900 COP</strong>
+        </span>
+        <span class="mobile-buy__action">Quiero el libro</span>
+    </a>
+
     <script>
-        const escapeHTML = (value = "") => String(value)
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#039;");
+        /*
+         * VIDEO DE ALEXANDRA
+         * Cuando el video esté listo, cambia type por "youtube" o "file"
+         * y pega la URL en src. El espacio se reemplazará automáticamente.
+         */
+        const MOTHER_VIDEO = {
+            type: "none",
+            src: "",
+            poster: ""
+        };
 
-        const $ = (selector, scope = document) => scope.querySelector(selector);
-        const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+        const progress = document.querySelector("#progress");
+        const nav = document.querySelector("#nav");
+        const bookStage = document.querySelector("#bookStage");
+        const book = document.querySelector("#book");
+        const videoMount = document.querySelector("#videoMount");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        const setText = (selector, value) => {
-            $$(selector).forEach((node) => {
-                node.textContent = value || "";
+        function updateScrollUI() {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const amount = max > 0 ? (window.scrollY / max) * 100 : 0;
+            progress.style.width = `${amount}%`;
+            nav.classList.toggle("is-scrolled", window.scrollY > 38);
+        }
+
+        updateScrollUI();
+        window.addEventListener("scroll", updateScrollUI, { passive: true });
+
+        if (!reduceMotion && bookStage && book) {
+            bookStage.addEventListener("pointermove", (event) => {
+                const rect = bookStage.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width - 0.5;
+                const y = (event.clientY - rect.top) / rect.height - 0.5;
+                book.style.transform = `rotateY(${-7 + x * 9}deg) rotateX(${1.5 - y * 5}deg) translateY(${-Math.abs(x) * 4}px)`;
             });
-        };
 
-        const setMeta = (selector, value) => {
-            const node = $(selector);
-            if (node && value) node.setAttribute("content", value);
-        };
-
-        function applyTheme(config) {
-            const mood = config.visualMood || {};
-            const root = document.documentElement;
-            root.style.setProperty("--accent", mood.primaryAccent || "#e9c349");
-            root.style.setProperty("--accent-2", mood.secondaryAccent || "#8ecdc2");
-            root.style.setProperty("--accent-3", mood.warmAccent || "#c77d69");
-            root.style.setProperty("--bg", mood.background || "#111111");
-            root.style.setProperty("--surface", mood.surface || "#191817");
-            root.style.setProperty("--text", mood.text || "#e9e4dc");
+            bookStage.addEventListener("pointerleave", () => {
+                book.style.transform = "rotateY(-7deg) rotateX(1.5deg)";
+            });
         }
 
-        function renderHeadline(config) {
-            const headline = config.headline || "";
-            const highlighted = config.highlightedWord || "";
-            const headlineNode = $("[data-headline]");
-            if (!headlineNode) return;
-
-            if (!highlighted || !headline.toLowerCase().includes(highlighted.toLowerCase())) {
-                headlineNode.textContent = headline;
-                return;
-            }
-
-            const index = headline.toLowerCase().indexOf(highlighted.toLowerCase());
-            const before = headline.slice(0, index);
-            const match = headline.slice(index, index + highlighted.length);
-            const after = headline.slice(index + highlighted.length);
-            headlineNode.innerHTML = `${escapeHTML(before)}<em class="text-[color:var(--accent)]">${escapeHTML(match)}</em>${escapeHTML(after)}`;
-        }
-
-        function renderVideo(config) {
-            const mount = $("#videoMount");
-            const video = config.video || {};
-            const type = video.videoType || video.type || "none";
-            if (!mount || !video.enabled || type === "none") return;
-
-            const source = video.iframeUrl || video.videoUrl || video.url;
-            if (!source) return;
-
-            mount.className = "video-frame";
-            mount.removeAttribute("role");
-            mount.removeAttribute("aria-label");
-
-            if (type === "youtube" || type === "vimeo") {
-                mount.innerHTML = `
-                    <iframe
-                        src="${escapeHTML(source)}"
-                        title="${escapeHTML(config.themeName)}"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-                `;
-                return;
-            }
-
-            if (type === "local") {
-                mount.innerHTML = `
-                    <video controls preload="metadata" ${video.posterImage ? `poster="${escapeHTML(video.posterImage)}"` : ""}>
-                        <source src="${escapeHTML(source)}" />
-                        Tu navegador no puede reproducir este video.
-                    </video>
-                `;
-            }
-        }
-
-        function renderChips(selector, chips = []) {
-            const mount = $(selector);
-            if (!mount) return;
-            mount.innerHTML = chips.map((chip, index) => `
-                <span class="chip ${index === 0 ? "chip-accent" : ""}">${escapeHTML(chip)}</span>
-            `).join("");
-        }
-
-        function renderCredibilityStrip(config) {
-            const mount = $("[data-credibility-strip]");
-            if (!mount) return;
-
-            const items = [
-                { label: "Tema", value: config.themeName },
-                { label: "Formato", value: config.format },
-                { label: "Acción", value: config.cta.label }
-            ];
-
-            mount.innerHTML = items.map((item) => `
-                <article class="premium-panel p-5" data-reveal>
-                    <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">${escapeHTML(item.label)}</p>
-                    <p class="pretty mt-3 font-display text-2xl leading-snug text-[color:var(--text)]">${escapeHTML(item.value)}</p>
-                </article>
-            `).join("");
-        }
-
-        function renderAudience(config) {
-            const mount = $("[data-audience-fit]");
-            if (!mount) return;
-
-            mount.innerHTML = (config.audienceFit || []).map((item, index) => `
-                <article class="premium-panel grid gap-4 p-6 sm:grid-cols-[3.2rem_1fr]" data-reveal>
-                    <span class="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--accent)] text-sm font-black text-[#211600]">${String(index + 1).padStart(2, "0")}</span>
-                    <p class="pretty text-lg font-light leading-8 text-white/76">${escapeHTML(item)}</p>
-                </article>
-            `).join("");
-        }
-
-        function renderBenefits(config) {
-            const mount = $("[data-benefits]");
-            if (!mount) return;
-
-            mount.innerHTML = (config.benefits || []).map((item) => `
-                <article class="premium-panel group min-h-[19rem] p-6 transition duration-300 hover:-translate-y-1" data-reveal>
-                    <div class="mb-10 flex items-start justify-between gap-4">
-                        <span class="material-symbols-outlined text-4xl text-[color:var(--accent)]" aria-hidden="true">${escapeHTML(item.icon || "auto_awesome")}</span>
-                        <span class="chip chip-accent">${escapeHTML(item.chip)}</span>
-                    </div>
-                    <h3 class="balanced font-display text-2xl leading-tight">${escapeHTML(item.title)}</h3>
-                    <p class="pretty mt-5 text-sm leading-7 text-white/62">${escapeHTML(item.description)}</p>
-                </article>
-            `).join("");
-        }
-
-        function renderAgenda(config) {
-            const mount = $("[data-agenda]");
-            if (!mount) return;
-
-            mount.innerHTML = (config.agenda || []).map((item) => `
-                <article class="grid gap-4 pl-0 sm:grid-cols-[3.8rem_1fr]" data-reveal>
-                    <span class="thread-node">${escapeHTML(item.step)}</span>
-                    <div class="premium-panel p-6">
-                        <h3 class="balanced font-display text-2xl leading-tight">${escapeHTML(item.title)}</h3>
-                        <p class="pretty mt-4 text-sm leading-7 text-white/62">${escapeHTML(item.description)}</p>
-                    </div>
-                </article>
-            `).join("");
-        }
-
-        function renderSpeaker(config) {
-            const speaker = config.speaker || {};
-            const visual = $("[data-speaker-visual]");
-            if (!visual) return;
-
-            if (speaker.image) {
-                visual.innerHTML = `
-                    <figure class="overflow-hidden rounded-[8px]">
-                        <img src="${escapeHTML(speaker.image)}" alt="Retrato de ${escapeHTML(speaker.name)}" class="aspect-[4/5] w-full object-cover" loading="lazy" />
-                    </figure>
-                `;
-                return;
-            }
-
-            const initials = (speaker.name || "GE")
-                .split(" ")
-                .filter(Boolean)
-                .slice(0, 2)
-                .map((word) => word[0])
-                .join("")
-                .toUpperCase();
-
-            visual.innerHTML = `
-                <div class="hero-stage grid min-h-[430px] place-items-center p-8" role="img" aria-label="Placeholder editorial para el mentor del webinar">
-                    <div class="relative z-10 text-center">
-                        <div class="mx-auto grid h-28 w-28 place-items-center rounded-full border border-white/12 bg-black/24 font-display text-4xl italic text-[color:var(--accent)]">${escapeHTML(initials)}</div>
-                        <p class="eyebrow mt-8">${escapeHTML(speaker.role || config.brand)}</p>
-                        <p class="balanced mx-auto mt-4 max-w-sm font-display text-3xl leading-tight">${escapeHTML(speaker.name || config.brand)}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderCredibility(config) {
-            const credibilityMount = $("[data-credibility]");
-            const testimonialsMount = $("[data-testimonials]");
-            if (!credibilityMount || !testimonialsMount) return;
-
-            credibilityMount.innerHTML = (config.credibility || []).map((item) => `
-                <article class="premium-panel p-6" data-reveal>
-                    <p class="text-[0.65rem] font-extrabold uppercase tracking-label text-white/42">${escapeHTML(item.label)}</p>
-                    <p class="pretty mt-3 font-display text-2xl leading-snug">${escapeHTML(item.value)}</p>
-                </article>
-            `).join("");
-
-            const testimonials = config.testimonials || [];
-            if (!testimonials.length) {
-                testimonialsMount.innerHTML = `
-                    <article class="premium-panel p-6 md:col-span-2" data-reveal>
-                        <p class="eyebrow">Prueba social real</p>
-                        <p class="pretty mt-4 text-base leading-8 text-white/66">
-                            Los testimonios aparecerán solo cuando existan comentarios reales y verificables de participantes.
-                        </p>
-                    </article>
-                `;
-                return;
-            }
-
-            testimonialsMount.innerHTML = testimonials.map((item) => `
-                <article class="premium-panel p-6" data-reveal>
-                    <p class="pretty font-display text-2xl italic leading-snug">“${escapeHTML(item.quote)}”</p>
-                    <p class="mt-6 text-sm font-extrabold uppercase tracking-label text-[color:var(--accent)]">${escapeHTML(item.name)}</p>
-                    <p class="mt-1 text-sm text-white/48">${escapeHTML(item.context || "")}</p>
-                </article>
-            `).join("");
-        }
-
-        function renderFaqs(config) {
-            const mount = $("[data-faqs]");
-            if (!mount) return;
-
-            mount.innerHTML = (config.faqs || []).map((item) => `
-                <details class="p-5" data-reveal>
-                    <summary class="flex items-start justify-between gap-4">
-                        <span class="balanced font-display text-xl leading-snug">${escapeHTML(item.question)}</span>
-                        <span class="faq-icon material-symbols-outlined mt-1 shrink-0 text-[color:var(--accent)]" aria-hidden="true">add</span>
-                    </summary>
-                    <p class="pretty mt-4 text-sm leading-7 text-white/62">${escapeHTML(item.answer)}</p>
-                </details>
-            `).join("");
-        }
-
-        function initReveal() {
-            const nodes = $$("[data-reveal]");
-            if (!("IntersectionObserver" in window)) {
-                nodes.forEach((node) => node.classList.add("is-visible"));
-                return;
-            }
-
+        if ("IntersectionObserver" in window && !reduceMotion) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -1058,60 +2354,58 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.14 });
+            }, { threshold: 0.12 });
 
-            nodes.forEach((node) => observer.observe(node));
+            document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+        } else {
+            document.querySelectorAll("[data-reveal]").forEach((element) => element.classList.add("is-visible"));
         }
 
-        function initPage(config) {
-            applyTheme(config);
+        // Evita que contenido fuera del primer viewport quede oculto en capturas,
+        // navegación por anclas o entornos que no disparan IntersectionObserver al desplazarse.
+        window.setTimeout(() => {
+            document.querySelectorAll("[data-reveal]").forEach((element) => element.classList.add("is-visible"));
+        }, 900);
 
-            document.title = config.seo?.title || `${config.themeName} | ${config.brand}`;
-            setMeta('meta[name="description"]', config.seo?.description || config.subheadline);
-            setMeta('meta[name="theme-color"]', config.visualMood?.background || "#111111");
-            setMeta('meta[property="og:title"]', config.seo?.title || config.themeName);
-            setMeta('meta[property="og:description"]', config.seo?.description || config.subheadline);
-            setMeta('meta[property="og:url"]', config.seo?.url || window.location.href);
-            setMeta('meta[property="og:image"]', config.seo?.ogImage || "");
+        function mountVideo() {
+            if (!videoMount || !MOTHER_VIDEO.src || MOTHER_VIDEO.type === "none") return;
 
-            setText("[data-brand]", config.brand);
-            setText("[data-category]", config.category);
-            setText("[data-theme-name]", config.themeName);
-            setText("[data-format]", config.format);
-            setText("[data-subheadline]", config.subheadline);
-            setText("[data-date]", config.date);
-            setText("[data-duration]", config.duration);
-            setText("[data-scarcity]", config.scarcityNote);
-            setText("[data-audience]", config.audience);
-            setText("[data-secondary-cta]", config.cta.secondaryLabel);
-            setText("[data-speaker-name]", config.speaker.name);
-            setText("[data-speaker-role]", config.speaker.role);
-            setText("[data-speaker-bio]", config.speaker.bio);
-            setText("[data-speaker-quote]", config.speaker.quote);
-            setText("[data-speaker-quote-block]", config.speaker.quote);
-            setText("[data-footer-theme]", config.themeName);
-            setText("[data-visual-label]", `${config.brand} · invitación privada`);
-            setText("[data-cta-label]", config.cta.label);
+            if (MOTHER_VIDEO.type === "youtube") {
+                const iframe = document.createElement("iframe");
+                iframe.src = MOTHER_VIDEO.src;
+                iframe.title = "Mensaje de Alexandra Ortega sobre el libro";
+                iframe.loading = "lazy";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                videoMount.replaceChildren(iframe);
+                return;
+            }
 
-            $$("[data-cta-link]").forEach((link) => {
-                link.setAttribute("href", config.cta.url);
+            if (MOTHER_VIDEO.type === "file") {
+                const video = document.createElement("video");
+                video.src = MOTHER_VIDEO.src;
+                video.controls = true;
+                video.preload = "metadata";
+                if (MOTHER_VIDEO.poster) video.poster = MOTHER_VIDEO.poster;
+                video.setAttribute("playsinline", "");
+                videoMount.replaceChildren(video);
+            }
+        }
+
+        mountVideo();
+
+        document.querySelectorAll("[data-wa]").forEach((link) => {
+            link.addEventListener("click", () => {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: "whatsapp_click",
+                    location: link.dataset.location || "unknown",
+                    product: "El hogar que construí después del adiós",
+                    value: 39900,
+                    currency: "COP"
+                });
             });
-
-            renderHeadline(config);
-            renderVideo(config);
-            renderChips("[data-emotional-chips]", config.emotionalChips);
-            renderChips("[data-final-chips]", config.emotionalChips);
-            renderCredibilityStrip(config);
-            renderAudience(config);
-            renderBenefits(config);
-            renderAgenda(config);
-            renderSpeaker(config);
-            renderCredibility(config);
-            renderFaqs(config);
-            initReveal();
-        }
-
-        initPage(WEBINAR_CONFIG);
+        });
     </script>
 </body>
 </html>
