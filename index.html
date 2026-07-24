@@ -44,7 +44,14 @@
             --paper: #fffaf2;
             --paper-warm: #f0dfcd;
             --white: #fffdf9;
+            --plum-glow: #8c5570;
             --shadow: 0 35px 90px rgba(61, 40, 34, .18);
+            --shadow-soft: 0 2px 4px rgba(61, 40, 34, .07), 0 12px 26px rgba(61, 40, 34, .1);
+            --shadow-lift: 0 2px 5px rgba(61, 40, 34, .09), 0 16px 34px rgba(61, 40, 34, .13), 0 38px 72px rgba(61, 40, 34, .14);
+            --shadow-lift-hover: 0 3px 8px rgba(61, 40, 34, .11), 0 26px 52px rgba(61, 40, 34, .17), 0 56px 96px rgba(61, 40, 34, .18);
+            --shadow-plum: 0 2px 3px rgba(43, 22, 32, .22), 0 14px 30px rgba(81, 44, 60, .28), 0 32px 64px rgba(81, 44, 60, .2);
+            --shadow-plum-hover: 0 3px 6px rgba(43, 22, 32, .26), 0 22px 44px rgba(81, 44, 60, .34), 0 48px 88px rgba(81, 44, 60, .24);
+            --ease-3d: cubic-bezier(.22, .8, .24, 1);
             --display: "Bodoni Moda", Georgia, serif;
             --display-stroke: .44px;
             --display-stroke-strong: .68px;
@@ -200,8 +207,11 @@
             .section-title,
             .hero__bg-word,
             .hero h1,
-            .hero__lead,
+            .hero__subtitle,
+            .price-plate__now,
             .book-stage__seal,
+            .apt__title,
+            .apt__closing,
             .marquee__track,
             .recognition-card h3,
             .threshold blockquote,
@@ -226,6 +236,7 @@
         :where(
             .section-title,
             .hero h1,
+            .apt__closing,
             .recognition-card h3,
             .threshold blockquote,
             .layer h3,
@@ -241,6 +252,7 @@
         }
 
         .button {
+            position: relative;
             display: inline-flex;
             min-height: 58px;
             align-items: center;
@@ -250,20 +262,45 @@
             border-radius: 999px;
             padding: 16px 25px;
             color: var(--white);
-            background: var(--plum);
-            box-shadow: 0 18px 45px rgba(81, 44, 60, .2);
+            background: linear-gradient(176deg, var(--plum-glow), var(--plum) 46%, #573245);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .3),
+                inset 0 -2px 1px rgba(28, 12, 18, .28),
+                var(--shadow-plum);
             font: 700 .76rem/1 var(--sans);
             letter-spacing: .12em;
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
-            transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+            isolation: isolate;
+            transition: transform .3s var(--ease-3d), box-shadow .3s ease, filter .3s ease;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            inset: 1px 1px 46%;
+            z-index: -1;
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .26), transparent);
+            pointer-events: none;
         }
 
         .button:hover {
-            transform: translateY(-3px);
-            background: var(--plum-deep);
-            box-shadow: 0 24px 60px rgba(81, 44, 60, .3);
+            transform: translateY(-4px) scale(1.012);
+            filter: saturate(1.06);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .34),
+                inset 0 -2px 1px rgba(28, 12, 18, .3),
+                var(--shadow-plum-hover);
+        }
+
+        .button:active {
+            transform: translateY(-1px) scale(.994);
+            box-shadow:
+                inset 0 2px 4px rgba(28, 12, 18, .32),
+                0 2px 6px rgba(43, 22, 32, .28),
+                0 8px 18px rgba(81, 44, 60, .2);
         }
 
         .button .arrow {
@@ -278,13 +315,30 @@
 
         .button--light {
             color: var(--plum-deep);
-            background: var(--paper);
-            box-shadow: 0 18px 50px rgba(29, 17, 20, .18);
+            background: linear-gradient(176deg, #fffefb, var(--paper) 46%, #efe0cf);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .9),
+                inset 0 -2px 1px rgba(120, 88, 70, .2),
+                0 2px 4px rgba(29, 17, 20, .16),
+                0 16px 34px rgba(29, 17, 20, .2),
+                0 34px 66px rgba(29, 17, 20, .16);
         }
 
         .button--light:hover {
-            color: var(--white);
-            background: var(--rose);
+            color: var(--plum-deep);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .95),
+                inset 0 -2px 1px rgba(120, 88, 70, .2),
+                0 3px 7px rgba(29, 17, 20, .18),
+                0 24px 48px rgba(29, 17, 20, .24),
+                0 50px 86px rgba(29, 17, 20, .18);
+        }
+
+        .button--light:active {
+            box-shadow:
+                inset 0 2px 5px rgba(120, 88, 70, .3),
+                0 2px 5px rgba(29, 17, 20, .18),
+                0 8px 18px rgba(29, 17, 20, .16);
         }
 
         .text-link {
@@ -494,51 +548,140 @@
             font-weight: 600;
         }
 
-        .hero__lead {
-            max-width: 650px;
-            margin: 26px 0 0;
+        .hero__subtitle {
+            max-width: 620px;
+            margin: 22px 0 0;
             color: var(--ink-soft);
             font-family: var(--display);
-            font-size: clamp(1.2rem, min(1.65vw, 2.8vh), 1.58rem);
-            line-height: 1.45;
+            font-size: clamp(1.16rem, min(1.6vw, 2.7vh), 1.5rem);
+            font-weight: 500;
+            line-height: 1.42;
+            letter-spacing: -.012em;
         }
 
-        .hero__lead strong {
-            color: var(--ink);
-            font-weight: 600;
-        }
-
-        .hero__actions {
-            display: flex;
+        .hero__tagline {
+            position: relative;
+            display: inline-flex;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 22px;
-            margin-top: 28px;
+            gap: 6px 12px;
+            margin: 20px 0 0;
+            border-radius: 16px;
+            padding: 14px 24px 14px 26px;
+            color: var(--white);
+            background: linear-gradient(122deg, var(--plum-glow), var(--plum) 42%, var(--plum-deep));
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .26),
+                inset 0 -3px 2px rgba(24, 10, 16, .3),
+                var(--shadow-plum);
+            font-size: clamp(.84rem, 1.05vw, 1rem);
+            font-weight: 700;
+            letter-spacing: .015em;
+            line-height: 1.4;
+            text-transform: uppercase;
+            transform: rotate(-.6deg);
+            transition: transform .4s var(--ease-3d), box-shadow .4s ease;
         }
 
-        .hero__facts {
+        .hero__tagline::before {
+            content: "";
+            position: absolute;
+            top: 14%;
+            bottom: 14%;
+            left: 10px;
+            width: 3px;
+            border-radius: 3px;
+            background: linear-gradient(var(--gold), var(--blush));
+        }
+
+        .hero__tagline:hover {
+            transform: rotate(0) translateY(-3px);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .3),
+                inset 0 -3px 2px rgba(24, 10, 16, .3),
+                var(--shadow-plum-hover);
+        }
+
+        .hero__tagline-part {
+            display: inline;
+        }
+
+        .hero__tagline .sep {
+            color: var(--gold);
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        .hero__buy {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 22px;
-            margin-top: 28px;
-            padding-top: 18px;
-            border-top: 1px solid rgba(108, 63, 83, .16);
-        }
-
-        .hero__fact {
-            display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--ink-soft);
-            font-size: .73rem;
-            font-weight: 600;
+            gap: 18px 28px;
+            margin-top: 32px;
         }
 
-        .hero__fact::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--rose);
+        .price-plate {
+            border-radius: 20px;
+            padding: 15px 24px 14px;
+            background: linear-gradient(168deg, var(--white), var(--paper) 42%, #f1e3d2);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .95),
+                inset 0 -2px 1px rgba(122, 90, 72, .18),
+                var(--shadow-lift);
+            transform: perspective(760px) rotateX(2.4deg);
+            transition: transform .4s var(--ease-3d), box-shadow .4s ease;
+        }
+
+        .price-plate:hover {
+            transform: perspective(760px) rotateX(0) translateY(-4px);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .95),
+                inset 0 -2px 1px rgba(122, 90, 72, .18),
+                var(--shadow-lift-hover);
+        }
+
+        .price-plate__label {
+            display: block;
+            color: var(--plum);
+            font-size: .6rem;
+            font-weight: 800;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+
+        .price-plate__now {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin: 7px 0 0;
+            color: var(--plum-deep);
+            font-family: var(--display);
+            font-size: clamp(2.3rem, 3.6vw, 3.05rem);
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -.05em;
+        }
+
+        .price-plate__now span {
+            font-family: var(--sans);
+            font-size: .62rem;
+            font-weight: 800;
+            letter-spacing: .14em;
+            -webkit-text-stroke: 0;
+        }
+
+        .price-plate__was {
+            margin: 9px 0 0;
+            color: var(--ink-soft);
+            font-size: .69rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+        }
+
+        .price-plate__was del {
+            color: var(--clay);
+            text-decoration-thickness: 1.5px;
         }
 
         .book-stage {
@@ -559,6 +702,36 @@
             box-shadow: inset 0 0 80px rgba(255, 255, 255, .6);
         }
 
+        .book-float {
+            position: relative;
+            z-index: 2;
+            animation: bookFloat 7.5s ease-in-out infinite;
+        }
+
+        .book-float::after {
+            content: "";
+            position: absolute;
+            bottom: -32px;
+            left: 50%;
+            width: 76%;
+            height: 24px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(72, 47, 37, .32), transparent 72%);
+            filter: blur(7px);
+            transform: translateX(-44%);
+            animation: bookFloorShadow 7.5s ease-in-out infinite;
+        }
+
+        @keyframes bookFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-14px); }
+        }
+
+        @keyframes bookFloorShadow {
+            0%, 100% { opacity: .9; transform: translateX(-44%) scale(1); }
+            50% { opacity: .55; transform: translateX(-44%) scale(.9); }
+        }
+
         .book {
             position: relative;
             z-index: 2;
@@ -566,7 +739,19 @@
             transform: rotateY(-7deg) rotateX(1.5deg);
             transform-style: preserve-3d;
             transition: transform .5s cubic-bezier(.2, .7, .2, 1);
-            filter: drop-shadow(28px 35px 35px rgba(72, 47, 37, .28));
+            filter: drop-shadow(26px 32px 30px rgba(72, 47, 37, .3));
+        }
+
+        .book::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 3px 8px 8px 3px;
+            background:
+                linear-gradient(90deg, rgba(30, 15, 22, .36), rgba(30, 15, 22, .08) 11px, transparent 28px),
+                linear-gradient(106deg, rgba(255, 255, 255, .3) 0 11%, rgba(255, 255, 255, .05) 19%, transparent 31%);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2);
+            pointer-events: none;
         }
 
         .book::before {
@@ -598,19 +783,33 @@
             place-items: center;
             border-radius: 50%;
             color: var(--white);
-            background: var(--plum);
-            box-shadow: 0 20px 50px rgba(71, 38, 51, .32);
-            font: 500 .92rem/1.15 var(--display);
+            background:
+                radial-gradient(circle at 34% 26%, rgba(255, 255, 255, .4), transparent 54%),
+                linear-gradient(150deg, var(--plum-glow), var(--plum) 44%, var(--plum-deep));
+            box-shadow:
+                inset 0 2px 2px rgba(255, 255, 255, .3),
+                inset 0 -4px 5px rgba(24, 10, 16, .32),
+                0 3px 6px rgba(43, 22, 32, .26),
+                0 20px 44px rgba(71, 38, 51, .34);
+            font: 600 1.62rem/1 var(--display);
+            letter-spacing: -.03em;
             text-align: center;
             transform: rotate(8deg);
+            animation: sealFloat 6.5s ease-in-out infinite;
         }
 
         .book-stage__seal small {
             display: block;
-            margin-top: 6px;
-            font: 700 .55rem/1 var(--sans);
-            letter-spacing: .14em;
+            margin-top: 5px;
+            font: 700 .5rem/1 var(--sans);
+            letter-spacing: .16em;
             text-transform: uppercase;
+            -webkit-text-stroke: 0;
+        }
+
+        @keyframes sealFloat {
+            0%, 100% { transform: rotate(8deg) translateY(0); }
+            50% { transform: rotate(6deg) translateY(-9px); }
         }
 
         .book-stage__line {
@@ -764,6 +963,262 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, .28);
             box-shadow: inset 0 0 30px rgba(255, 255, 255, .3);
+        }
+
+        /* ── Apartados desplegables (tarjetas moradas 3D) ── */
+        .apartados {
+            padding: clamp(100px, 12vw, 165px) 0;
+            background: var(--paper);
+            scroll-margin-top: 110px;
+        }
+
+        .apartados__head {
+            max-width: 780px;
+            margin-bottom: clamp(44px, 5vw, 68px);
+        }
+
+        .apartados__head .section-title {
+            font-size: clamp(2.7rem, 5vw, 4.6rem);
+        }
+
+        .apartados__list {
+            display: grid;
+            gap: 22px;
+        }
+
+        .apartados__list > *:nth-child(2) { --reveal-delay: .09s; }
+        .apartados__list > *:nth-child(3) { --reveal-delay: .18s; }
+        .apartados__list > *:nth-child(4) { --reveal-delay: .27s; }
+
+        .apt {
+            position: relative;
+            border-radius: 26px;
+            background: linear-gradient(158deg, var(--plum-glow), var(--plum) 44%, var(--plum-deep));
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .22),
+                inset 0 -3px 2px rgba(24, 10, 16, .32),
+                var(--shadow-plum);
+            scroll-margin-top: 120px;
+            transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
+            transition: transform .45s var(--ease-3d), box-shadow .45s ease;
+        }
+
+        .apt::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at var(--mx, 40%) var(--my, 0%), rgba(255, 255, 255, .17), transparent 44%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .45s ease;
+        }
+
+        .apt:hover {
+            --ty: -6px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .26),
+                inset 0 -3px 2px rgba(24, 10, 16, .32),
+                var(--shadow-plum-hover);
+        }
+
+        .apt:hover::before {
+            opacity: 1;
+        }
+
+        .apt__head {
+            position: relative;
+            display: grid;
+            align-items: start;
+            gap: 0 24px;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            grid-template-areas:
+                "num title toggle"
+                "num teaser toggle";
+            padding: 30px 30px 32px;
+        }
+
+        .apt__num {
+            grid-area: num;
+            display: grid;
+            width: 58px;
+            height: 58px;
+            place-items: center;
+            align-self: center;
+            border-radius: 50%;
+            color: var(--plum-deep);
+            background: radial-gradient(circle at 32% 26%, #fffdf9, var(--blush) 58%, #c99a8c);
+            box-shadow:
+                inset 0 2px 3px rgba(255, 255, 255, .85),
+                inset 0 -4px 6px rgba(140, 90, 78, .45),
+                0 6px 14px rgba(24, 10, 16, .32),
+                0 16px 30px rgba(24, 10, 16, .22);
+            font: 800 1.32rem/1 var(--sans);
+            letter-spacing: .01em;
+            animation: orbFloat 5.5s ease-in-out infinite;
+            transition: transform .4s var(--ease-3d), background .4s ease, color .4s ease;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-6px) scale(1.03); }
+        }
+
+        .apt:hover .apt__num {
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .apt.is-open .apt__num {
+            color: #3d2712;
+            background: radial-gradient(circle at 32% 26%, #fff8e6, var(--gold) 58%, #a4762f);
+        }
+
+        .apt__title {
+            grid-area: title;
+            margin: 0;
+            color: var(--white);
+            font: 600 clamp(1.45rem, 2.5vw, 2.25rem)/1.1 var(--display);
+            letter-spacing: -.035em;
+        }
+
+        .apt__trigger {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            color: inherit;
+            background: none;
+            cursor: pointer;
+            font: inherit;
+            letter-spacing: inherit;
+            text-align: left;
+        }
+
+        .apt__trigger::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 26px;
+        }
+
+        .apt__trigger:focus-visible {
+            outline: none;
+        }
+
+        .apt__trigger:focus-visible::after {
+            outline: 3px solid var(--gold);
+            outline-offset: -4px;
+        }
+
+        .apt__teaser {
+            grid-area: teaser;
+            max-width: 64ch;
+            margin: 12px 0 0;
+            color: rgba(255, 253, 249, .82);
+            font-size: clamp(.9rem, 1.05vw, .98rem);
+            font-weight: 400;
+            line-height: 1.72;
+        }
+
+        .apt__toggle {
+            grid-area: toggle;
+            display: grid;
+            align-self: center;
+            justify-items: center;
+            gap: 9px;
+        }
+
+        .apt__hint {
+            color: rgba(255, 253, 249, .8);
+            font-size: .58rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .apt__chev {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: rgba(255, 255, 255, .22);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, .38),
+                inset 0 2px 0 rgba(255, 255, 255, .3),
+                inset 0 -3px 4px rgba(20, 8, 14, .25),
+                0 8px 18px rgba(20, 8, 14, .32);
+            transition: transform .5s var(--ease-3d), background .35s ease, color .35s ease;
+        }
+
+        .apt__chev svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        .apt:hover .apt__chev {
+            background: rgba(255, 255, 255, .34);
+            transform: translateY(2px);
+        }
+
+        .apt.is-open .apt__chev {
+            color: var(--plum-deep);
+            background: linear-gradient(170deg, var(--white), var(--paper) 60%, #eddfcd);
+            transform: rotate(180deg);
+        }
+
+        .apt__panel {
+            display: grid;
+            grid-template-rows: 0fr;
+            visibility: hidden;
+            transition: grid-template-rows .55s var(--ease-3d), visibility 0s linear .55s;
+        }
+
+        .apt.is-open .apt__panel {
+            grid-template-rows: 1fr;
+            visibility: visible;
+            transition: grid-template-rows .55s var(--ease-3d), visibility 0s;
+        }
+
+        .apt__clip {
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        .apt__sheet {
+            margin: 0 14px 14px;
+            border-radius: 20px;
+            padding: clamp(26px, 3.2vw, 46px);
+            background: linear-gradient(172deg, var(--white), var(--paper) 52%, #f4e8da);
+            box-shadow:
+                inset 0 2px 5px rgba(120, 88, 70, .14),
+                inset 0 -1px 0 rgba(255, 255, 255, .8);
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: opacity .45s ease .08s, transform .5s var(--ease-3d) .08s;
+        }
+
+        .apt.is-open .apt__sheet {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .apt__closing {
+            margin-top: 34px !important;
+            color: var(--plum) !important;
+            font: 600 clamp(1.7rem, 3vw, 2.7rem)/1.1 var(--display);
+            letter-spacing: -.035em;
+        }
+
+        .apt__closing em {
+            display: block;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .apt__cta {
+            margin-top: 36px;
         }
 
         .content-section {
@@ -1317,7 +1772,9 @@
         .offer__visual img {
             width: 100%;
             border-radius: 48% 48% 18px 18px / 30% 30% 18px 18px;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lift-hover);
+            transform: perspective(1300px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+            transition: transform .5s var(--ease-3d);
         }
 
         .offer__badge {
@@ -1330,10 +1787,33 @@
             place-items: center;
             border-radius: 50%;
             color: var(--white);
-            background: var(--plum);
-            font: 500 1.2rem/1.05 var(--display);
+            background:
+                radial-gradient(circle at 34% 26%, rgba(255, 255, 255, .4), transparent 54%),
+                linear-gradient(150deg, var(--plum-glow), var(--plum) 44%, var(--plum-deep));
+            box-shadow:
+                inset 0 2px 2px rgba(255, 255, 255, .3),
+                inset 0 -4px 5px rgba(24, 10, 16, .32),
+                0 3px 6px rgba(43, 22, 32, .26),
+                0 20px 44px rgba(71, 38, 51, .34);
+            font: 600 1.85rem/1 var(--display);
+            letter-spacing: -.03em;
             text-align: center;
             transform: rotate(-10deg);
+            animation: badgeFloat 6.5s ease-in-out infinite;
+        }
+
+        .offer__badge small {
+            display: block;
+            margin-top: 5px;
+            font: 700 .5rem/1 var(--sans);
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            -webkit-text-stroke: 0;
+        }
+
+        @keyframes badgeFloat {
+            0%, 100% { transform: rotate(-10deg) translateY(0); }
+            50% { transform: rotate(-8deg) translateY(-9px); }
         }
 
         .offer__copy {
@@ -1344,11 +1824,42 @@
             font-size: clamp(3.7rem, 6.5vw, 6.8rem);
         }
 
+        .offer__price-box {
+            display: inline-block;
+            margin-top: 30px;
+            border-radius: 22px;
+            padding: 18px 30px 20px;
+            background: linear-gradient(168deg, var(--white), var(--paper) 42%, #f1e3d2);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .95),
+                inset 0 -2px 1px rgba(122, 90, 72, .18),
+                var(--shadow-lift);
+            transform: perspective(900px) rotateX(2.2deg);
+            transition: transform .4s var(--ease-3d), box-shadow .4s ease;
+        }
+
+        .offer__price-box:hover {
+            transform: perspective(900px) rotateX(0) translateY(-4px);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .95),
+                inset 0 -2px 1px rgba(122, 90, 72, .18),
+                var(--shadow-lift-hover);
+        }
+
+        .offer__price-label {
+            display: block;
+            color: var(--plum);
+            font-size: .62rem;
+            font-weight: 800;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+
         .offer__price {
             display: flex;
             align-items: baseline;
             gap: 10px;
-            margin-top: 34px;
+            margin-top: 8px;
             color: var(--plum);
         }
 
@@ -1365,15 +1876,17 @@
         }
 
         .offer__old-price {
-            margin: 14px 0 0;
+            margin: 10px 0 0;
             color: var(--ink-soft);
-            font-size: .92rem;
-            font-weight: 600;
+            font-size: .71rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
         }
 
         .offer__old-price del {
-            text-decoration-thickness: 1px;
-            text-decoration-color: var(--plum);
+            color: var(--clay);
+            text-decoration-thickness: 1.5px;
         }
 
         .offer__support {
@@ -1622,10 +2135,19 @@
             border-radius: 18px;
             padding: 10px 11px 10px 17px;
             color: var(--white);
-            background: rgba(63, 37, 49, .94);
-            box-shadow: 0 15px 45px rgba(45, 28, 34, .35);
+            background: linear-gradient(176deg, rgba(126, 74, 98, .96), rgba(63, 37, 49, .96));
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .22),
+                inset 0 -2px 2px rgba(20, 8, 14, .3),
+                0 4px 10px rgba(45, 28, 34, .3),
+                0 18px 40px rgba(45, 28, 34, .38);
             backdrop-filter: blur(16px);
             text-decoration: none;
+            transition: transform .25s var(--ease-3d);
+        }
+
+        .mobile-buy:active {
+            transform: scale(.985);
         }
 
         .mobile-buy__copy {
@@ -1637,8 +2159,14 @@
             color: rgba(255, 255, 255, .65);
             font-size: .58rem;
             font-weight: 600;
-            letter-spacing: .1em;
+            letter-spacing: .08em;
             text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .mobile-buy__copy small del {
+            color: var(--blush);
+            text-decoration-thickness: 1px;
         }
 
         .mobile-buy__copy strong {
@@ -1646,25 +2174,31 @@
         }
 
         .mobile-buy__action {
+            flex: 0 0 auto;
             border-radius: 12px;
             padding: 12px 14px;
             color: var(--plum-deep);
-            background: var(--paper);
+            background: linear-gradient(176deg, #fffefb, var(--paper) 50%, #eddfcd);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, .9),
+                inset 0 -2px 1px rgba(120, 88, 70, .2),
+                0 4px 10px rgba(20, 8, 14, .28);
             font-size: .64rem;
             font-weight: 800;
             letter-spacing: .08em;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         [data-reveal] {
             opacity: 0;
-            transform: translateY(26px);
-            transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1);
+            transform: translateY(32px) scale(.986);
+            transition: opacity .85s ease var(--reveal-delay, 0s), transform .95s var(--ease-3d) var(--reveal-delay, 0s);
         }
 
         [data-reveal].is-visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
 
         @media (min-width: 1001px) and (max-height: 820px) {
@@ -1673,21 +2207,25 @@
                 padding: 118px 0 30px;
             }
 
-            .hero__overline {
-                margin-bottom: 14px;
+            .hero__subtitle {
+                margin-top: 16px;
             }
 
-            .hero__lead {
-                margin-top: 18px;
+            .hero__tagline {
+                margin-top: 14px;
+                padding-block: 11px;
             }
 
-            .hero__actions {
-                margin-top: 20px;
+            .hero__buy {
+                margin-top: 22px;
             }
 
-            .hero__facts {
-                margin-top: 18px;
-                padding-top: 14px;
+            .price-plate {
+                padding: 12px 20px 11px;
+            }
+
+            .price-plate__now {
+                font-size: clamp(2rem, 3vw, 2.5rem);
             }
 
             .book-stage {
@@ -1703,7 +2241,7 @@
                 bottom: 32px;
                 width: 98px;
                 height: 98px;
-                font-size: .82rem;
+                font-size: 1.4rem;
             }
         }
 
@@ -1741,6 +2279,11 @@
 
             .book-stage {
                 min-height: 650px;
+            }
+
+            .apt__head {
+                gap: 0 18px;
+                padding: 26px 24px 28px;
             }
 
             .recognition__grid {
@@ -1826,29 +2369,48 @@
             }
 
             .hero h1 {
-                font-size: clamp(3.75rem, 18vw, 5.8rem);
+                font-size: clamp(2.85rem, 14.6vw, 5.2rem);
             }
 
             .hero h1 em {
                 margin-left: 20px;
             }
 
-            .hero__lead {
-                margin-top: 26px;
-                font-size: 1.28rem;
+            .hero__subtitle {
+                margin-top: 20px;
+                font-size: 1.16rem;
             }
 
-            .hero__actions {
+            .hero__tagline {
+                display: block;
+                margin-top: 18px;
+                border-radius: 14px;
+                padding: 13px 18px 13px 22px;
+                font-size: .78rem;
+                letter-spacing: .03em;
+            }
+
+            .hero__tagline-part {
+                display: block;
+            }
+
+            .hero__buy {
                 align-items: stretch;
                 flex-direction: column;
+                gap: 16px;
+                margin-top: 26px;
             }
 
-            .hero__actions .text-link {
-                justify-content: center;
+            .price-plate {
+                transform: none;
             }
 
-            .hero__facts {
-                gap: 10px 16px;
+            .price-plate:hover {
+                transform: translateY(-3px);
+            }
+
+            .hero__buy .button {
+                width: 100%;
             }
 
             .book-stage {
@@ -1864,7 +2426,7 @@
                 bottom: 48px;
                 width: 102px;
                 height: 102px;
-                font-size: .86rem;
+                font-size: 1.45rem;
             }
 
             .marquee__item {
@@ -1890,6 +2452,7 @@
                 margin-top: 58px;
             }
 
+            .apartados,
             .threshold,
             .content-section,
             .video-section,
@@ -1897,6 +2460,68 @@
             .offer,
             .faq {
                 padding-block: 92px;
+            }
+
+            .apartados__list {
+                gap: 18px;
+            }
+
+            .apt {
+                border-radius: 22px;
+            }
+
+            .apt__head {
+                gap: 0 14px;
+                grid-template-columns: auto minmax(0, 1fr);
+                grid-template-areas:
+                    "num toggle"
+                    "title title"
+                    "teaser teaser";
+                padding: 22px 20px 24px;
+            }
+
+            .apt__num {
+                width: 50px;
+                height: 50px;
+                font-size: 1.16rem;
+            }
+
+            .apt__title {
+                margin-top: 18px;
+                font-size: clamp(1.5rem, 7.2vw, 2rem);
+            }
+
+            .apt__trigger::after {
+                border-radius: 22px;
+            }
+
+            .apt__teaser {
+                margin-top: 10px;
+                font-size: .92rem;
+            }
+
+            .apt__toggle {
+                justify-self: end;
+                gap: 0;
+            }
+
+            .apt__hint {
+                display: none;
+            }
+
+            .apt__chev {
+                width: 44px;
+                height: 44px;
+            }
+
+            .apt__sheet {
+                margin: 0 10px 10px;
+                border-radius: 16px;
+                padding: 26px 20px 28px;
+            }
+
+            .apt__cta .button {
+                width: 100%;
             }
 
             .threshold__layers {
@@ -1977,7 +2602,17 @@
                 left: -4px;
                 width: 105px;
                 height: 105px;
-                font-size: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .offer__price-box {
+                display: block;
+                padding: 16px 22px 18px;
+                transform: none;
+            }
+
+            .offer__price-box:hover {
+                transform: translateY(-3px);
             }
 
             .offer__actions {
@@ -2094,12 +2729,21 @@
             <div class="shell hero__grid">
                 <div class="hero__copy" data-reveal>
                     <h1>El hogar que <em>construí</em> después del adiós</h1>
-                    <p class="hero__lead">
-                        Un viaje de comprensión y reencuentro contigo misma.
-                        <strong>De aguantar por los hijos a enseñarles otra forma de amar.</strong>
+
+                    <p class="hero__subtitle">Un viaje de comprensión y reencuentro contigo misma.</p>
+
+                    <p class="hero__tagline">
+                        <span class="hero__tagline-part">De aguantar por los hijos <span class="sep" aria-hidden="true">/</span></span>
+                        <span class="hero__tagline-part">a enseñarles otra forma de amar</span>
                     </p>
 
-                    <div class="hero__actions">
+                    <div class="hero__buy">
+                        <div class="price-plate">
+                            <span class="price-plate__label">Precio de lanzamiento</span>
+                            <p class="price-plate__now">$25.900 <span>COP</span></p>
+                            <p class="price-plate__was">Precio oficial <del>$40.000 COP</del></p>
+                        </div>
+
                         <a class="button" data-wa data-location="hero" href="https://wa.me/573112602355?text=HOGAR" target="_blank" rel="noopener noreferrer">
                             Quiero mi libro <span class="arrow" aria-hidden="true">→</span>
                         </a>
@@ -2110,115 +2754,192 @@
                     <div class="book-stage__arch" aria-hidden="true"></div>
                     <div class="book-stage__line book-stage__line--one" aria-hidden="true"></div>
                     <div class="book-stage__line book-stage__line--two" aria-hidden="true"></div>
-                    <div class="book" id="book">
-                        <img src="assets/book-cover.webp" width="1000" height="1500" alt="Portada de El hogar que construí después del adiós, de Alexandra Ortega">
+                    <div class="book-float">
+                        <div class="book" id="book">
+                            <img src="assets/book-cover.webp" width="1000" height="1500" alt="Portada de El hogar que construí después del adiós, de Alexandra Ortega">
+                        </div>
                     </div>
-                    <div class="book-stage__seal">
-                        <span>Precio de<br>lanzamiento<small>$25.900 COP</small></span>
+                    <div class="book-stage__seal" aria-hidden="true">
+                        <span>−35%<small>Lanzamiento</small></span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section content-section--paper" id="de-que-se-trata">
+        <section class="apartados" id="el-libro">
             <div class="shell">
-                <div class="content-section__grid">
-                    <div class="content-section__heading" data-reveal>
-                        <span class="content-section__index" aria-hidden="true">01</span>
-                        <h2 class="section-title">De qué se trata este libro</h2>
+                <header class="apartados__head" data-reveal>
+                    <p class="eyebrow">El libro en detalle</p>
+                    <h2 class="section-title">Todo lo que necesitas saber, en cuatro puntos.</h2>
+                    <p class="section-intro">Toca cada tarjeta para abrirla y leer el contenido completo. Empieza por la que más te resuene.</p>
+                </header>
+
+                <div class="apartados__list">
+                    <div class="apt-shell" data-reveal data-tilt>
+                        <article class="apt" id="de-que-se-trata">
+                            <div class="apt__head">
+                                <span class="apt__num" aria-hidden="true">1</span>
+                                <h3 class="apt__title">
+                                    <button class="apt__trigger" id="apt-btn-1" type="button" aria-expanded="false" aria-controls="apt-panel-1">¿De qué se trata este libro?</button>
+                                </h3>
+                                <p class="apt__teaser">«El hogar que construí después del adiós» cuenta la historia de Elena, pero mientras avanzas por sus páginas, comienzas a reconocer en ella escenas, pensamientos y silencios que también podrían pertenecer a tu propia historia…</p>
+                                <span class="apt__toggle" aria-hidden="true">
+                                    <span class="apt__hint">Ver más</span>
+                                    <span class="apt__chev">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"/></svg>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="apt__panel" id="apt-panel-1" role="region" aria-labelledby="apt-btn-1">
+                                <div class="apt__clip">
+                                    <div class="apt__sheet">
+                                        <div class="long-copy">
+                                            <p>Desde afuera, la vida de Elena parece normal: una casa en orden, un hijo feliz y una pareja estable. Por dentro, sin embargo, vive en alerta. Mide cada palabra, anticipa el humor de su pareja, guarda silencio y se repite que debe aguantar «por los hijos».</p>
+
+                                            <p>A lo largo del libro, Elena empieza a hacerse preguntas que tal vez también te hayas hecho:</p>
+                                            <div class="question-stack">
+                                                <p>¿En qué momento comenzaste a confundir amor con miedo?</p>
+                                                <p>¿Cuánto de ti has tenido que dejar atrás para sostener tu familia?</p>
+                                                <p>¿Y qué aprenden tus hijos de la forma en que estás viviendo el amor?</p>
+                                            </div>
+
+                                            <p>Este no es solo un relato. Tampoco es un manual frío ni una lista de consejos. En cada capítulo encontrarás:</p>
+                                            <ul class="editorial-list">
+                                                <li>Una historia en la que puedes reconocerte.</li>
+                                                <li>Una explicación clara sobre el apego, el sistema nervioso, la dependencia emocional y los patrones que se transmiten de una generación a otra.</li>
+                                                <li>Ejercicios para comprender lo que te ocurre, ponerle nombre a lo que sientes y empezar a trabajar en tu propia historia.</li>
+                                            </ul>
+
+                                            <p>Así, no solo acompañas a Elena en su proceso. También encuentras un espacio para mirar tu vida con más claridad y entender por qué has permanecido, por qué te ha costado soltar y qué necesitas para empezar a tomar decisiones diferentes.</p>
+
+                                            <p>Este libro no está escrito para decirte si debes quedarte o irte. No promete rupturas ni finales perfectos. Te acompaña a comprender lo que estás viviendo, sin juzgarte, para que puedas decidir desde la conciencia y no desde el miedo.</p>
+
+                                            <p>Escrito por Alexandra Ortega, psicóloga, coach y fundadora de GEMB, es un libro de acompañamiento emocional y educativo. No reemplaza la terapia ni pretende hacerlo; puede ser una puerta de entrada para comenzar a entenderte y dar tus primeros pasos en el proceso.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
 
-                    <div class="long-copy" data-reveal>
-                        <p>«El hogar que construí después del adiós» cuenta la historia de Elena. Pero mientras avanzas en sus páginas, quizá empieces a reconocer en ella escenas, pensamientos o silencios que también forman parte de tu historia.</p>
+                    <div class="apt-shell" data-reveal data-tilt>
+                        <article class="apt" id="antes-de-seguir">
+                            <div class="apt__head">
+                                <span class="apt__num" aria-hidden="true">2</span>
+                                <h3 class="apt__title">
+                                    <button class="apt__trigger" id="apt-btn-2" type="button" aria-expanded="false" aria-controls="apt-panel-2">Antes de seguir, hay algo que necesitas saber</button>
+                                </h3>
+                                <p class="apt__teaser">Este libro no te ofrece una fórmula rápida ni una lista de pasos para cambiar tu vida de un día para otro. Hay algo que preferimos decirte con honestidad antes de que sigas leyendo…</p>
+                                <span class="apt__toggle" aria-hidden="true">
+                                    <span class="apt__hint">Ver más</span>
+                                    <span class="apt__chev">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"/></svg>
+                                    </span>
+                                </span>
+                            </div>
 
-                        <p>Desde afuera, la vida de Elena parece normal: una casa en orden, un hijo feliz y una pareja estable. Por dentro, sin embargo, vive en alerta. Mide cada palabra, anticipa el humor de su pareja, guarda silencio y se repite que debe aguantar «por los hijos».</p>
+                            <div class="apt__panel" id="apt-panel-2" role="region" aria-labelledby="apt-btn-2">
+                                <div class="apt__clip">
+                                    <div class="apt__sheet">
+                                        <div class="long-copy">
+                                            <p>Si decides mirar de frente el patrón que te ha llevado a confundir amor con miedo, necesitarás tiempo, constancia y una decisión que probablemente tendrás que renovar muchas veces.</p>
 
-                        <p>A lo largo del libro, Elena empieza a hacerse preguntas que tal vez también te hayas hecho:</p>
-                        <div class="question-stack">
-                            <p>¿En qué momento comenzaste a confundir amor con miedo?</p>
-                            <p>¿Cuánto de ti has tenido que dejar atrás para sostener tu familia?</p>
-                            <p>¿Y qué aprenden tus hijos de la forma en que estás viviendo el amor?</p>
-                        </div>
+                                            <p>Ese patrón no apareció de la nada. Lo aprendiste, lo repetiste y, durante años, encontraste razones para permanecer en él. Por eso abandonarlo no siempre se sentirá como libertad. Al principio puede traer culpa, miedo, vacío, dudas y la tentación de regresar a lo conocido.</p>
 
-                        <p>Este no es solo un relato. Tampoco es un manual frío ni una lista de consejos. En cada capítulo encontrarás:</p>
-                        <ul class="editorial-list">
-                            <li>Una historia en la que puedes reconocerte.</li>
-                            <li>Una explicación clara sobre el apego, el sistema nervioso, la dependencia emocional y los patrones que se transmiten de una generación a otra.</li>
-                            <li>Ejercicios para comprender lo que te ocurre, ponerle nombre a lo que sientes y empezar a trabajar en tu propia historia.</li>
-                        </ul>
+                                            <p>No te decimos esto para desanimarte, sino para hablarte con honestidad. Seguir igual también tiene un costo: continuar luchando no para crecer, sino apenas para sobrevivir dentro de una relación, una familia o una vida que no es la que deseas.</p>
 
-                        <p>Así, no solo acompañas a Elena en su proceso. También encuentras un espacio para mirar tu vida con más claridad y entender por qué has permanecido, por qué te ha costado soltar y qué necesitas para empezar a tomar decisiones diferentes.</p>
+                                            <p>La diferencia es que, si decides comenzar este proceso, tu esfuerzo dejará de estar dedicado a sostener aquello que te lastima. Empezará a construir una vida en la que puedas amar sin desaparecer, cuidar a tus hijos sin abandonarte y elegir desde el amor, no desde el miedo.</p>
 
-                        <p>Este libro no está escrito para decirte si debes quedarte o irte. No promete rupturas ni finales perfectos. Te acompaña a comprender lo que estás viviendo, sin juzgarte, para que puedas decidir desde la conciencia y no desde el miedo.</p>
+                                            <p class="apt__closing">No se trata de amar menos. Se trata de amar mejor.</p>
 
-                        <p>Escrito por Alexandra Ortega, psicóloga, coach y fundadora de GEMB, es un libro de acompañamiento emocional y educativo. No reemplaza la terapia ni pretende hacerlo; puede ser una puerta de entrada para comenzar a entenderte y dar tus primeros pasos en el proceso.</p>
+                                            <div class="apt__cta">
+                                                <a class="button" data-wa data-location="about" href="https://wa.me/573112602355?text=HOGAR" target="_blank" rel="noopener noreferrer">
+                                                    Quiero mi libro <span class="arrow" aria-hidden="true">→</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </div>
 
-                <aside class="honesty-block" data-reveal aria-label="Antes de seguir">
-                    <div class="honesty-block__inner">
-                        <h3>Antes de seguir, hay algo que necesitas saber.</h3>
-                        <p>Este libro no te ofrece una fórmula rápida ni una lista de pasos para cambiar tu vida de un día para otro. Si decides mirar de frente el patrón que te ha llevado a confundir amor con miedo, necesitarás tiempo, constancia y una decisión que probablemente tendrás que renovar muchas veces.</p>
-                        <p>Ese patrón no apareció de la nada. Lo aprendiste, lo repetiste y, durante años, encontraste razones para permanecer en él. Por eso abandonarlo no siempre se sentirá como libertad. Al principio puede traer culpa, miedo, vacío, dudas y la tentación de regresar a lo conocido.</p>
-                        <p>No te decimos esto para desanimarte, sino para hablarte con honestidad. Seguir igual también tiene un costo: continuar luchando no para crecer, sino apenas para sobrevivir dentro de una relación, una familia o una vida que no es la que deseas.</p>
-                        <p>La diferencia es que, si decides comenzar este proceso, tu esfuerzo dejará de estar dedicado a sostener aquello que te lastima. Empezará a construir una vida en la que puedas amar sin desaparecer, cuidar a tus hijos sin abandonarte y elegir desde el amor, no desde el miedo.</p>
-                        <p class="honesty-block__closing">No se trata de amar menos. Se trata de amar mejor.</p>
-                        <div class="content-section__cta">
-                            <a class="button button--light" data-wa data-location="about" href="https://wa.me/573112602355?text=HOGAR" target="_blank" rel="noopener noreferrer">
-                                Quiero mi libro <span class="arrow" aria-hidden="true">→</span>
-                            </a>
-                        </div>
+                    <div class="apt-shell" data-reveal data-tilt>
+                        <article class="apt" id="para-quien">
+                            <div class="apt__head">
+                                <span class="apt__num" aria-hidden="true">3</span>
+                                <h3 class="apt__title">
+                                    <button class="apt__trigger" id="apt-btn-3" type="button" aria-expanded="false" aria-controls="apt-panel-3">¿Para quién es este libro?</button>
+                                </h3>
+                                <p class="apt__teaser">Es para la mujer que está lista para elegirse, aunque todavía no sepa cómo empezar. Para quien ha puesto a todos por delante, ha aguantado «por los hijos» y está cansada de ser la última prioridad de su propia vida…</p>
+                                <span class="apt__toggle" aria-hidden="true">
+                                    <span class="apt__hint">Ver más</span>
+                                    <span class="apt__chev">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"/></svg>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="apt__panel" id="apt-panel-3" role="region" aria-labelledby="apt-btn-3">
+                                <div class="apt__clip">
+                                    <div class="apt__sheet">
+                                        <div class="long-copy">
+                                            <p>Tal vez todavía estás dentro de esa relación. Tal vez ya te fuiste, pero una parte de ti sigue atrapada en la culpa, la ansiedad o la duda. Tal vez llevas años diciendo «por los hijos», «por la familia» o «quizá algún día cambie», aunque en el fondo sabes que también has estado renunciando a ti.</p>
+
+                                            <p>Este libro es para la mujer que:</p>
+                                            <ul class="editorial-list audience-list">
+                                                <li>Está decidida a elegirse, aunque todavía tenga miedo.</li>
+                                                <li>Quiere entender por qué le cuesta soltar, poner límites o dejar de justificar lo que le duele.</li>
+                                                <li>Está cansada de ser fuerte para todos y sentirse sola cuando nadie la sostiene a ella.</li>
+                                                <li>No busca que alguien decida por ella, sino recuperar la claridad para tomar sus propias decisiones.</li>
+                                                <li>Quiere dejar de repetir la historia de su madre, su abuela o las mujeres que aprendieron a aguantar en silencio.</li>
+                                                <li>Desea construir una relación con el amor, la maternidad y consigo misma sin tener que desaparecer.</li>
+                                            </ul>
+
+                                            <p>Invertir en estas páginas es hacer una elección concreta por ti: dejar de ser la segunda opción y empezar a ocupar tu lugar.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </aside>
-            </div>
-        </section>
 
-        <section class="content-section content-section--warm" id="para-quien">
-            <div class="shell content-section__grid">
-                <div class="content-section__heading" data-reveal>
-                    <span class="content-section__index" aria-hidden="true">02</span>
-                    <h2 class="section-title">Para quién es este libro</h2>
-                </div>
+                    <div class="apt-shell" data-reveal data-tilt>
+                        <article class="apt" id="no-es-para-ti">
+                            <div class="apt__head">
+                                <span class="apt__num" aria-hidden="true">4</span>
+                                <h3 class="apt__title">
+                                    <button class="apt__trigger" id="apt-btn-4" type="button" aria-expanded="false" aria-controls="apt-panel-4">¿Para quién NO es este libro?</button>
+                                </h3>
+                                <p class="apt__teaser">Este libro no intenta convencerte de quedarte o irte. Tampoco te ofrece una fórmula rápida, una lista de pasos ni una respuesta que otra persona pueda tomar por ti…</p>
+                                <span class="apt__toggle" aria-hidden="true">
+                                    <span class="apt__hint">Ver más</span>
+                                    <span class="apt__chev">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"/></svg>
+                                    </span>
+                                </span>
+                            </div>
 
-                <div class="long-copy" data-reveal>
-                    <p>Este libro es para la mujer que está lista para elegirse, aunque todavía no sepa cómo empezar. Para quien ha puesto a todos por delante, ha aguantado «por los hijos» y está cansada de ser la última prioridad de su propia vida.</p>
+                            <div class="apt__panel" id="apt-panel-4" role="region" aria-labelledby="apt-btn-4">
+                                <div class="apt__clip">
+                                    <div class="apt__sheet">
+                                        <div class="long-copy">
+                                            <p>No promete rupturas, finales perfectos ni cambios de un día para otro. Y no reemplaza la terapia.</p>
 
-                    <p>Tal vez todavía estás dentro de esa relación. Tal vez ya te fuiste, pero una parte de ti sigue atrapada en la culpa, la ansiedad o la duda. Tal vez llevas años diciendo «por los hijos», «por la familia» o «quizá algún día cambie», aunque en el fondo sabes que también has estado renunciando a ti.</p>
+                                            <p>Tampoco es para la mujer que todavía necesita convencerse de que «no está tan mal». Después de mucho tiempo viviendo en tensión, una puede empezar a llamar normal a lo que antes le habría parecido insoportable: medir cada palabra, anticipar el humor de otra persona y callar para mantener la calma.</p>
 
-                    <p>Este libro es para la mujer que:</p>
-                    <ul class="editorial-list audience-list">
-                        <li>Está decidida a elegirse, aunque todavía tenga miedo.</li>
-                        <li>Quiere entender por qué le cuesta soltar, poner límites o dejar de justificar lo que le duele.</li>
-                        <li>Está cansada de ser fuerte para todos y sentirse sola cuando nadie la sostiene a ella.</li>
-                        <li>No busca que alguien decida por ella, sino recuperar la claridad para tomar sus propias decisiones.</li>
-                        <li>Quiere dejar de repetir la historia de su madre, su abuela o las mujeres que aprendieron a aguantar en silencio.</li>
-                        <li>Desea construir una relación con el amor, la maternidad y consigo misma sin tener que desaparecer.</li>
-                    </ul>
+                                            <p>Si hoy prefieres no mirar de frente lo que ocurre ni hacerte preguntas incómodas, este libro no te servirá. No porque estés equivocada, sino porque todavía no estás dispuesta a abrir esa conversación contigo.</p>
 
-                    <p>Invertir en estas páginas es hacer una elección concreta por ti: dejar de ser la segunda opción y empezar a ocupar tu lugar.</p>
-                </div>
-            </div>
-        </section>
+                                            <p>Estas páginas empiezan a tener sentido cuando puedes reconocer que algo necesita cambiar y estás preparada para examinar tu historia con honestidad.</p>
 
-        <section class="content-section content-section--paper" id="no-es-para-ti">
-            <div class="shell content-section__grid">
-                <div class="content-section__heading" data-reveal>
-                    <span class="content-section__index" aria-hidden="true">03</span>
-                    <h2 class="section-title">Para quién NO es este libro</h2>
-                </div>
-
-                <div class="long-copy" data-reveal>
-                    <p>Este libro no intenta convencerte de quedarte o irte. Tampoco te ofrece una fórmula rápida, una lista de pasos ni una respuesta que otra persona pueda tomar por ti.</p>
-
-                    <p>No promete rupturas, finales perfectos ni cambios de un día para otro. Y no reemplaza la terapia.</p>
-
-                    <p>Tampoco es para la mujer que todavía necesita convencerse de que «no está tan mal». Después de mucho tiempo viviendo en tensión, una puede empezar a llamar normal a lo que antes le habría parecido insoportable: medir cada palabra, anticipar el humor de otra persona y callar para mantener la calma.</p>
-
-                    <p>Si hoy prefieres no mirar de frente lo que ocurre ni hacerte preguntas incómodas, este libro no te servirá. No porque estés equivocada, sino porque todavía no estás dispuesta a abrir esa conversación contigo.</p>
-
-                    <p>Estas páginas empiezan a tener sentido cuando puedes reconocer que algo necesita cambiar y estás preparada para examinar tu historia con honestidad.</p>
-
-                    <p class="not-for-closing">Si aún no estás ahí, este libro no es para ti.<em>Todavía.</em></p>
+                                            <p class="apt__closing">Si aún no estás ahí, este libro no es para ti.<em>Todavía.</em></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2250,18 +2971,21 @@
 
         <aside class="offer" id="quiero-el-libro" aria-labelledby="offer-title">
             <div class="shell offer__grid">
-                <div class="offer__visual" data-reveal>
+                <div class="offer__visual" data-reveal data-tilt>
                     <img src="assets/book-cover.webp" width="1000" height="1500" alt="Portada del libro El hogar que construí después del adiós">
-                    <div class="offer__badge">Precio de<br>lanzamiento</div>
+                    <div class="offer__badge" aria-hidden="true">−35%<small>Lanzamiento</small></div>
                 </div>
 
                 <div class="offer__copy" data-reveal>
                     <p class="eyebrow" id="offer-title">ADQUIRIR MI LIBRO</p>
-                    <div class="offer__price">
-                        <strong>$25.900</strong>
-                        <span>COP</span>
+                    <div class="offer__price-box">
+                        <span class="offer__price-label">Precio de lanzamiento</span>
+                        <div class="offer__price">
+                            <strong>$25.900</strong>
+                            <span>COP</span>
+                        </div>
+                        <p class="offer__old-price">Precio oficial <del>$40.000 COP</del></p>
                     </div>
-                    <p class="offer__old-price"><del>Antes $39.900</del></p>
                     <p class="offer__support">Da clic y te acompañamos por WhatsApp para completar tu compra.</p>
                     <div class="offer__actions">
                         <a class="button" data-wa data-location="offer" href="https://wa.me/573112602355?text=HOGAR" target="_blank" rel="noopener noreferrer">
@@ -2290,7 +3014,7 @@
 
     <a class="mobile-buy" data-wa data-location="mobile-sticky" href="https://wa.me/573112602355?text=HOGAR" target="_blank" rel="noopener noreferrer" aria-label="Quiero mi libro por 25.900 pesos colombianos">
         <span class="mobile-buy__copy">
-            <small>Precio de lanzamiento</small>
+            <small>Oficial <del>$40.000</del></small>
             <strong>$25.900 COP</strong>
         </span>
         <span class="mobile-buy__action">Quiero mi libro</span>
@@ -2346,6 +3070,66 @@
         window.setTimeout(() => {
             document.querySelectorAll("[data-reveal]").forEach((element) => element.classList.add("is-visible"));
         }, 900);
+
+        // Apartados desplegables: la cabecera completa abre y cierra la tarjeta.
+        function setCard(card, open) {
+            const trigger = card.querySelector(".apt__trigger");
+            const hint = card.querySelector(".apt__hint");
+            card.classList.toggle("is-open", open);
+            if (trigger) trigger.setAttribute("aria-expanded", String(open));
+            if (hint) hint.textContent = open ? "Ver menos" : "Ver más";
+        }
+
+        document.querySelectorAll(".apt").forEach((card) => {
+            const head = card.querySelector(".apt__head");
+            if (!head) return;
+
+            head.addEventListener("click", (event) => {
+                if (event.target.closest("a")) return;
+                setCard(card, !card.classList.contains("is-open"));
+            });
+        });
+
+        // Un enlace hacia un apartado lo abre además de desplazarse hasta él.
+        function openCardFromHash(hash) {
+            if (!hash || hash.length < 2) return;
+            let target = null;
+            try {
+                target = document.querySelector(hash);
+            } catch (error) {
+                return;
+            }
+            if (target && target.classList.contains("apt")) setCard(target, true);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener("click", () => openCardFromHash(link.getAttribute("href")));
+        });
+
+        openCardFromHash(window.location.hash);
+        window.addEventListener("hashchange", () => openCardFromHash(window.location.hash));
+
+        // Inclinación suave siguiendo el cursor (solo ratón, nunca en táctil).
+        const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+        if (finePointer && !reduceMotion) {
+            document.querySelectorAll("[data-tilt]").forEach((element) => {
+                element.addEventListener("pointermove", (event) => {
+                    const rect = element.getBoundingClientRect();
+                    const px = (event.clientX - rect.left) / rect.width;
+                    const py = (event.clientY - rect.top) / rect.height;
+                    element.style.setProperty("--ry", `${(px - 0.5) * 3.4}deg`);
+                    element.style.setProperty("--rx", `${(0.5 - py) * 2.6}deg`);
+                    element.style.setProperty("--mx", `${px * 100}%`);
+                    element.style.setProperty("--my", `${py * 100}%`);
+                });
+
+                element.addEventListener("pointerleave", () => {
+                    element.style.setProperty("--rx", "0deg");
+                    element.style.setProperty("--ry", "0deg");
+                });
+            });
+        }
 
         document.querySelectorAll("[data-wa]").forEach((link) => {
             link.addEventListener("click", () => {
