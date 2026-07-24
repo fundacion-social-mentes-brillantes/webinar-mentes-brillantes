@@ -46,6 +46,8 @@
             --white: #fffdf9;
             --shadow: 0 35px 90px rgba(61, 40, 34, .18);
             --display: "Bodoni Moda", Georgia, serif;
+            --display-stroke: .44px;
+            --display-stroke-strong: .68px;
             --sans: "DM Sans", system-ui, sans-serif;
             --shell: min(1180px, calc(100vw - 40px));
         }
@@ -191,6 +193,51 @@
             font-size: clamp(1rem, 1.4vw, 1.2rem);
             font-weight: 400;
             line-height: 1.8;
+        }
+
+        :where(
+            .display,
+            .section-title,
+            .hero__bg-word,
+            .hero h1,
+            .hero__lead,
+            .book-stage__seal,
+            .marquee__track,
+            .recognition-card h3,
+            .threshold blockquote,
+            .layer__number,
+            .layer h3,
+            .manifesto__mark,
+            .manifesto h2,
+            .video-placeholder h3,
+            .author__monogram,
+            .author h2,
+            .author__quote,
+            .offer__badge,
+            .offer__price strong,
+            .faq summary,
+            .finale h2,
+            .mobile-buy__copy strong
+        ) {
+            -webkit-text-stroke: var(--display-stroke) currentColor;
+            paint-order: stroke fill;
+        }
+
+        :where(
+            .section-title,
+            .hero h1,
+            .recognition-card h3,
+            .threshold blockquote,
+            .layer h3,
+            .manifesto h2,
+            .video-placeholder h3,
+            .author h2,
+            .author__quote,
+            .offer__price strong,
+            .faq summary,
+            .finale h2
+        ) {
+            -webkit-text-stroke-width: var(--display-stroke-strong);
         }
 
         .button {
@@ -444,7 +491,7 @@
             display: block;
             margin-left: clamp(26px, 5vw, 78px);
             color: var(--plum);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .hero__lead {
@@ -606,7 +653,7 @@
             align-items: center;
             gap: 34px;
             padding: 25px 18px;
-            font: 400 clamp(1.3rem, 2vw, 2rem)/1 var(--display);
+            font: 500 clamp(1.3rem, 2vw, 2rem)/1 var(--display);
             white-space: nowrap;
         }
 
@@ -756,7 +803,7 @@
 
         .threshold blockquote {
             margin: 22px 0 0;
-            font: 400 clamp(3.1rem, 6vw, 6.2rem)/.98 var(--display);
+            font: 500 clamp(3.1rem, 6vw, 6.2rem)/.98 var(--display);
             letter-spacing: -.05em;
         }
 
@@ -860,7 +907,7 @@
 
         .manifesto h2 {
             margin: 24px 0 0;
-            font: 400 clamp(3.6rem, 8vw, 8.6rem)/.92 var(--display);
+            font: 500 clamp(3.6rem, 8vw, 8.6rem)/.92 var(--display);
             letter-spacing: -.06em;
         }
 
@@ -1001,7 +1048,7 @@
         .author__monogram {
             position: relative;
             z-index: 1;
-            font: 400 clamp(7rem, 15vw, 12rem)/1 var(--display);
+            font: 500 clamp(7rem, 15vw, 12rem)/1 var(--display);
             letter-spacing: -.12em;
         }
 
@@ -1038,7 +1085,7 @@
             margin: 38px 0 0;
             padding: 24px 0 0 28px;
             border-left: 2px solid #e8d3bf;
-            font: 400 clamp(1.6rem, 2.5vw, 2.35rem)/1.3 var(--display);
+            font: 500 clamp(1.6rem, 2.5vw, 2.35rem)/1.3 var(--display);
         }
 
         .offer {
@@ -1291,7 +1338,7 @@
 
         .finale h2 {
             margin: 28px 0 0;
-            font: 400 clamp(4rem, 9vw, 9.2rem)/.88 var(--display);
+            font: 500 clamp(4rem, 9vw, 9.2rem)/.88 var(--display);
             letter-spacing: -.065em;
         }
 
